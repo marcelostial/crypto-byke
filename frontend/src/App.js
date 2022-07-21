@@ -1,7 +1,11 @@
+import Download from "./components/Download/Download";
+import "./styles/globals.scss";
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header">Test</header>
+      <Download variant="primary" icon="apple" />
+      <Download variant="secondary" icon="google" />
     </div>
   );
 }

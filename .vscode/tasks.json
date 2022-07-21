@@ -1,0 +1,28 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run Tests",
+      "type": "shell",
+      "command": "cd frontend && npm run test",
+      "group": "test",
+      "presentation": {
+        "panel": "new",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+
+    {
+      "label": "Start Development Server",
+      "type": "shell",
+      "presentation": {
+        "panel": "new",
+        "reveal": "silent",
+        "clear": true
+      },
+      "command": "cd frontend && npm start",
+      "problemMatcher": []
+    }
+  ]
+}
