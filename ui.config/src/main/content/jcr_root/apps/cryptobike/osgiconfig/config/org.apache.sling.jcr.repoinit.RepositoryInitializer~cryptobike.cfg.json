@@ -1,0 +1,7 @@
+{
+    "scripts": [
+        "create path (sling:OrderedFolder) /content/dam/cryptobike",
+        "create path (nt:unstructured) /content/dam/cryptobike/jcr:content",
+        "set properties on /content/dam/cryptobike/jcr:content\n  set cq:conf{String} to /conf/cryptobike\n  set jcr:title{String} to \"Crypto Bike\"\nend"
+    ]
+}
