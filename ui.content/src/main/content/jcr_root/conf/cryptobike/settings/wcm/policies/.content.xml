@@ -34,9 +34,9 @@
                     jcr:title="Content Image"
                     sling:resourceType="wcm/core/components/policy/policy"
                     allowedRenditionWidths="[320,480,600,800,1024,1200,1600]"
-                    disableLazyLoading="false"
                     allowUpload="false"
                     altValueFromDAM="true"
+                    disableLazyLoading="false"
                     displayPopupTitle="true"
                     isDecorative="false"
                     jpegQuality="{Long}85"
@@ -190,6 +190,8 @@
                 <policy_header
                     cq:styleDefaultElement="header"
                     jcr:description="Sets a &lt;header> element on the page header experience fragment."
+                    jcr:lastModified="{Date}2022-07-25T19:33:40.162-03:00"
+                    jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Page Header"
                     sling:resourceType="wcm/core/components/policy/policy">
@@ -198,6 +200,8 @@
                 <policy_footer
                     cq:styleDefaultElement="footer"
                     jcr:description="Sets a &lt;footer> element on the page footer experience fragment."
+                    jcr:lastModified="{Date}2022-07-25T19:33:52.051-03:00"
+                    jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Page Footer"
                     sling:resourceType="wcm/core/components/policy/policy">
@@ -339,22 +343,28 @@
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                 </policy>
                 <policy_spa
+                    jcr:lastModified="{Date}2022-07-25T19:35:17.274-03:00"
+                    jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Crypto Bike SPA Page Policy"
                     sling:resourceType="wcm/core/components/policy/policy"
-                    clientlibs="[cryptobike.react]">
+                    clientlibs="cryptobike.react"
+                    structureDepth="0">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                 </policy_spa>
             </page>
             <spa jcr:primaryType="nt:unstructured">
                 <default
+                    jcr:lastModified="{Date}2022-07-25T19:35:24.484-03:00"
+                    jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Crypto Bike App Policy"
                     sling:resourceType="wcm/core/components/policy/policy"
-                    clientlibs="[cryptobike.react]"
-                    isRoot="{Boolean}true"
-                    structureDepth="3"
-                />
+                    clientlibs="cryptobike.react"
+                    isRoot="true"
+                    structureDepth="0">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                </default>
             </spa>
         </components>
     </cryptobike>
@@ -364,13 +374,15 @@
                 <responsivegrid jcr:primaryType="nt:unstructured">
                     <spa-default
                         jcr:description="Includes only SPA-Enabled components."
+                        jcr:lastModified="{Date}2022-07-25T19:34:31.812-03:00"
+                        jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         jcr:title="SPA Content"
                         sling:resourceType="wcm/core/components/policy/policy"
-                        components="[/libs/wcm/foundation/components/responsivegrid,/apps/cryptobike/components/text]">
+                        components="[/libs/wcm/foundation/components/responsivegrid,/apps/cryptobike/components/container,/apps/cryptobike/components/experiencefragment,/apps/cryptobike/components/image,/apps/cryptobike/components/text,/apps/cryptobike/components/title]">
                         <jcr:content jcr:primaryType="nt:unstructured"/>
                     </spa-default>
-                    </responsivegrid>
+                </responsivegrid>
             </components>
         </foundation>
     </wcm>

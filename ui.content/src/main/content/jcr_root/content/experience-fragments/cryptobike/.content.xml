@@ -6,5 +6,5 @@
     jcr:primaryType="sling:OrderedFolder"
     jcr:title="Crypto Bike Fragments"
     sling:configRef="/conf/cryptobike">
-    <us/>
+    <en/>
 </jcr:root>
