@@ -3,8 +3,6 @@
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:deviceGroups="[mobile/groups/responsive]"
-        cq:lastModified="{Date}2022-07-25T19:33:28.641-03:00"
-        cq:lastModifiedBy="admin"
         cq:template="/conf/cryptobike/settings/wcm/templates/spa-page-template"
         jcr:primaryType="cq:PageContent"
         sling:resourceType="cryptobike/components/page">
@@ -14,17 +12,22 @@
             <experiencefragment-header
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="cryptobike/components/experiencefragment"
-                editable="{Boolean}true"/>
+                                fragmentVariationPath="/content/experience-fragments/cryptobike/us/en/site/header/master"/>
+                
+
             <responsivegrid
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/foundation/components/responsivegrid"
                 editable="{Boolean}true">
                 <cq:responsive jcr:primaryType="nt:unstructured"/>
             </responsivegrid>
+
             <experiencefragment-footer
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="cryptobike/components/experiencefragment"
-                editable="{Boolean}true"/>
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="cryptobike/components/experiencefragment"
+                        fragmentVariationPath="/content/experience-fragments/cryptobike/us/en/site/footer/master"/>
+            
+
         </root>
         <cq:responsive jcr:primaryType="nt:unstructured">
             <breakpoints jcr:primaryType="nt:unstructured">
