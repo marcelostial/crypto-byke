@@ -1,0 +1,67 @@
+{
+  "project-settings": {
+    "code-owner": "Compass UOL",
+    "bundle-path": "../core/src/main/java",
+    "test-path": "../core/src/test/java",
+    "apps-path": "../ui.apps/src/main/content/jcr_root/apps",
+    "component-path": "cryptobike",
+    "model-interface-pkg": "com.uol.cryptobike.core.models",
+    "model-impl-pkg": "com.uol.cryptobike.core.models.impl"
+  },
+  "name": "pedalar",
+  "title": "Pedalar",
+  "group": "Layout",
+  "type": "components",
+  "options": {
+    "js": false,
+    "jstxt": false,
+    "css": false,
+    "csstxt": false,
+    "html": false,
+    "html-content": false,
+    "slingmodel": true,
+    "testclass": false,
+    "junit-major-version": 5,
+    "content-exporter": true,
+    "model-adaptables": ["request"],
+    "generic-javadoc": false,
+    "properties": [
+      {
+        "field": "maintitle",
+        "type": "textfield",
+        "label": "Main Title",
+        "json-expose": true
+      },
+      {
+        "field": "cards",
+        "type": "multifield",
+        "model-name": "Cards",
+        "use-existing-model": false,
+        "label": "Cards",
+        "json-expose": true,
+        "items": [
+          {
+            "field": "icon",
+            "type": "image",
+            "label": "Icon",
+            "json-expose": true
+          },
+          {
+            "field": "title",
+            "type": "textfield",
+            "label": "Title",
+            "description": "Title for the item",
+            "json-expose": true
+          },
+          {
+            "field": "description",
+            "type": "textfield",
+            "label": "Description Text",
+            "description": "Description text for the item",
+            "json-expose": true
+          }
+        ]
+      }
+    ]
+  }
+}

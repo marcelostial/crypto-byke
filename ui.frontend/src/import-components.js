@@ -63,6 +63,10 @@ const CarouselV1 = withAsyncImport(() =>
 const ExampleComponent = withAsyncImport(() =>
   import(`./layouts/ExampleComponent/ExampleComponent`),
 );
+const Pedalar = withAsyncImport(() =>
+  import(`./layouts/Pedalar/pedalar`),
+);
+MapTo('cryptobike/components/pedalar')(Pedalar);
 
 MapTo('cryptobike/components/navigation')(NavigationV1);
 MapTo('cryptobike/components/text')(LazyTextComponent, TextEditConfig);
