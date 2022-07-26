@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2022-07-25T19:37:30.586-03:00"
+        cq:lastModifiedBy="admin"
+        cq:tags="[]"
+        cq:template="/conf/cryptobike/settings/wcm/templates/xf-web-variation"
+        cq:xfMasterVariation="{Boolean}true"
+        cq:xfVariantType="web"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Header"
+        jcr:uuid="a14dcf7a-1d70-4c9c-a053-fa961c46aace"
+        sling:resourceType="cryptobike/components/xfpage">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="cryptobike/components/container"
+            layout="simple">
+            <navigation
+                jcr:lastModified="{Date}2022-07-25T19:37:28.964-03:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="cryptobike/components/navigation"
+                collectAllPages="false"
+                disableShadowing="false"
+                navigationRoot="/content/cryptobike/en"
+                skipNavigationRoot="false"
+                structureDepth="1"
+                structureStart="1"/>
+            <search
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="cryptobike/components/search"
+                searchRoot="/content/cryptobike/us"/>
+            <logo/>
+        </root>
+    </jcr:content>
+</jcr:root>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/cryptobike" mode="merge"/>
+    <filter root="/content/cryptobike" mode="merge"/>
+    <filter root="/content/dam/cryptobike/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/cryptobike" mode="merge"/>
+</workspaceFilter>
