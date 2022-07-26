@@ -64,6 +64,10 @@ const ExampleComponent = withAsyncImport(() =>
   import(`./layouts/ExampleComponent/ExampleComponent`),
 );
 
+const Header = withAsyncImport(() =>
+  import(`./layouts/HeaderComponent/Header`),
+);
+
 MapTo('cryptobike/components/navigation')(NavigationV1);
 MapTo('cryptobike/components/text')(LazyTextComponent, TextEditConfig);
 MapTo('cryptobike/components/languagenavigation')(LanguageNavigationV1);
@@ -93,3 +97,5 @@ MapTo('cryptobike/components/breadcrumb')(BreadCrumbV2, {
 });
 
 MapTo('cryptobike/components/example')(ExampleComponent);
+
+MapTo('cryptobike/components/header')(Header);

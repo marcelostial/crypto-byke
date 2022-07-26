@@ -1,0 +1,34 @@
+.navLink {
+  text-decoration: none;
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+  /* Cor Primária/Primary-200 */
+
+  color: #ffffff;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.navLink:hover {
+  color: #fece00;
+}
+
+.navLink.active {
+  color: #fece00;
+}
+
+@media (max-width: 560px) {
+  
+  .navLink {
+    display: none;
+  }
+}

@@ -1,0 +1,57 @@
+.modal-button {
+  background-image: url("../../../../assets/close.png");
+  background-color: #111213;
+  cursor: pointer;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  right: 126px;
+  top: 24px;
+}
+
+.modal-language {
+  z-index: 1;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  background: #111213;
+  transition: all 0.4s;
+}
+
+.logo-modal {
+  position: absolute;
+  width: 403px;
+  height: 24px;
+  left: 126px;
+  top: 28px;
+  
+}
+
+.container-modal{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 32px;
+  
+
+  width: 264px;
+  height: 112px;
+  left: 551px;
+  top: 324px;
+}
+
+@media (min-width: 1400px){
+  
+  .container-modal{
+    top: 45%;
+    left: 40%;
+  }
+}
+

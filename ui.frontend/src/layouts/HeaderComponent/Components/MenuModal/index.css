@@ -1,0 +1,11 @@
+.modal-container {
+  position: absolute;
+  width: 360px;
+  height: 560px;
+  left: 0px;
+  top: 80px;
+  
+  /* Tons de Cinza/500 */
+  
+  background: #111213;
+}
