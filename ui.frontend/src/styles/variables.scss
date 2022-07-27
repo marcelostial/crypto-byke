@@ -29,3 +29,24 @@ $border-radius: (
   "lg": 8px,
   "xl": 12px,
 );
+
+$breakpoints: (
+  "mobile": 992px,
+  "desktop": 1366px,
+  "wide": 1920px,
+) !default;
+
+@mixin breakpoint($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media all and (max-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+}
+
+$widths: (
+  "mobile": 328px,
+  "desktop": 1114px,
+);
+
+$padding-y: 96px;
