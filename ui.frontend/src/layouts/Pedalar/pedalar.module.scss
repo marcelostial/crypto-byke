@@ -1,0 +1,64 @@
+.container {
+  width: 100%;
+  display: flex;
+  background-color: #e5e5e5;
+  height: 800px;
+  justify-content: center;
+}
+
+.subcontainer {
+  width: 100%;
+  max-width: 1114px;
+  margin-top: 96px;
+  padding-left: 126px;
+}
+
+.cardscontainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.icon {
+  width: 80px;
+  height: 80px;
+}
+
+.textcontainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  width: 287px;
+  height: 73px;
+  /* Title/T5/Bold */
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  /* or 150% */
+
+  /* Tons de Cinza/500 */
+
+  color: #111213;
+}
+
+.description {
+  width: 287px;
+  height: 48px;
+
+  /* Paragraph/P3/Regular */
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  /* or 150% */
+  /* Tons de Cinza/400 */
+  color: #585858;
+}
