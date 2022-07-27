@@ -1,11 +1,16 @@
 .modal-container {
+  z-index: 2;
+  display: flex;
   position: absolute;
-  width: 360px;
-  height: 560px;
-  left: 0px;
-  top: 80px;
-  
-  /* Tons de Cinza/500 */
-  
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  right: 0;
   background: #111213;
+}
+
+@media (min-width: 600px){
+  .modal-container{
+    display: none;
+  }
 }

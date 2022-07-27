@@ -1,14 +1,3 @@
-.modal-button {
-  background-image: url("../../../../assets/close.png");
-  background-color: #111213;
-  cursor: pointer;
-  position: absolute;
-  width: 32px;
-  height: 32px;
-  right: 126px;
-  top: 24px;
-}
-
 .modal-language {
   z-index: 1;
   width: 100%;
@@ -18,28 +7,43 @@
   left: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  gap: 30%;
   position: absolute;
   background: #111213;
   transition: all 0.4s;
 }
 
-.logo-modal {
-  position: absolute;
-  width: 403px;
-  height: 24px;
-  left: 126px;
-  top: 28px;
-  
+.modal-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  max-width: 1114px;
 }
 
-.container-modal{
+.modal-button {
+  position: absolute;
+  background-image: url("../../../../assets/close.png");
+  background-color: #111213;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  right: 9.2%;
+}
+
+.logo-modal {
+  width: 403px;
+  height: 24px;
+}
+
+.container-modal {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 0px;
   gap: 32px;
-  
+
 
   width: 264px;
   height: 112px;
@@ -47,11 +51,10 @@
   top: 324px;
 }
 
-@media (min-width: 1400px){
-  
-  .container-modal{
+@media (min-width: 1400px) {
+
+  .container-modal {
     top: 45%;
     left: 40%;
   }
 }
-

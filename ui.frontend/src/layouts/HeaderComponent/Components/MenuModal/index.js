@@ -2,7 +2,7 @@ import React from "react";
 import "./index.css";
 
 
-const MenuModal = ({ menuModal, setMenuModal }) => {
+const MenuModal = ({ menuModal, setMenuModal}) => {
   if (menuModal === true)
     return (
       <div className="modal-container">
