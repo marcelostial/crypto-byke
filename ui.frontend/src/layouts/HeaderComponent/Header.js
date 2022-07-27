@@ -24,13 +24,30 @@ const Header = ({
 }) => {
   const [modal, setModal] = React.useState(false);
   const [menuModal, setMenuModal] = React.useState(false);
-
+  const [buttonVisibility, setButtonVisibility] = React.useState(true);
+  const [buttonCloseVisibility, setbuttonCloseVisibility] = React.useState(false);
   const ref = useRef();
 
   const handleClick = () => {
     setMenuModal(true);
     ref.current.style.display = "flex";
   };
+
+  const hiddenButton = () => {
+    if (menuModal === true) {
+      console.log("ta ativo");
+      setButtonVisibility(false);
+      setbuttonCloseVisibility(true);
+    } else {
+      console.log("não esta ativo")
+      setButtonVisibility(true);
+      setbuttonCloseVisibility(false);
+    }
+  };
+
+  React.useEffect(() => {
+    hiddenButton();
+  });
 
   return (
     <div>
@@ -53,16 +70,24 @@ const Header = ({
 
           <div className={styles["nav-navigation"]}>
             <nav className={styles["navLink-container"]} ref={ref}>
-              <Nav id="navfirst" name={firstbuttonlabel} link={firstlinklabel} />
-              <Nav id="navsecond"name={secondbuttonlabel} link={secondlinklabel} />
-              <Nav id="navthird" name={thirdbuttonlabel} link={thirdlinklabel} />
-              <Nav id="navfourth" name={fourthbuttonlabel} link={fourthlinklabel} />
+              <Nav name={firstbuttonlabel} link={firstlinklabel} />
+              <Nav name={secondbuttonlabel} link={secondlinklabel} />
+              <Nav name={thirdbuttonlabel} link={thirdlinklabel} />
+              <Nav name={fourthbuttonlabel} link={fourthlinklabel} />
             </nav>
-            <NavDropdwon name="PT" setModal={setModal}></NavDropdwon>
-            <button
-              className={styles["buttun-menu"]}
-              onClick={handleClick}
-            ></button>
+            <div className={styles["nav-buttons"]}>
+              <NavDropdwon name="PT" setModal={setModal}></NavDropdwon>
+              {buttonVisibility && (
+                <button
+                  className={styles["buttun-menu"]}
+                  onClick={handleClick}
+                ></button>
+              )}
+              {buttonCloseVisibility && (
+                <button className={styles["buttonClose"]} onClick={() => setMenuModal(false)}>
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </div>

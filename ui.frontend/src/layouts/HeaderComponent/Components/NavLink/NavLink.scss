@@ -1,38 +1,29 @@
-#navfirst{
+.navLink {
   text-decoration: none;
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+  /* Cor Primária/Primary-200 */
+
+  color: #ffffff;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+
 }
 
-#navfirst:hover {
+.navLink:hover {
   color: #fece00;
 }
 
-#navfirst.active {
-  color: #fece00;
-}
-
-
-#navsecond{
-  text-decoration: none;
-}
-
-#navsecond:hover {
-  color: #fece00;
-}
-
-#navsecond.active {
-  color: #fece00;
-}
-
-
-#navthird{
-  text-decoration: none;
-}
-
-#navthird:hover {
-  color: #fece00;
-}
-
-#navthird.active {
+.navLink.active {
   color: #fece00;
 }
 
