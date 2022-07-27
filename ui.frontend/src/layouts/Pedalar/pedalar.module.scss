@@ -1,9 +1,20 @@
+.desktop {
+  @media all and (max-width: 1210px) {
+    display: none;
+  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .container {
   width: 100%;
   display: flex;
   background-color: #e5e5e5;
   height: 800px;
   justify-content: center;
+  @media all and (max-width: 1210px) {
+    display: block;
+  }
 }
 
 .subcontainer {
@@ -16,11 +27,13 @@
 .cardscontainer {
   display: flex;
   flex-direction: row;
+  padding-top: 117px;
 }
 
 .card {
   display: flex;
   flex-direction: column;
+  padding: 32px;
 }
 
 .icon {
@@ -31,34 +44,26 @@
 .textcontainer {
   display: flex;
   flex-direction: column;
+  margin-top: 24px;
 }
 
 .title {
   width: 287px;
   height: 73px;
-  /* Title/T5/Bold */
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
   line-height: 36px;
-  /* or 150% */
-
-  /* Tons de Cinza/500 */
-
+  margin-bottom: 16px;
   color: #111213;
 }
 
 .description {
   width: 287px;
   height: 48px;
-
-  /* Paragraph/P3/Regular */
-
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  /* or 150% */
-  /* Tons de Cinza/400 */
   color: #585858;
 }
