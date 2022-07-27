@@ -1,0 +1,186 @@
+@import "../../styles/compass/variables.scss";
+@import "../../styles/compass/mixins.scss";
+
+.buttonContainer {
+  display: flex;
+  width: 100%;
+}
+
+.cmp-button {
+  font-family: Mulish;
+  display: flex;
+  width: max-content;
+  align-items: center;
+  padding: 15px;
+  font-size: clamp(1rem, 0.75vw, 4rem);
+  font-weight: 900;
+  line-height: clamp(2rem, 0.75vw, 8rem);
+  height: 48px;
+  color: $color-white;
+  justify-content: flex-start;
+  border: solid 1px transparent;
+  background: transparent;
+  flex-direction: row-reverse;
+}
+
+.left {
+  flex-direction: row-reverse;
+
+  img,
+  svg {
+    margin-right: 16px;
+  }
+}
+
+.right {
+  flex-direction: row;
+
+  img,
+  svg {
+    margin-left: 10px;
+  }
+}
+
+.icon {
+  img,
+  svg {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
+.primary {
+  border-color: $color-yellow;
+
+  @media (hover: hover) {
+    &:hover {
+      color: $color-neutral90;
+      background: $color-yellow;
+
+      img {
+        filter: brightness(0);
+      }
+    }
+  }
+
+  &:active {
+    color: $color-neutral90;
+    background: $color-yellow;
+
+    img {
+      filter: brightness(0);
+    }
+  }
+
+  &.light {
+    color: $color-neutral90;
+  }
+}
+
+.secondary {
+  border-color: $color-white;
+
+  img {
+    filter: none;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      color: $color-neutral90;
+      background: $color-white;
+
+      img {
+        filter: brightness(0);
+      }
+    }
+  }
+
+  &:active {
+    color: $color-neutral90;
+    background: $color-white;
+
+    img {
+      filter: brightness(0);
+    }
+  }
+
+  &.light {
+    img {
+      filter: brightness(0);
+    }
+
+    color: $color-neutral90;
+    border-color: $color-neutral90;
+
+    &:hover {
+      color: $color-white;
+      background: $color-neutral90;
+
+      // make it white
+      img {
+        filter: brightness(255) saturate(0);
+      }
+    }
+  }
+}
+
+.tertiary {
+  padding: 0;
+
+  @media (hover: hover) {
+    &:hover {
+      color: $color-yellow !important;
+    }
+  }
+
+  &:active {
+    color: $color-yellow !important;
+  }
+
+  &.light {
+    color: $color-neutral70;
+  }
+}
+
+.quaternary {
+  padding: 0;
+
+  @media (hover: hover) {
+    &:hover {
+      color: $color-neutral70 !important;
+    }
+  }
+
+  &:active {
+    color: $color-neutral70 !important;
+  }
+
+  &.light {
+    color: $color-neutral70;
+  }
+}
+
+.playVideoCard {
+  width: 56px;
+  height: 56px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-yellow;
+  position: absolute;
+  top: 36%;
+  left: 42.5%;
+
+  img {
+    filter: brightness(0);
+    width: 90%;
+    margin-left: 5px;
+  }
+}
+
+.ButtonYellowSection {
+  img {
+    margin-left: 32px;
+  }
+}

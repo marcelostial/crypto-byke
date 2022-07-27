@@ -96,4 +96,10 @@ MapTo('cryptobike/components/breadcrumb')(BreadCrumbV2, {
   isEmpty: BreadCrumbV2IsEmptyFn,
 });
 
+
+const Blog = withAsyncImport(() =>
+  import(`./layouts/Blog/Blog`),
+);
+
+MapTo("compass/components/blog-posts")(Blog);
 MapTo('cryptobike/components/example')(ExampleComponent);
