@@ -96,5 +96,10 @@ const Blog = withAsyncImport(() =>
   import(`./layouts/Blog/Blog`),
 );
 
+const TourDeTerre = withAsyncImport(() =>
+  import(`./layouts/TourDeTerre/tourdeterre`),
+);
+
+MapTo("cryptobike/components/tourdeterre")(TourDeTerre);
 MapTo("compass/components/blog-posts")(Blog);
 MapTo('cryptobike/components/example')(ExampleComponent);
