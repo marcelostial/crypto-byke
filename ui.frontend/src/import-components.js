@@ -60,10 +60,6 @@ const CarouselV1 = withAsyncImport(() =>
   ),
 );
 
-const ExampleComponent = withAsyncImport(() =>
-  import(`./layouts/ExampleComponent/ExampleComponent`),
-);
-
 MapTo('cryptobike/components/navigation')(NavigationV1);
 MapTo('cryptobike/components/text')(LazyTextComponent, TextEditConfig);
 MapTo('cryptobike/components/languagenavigation')(LanguageNavigationV1);
@@ -92,4 +88,13 @@ MapTo('cryptobike/components/breadcrumb')(BreadCrumbV2, {
   isEmpty: BreadCrumbV2IsEmptyFn,
 });
 
+
+const ExampleComponent = withAsyncImport(() =>
+  import(`./layouts/ExampleComponent/ExampleComponent`),
+);
+const Blog = withAsyncImport(() =>
+  import(`./layouts/Blog/Blog`),
+);
+
+MapTo("compass/components/blog-posts")(Blog);
 MapTo('cryptobike/components/example')(ExampleComponent);

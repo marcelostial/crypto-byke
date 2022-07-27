@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;700;900&display=swap");
 @import "variables";
+@import "./compass/slick.scss";
 @import url("https://unpkg.com/reset-css/reset.css");
 
 html,
@@ -49,10 +50,6 @@ h5 {
   font-size: 10px;
 }
 
-.App {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem;
-  gap: 2rem;
+a {
+  text-decoration: none;
 }
