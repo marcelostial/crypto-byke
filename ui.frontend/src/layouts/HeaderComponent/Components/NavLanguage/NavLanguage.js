@@ -1,7 +1,7 @@
 import React from "react";
-import "./index.css"
+import "./NavLanguage.scss"
 
-const NavDropdwon = ({name, setModal}) => {
+const NavLanguage = ({name, setModal}) => {
  
   return (
     <>
@@ -10,4 +10,4 @@ const NavDropdwon = ({name, setModal}) => {
   )
 };
 
-export default NavDropdwon;
+export default NavLanguage;

@@ -6,7 +6,7 @@ import Logo from "../../assets/logo-horizontal-white.svg";
 import LogoVertical from "../../assets/logo-vertical-white.svg";
 
 import Nav from "./Components/NavLink/NavLink";
-import NavDropdwon from "../HeaderComponent/Components/NavDropdown";
+import NavLanguage from "../HeaderComponent/Components/NavLanguage/NavLanguage";
 import ModalLanguage from "./Components/ModalLanguage/ModalLanguage";
 
 const Header = ({
@@ -59,7 +59,12 @@ const Header = ({
 
   return (
     <>
-      <ModalLanguage modal={modal} setModal={setModal} urlPtBr={urlLanguagePTbr} urlEnUs={urlLanguageEnUs}/>
+      <ModalLanguage
+        modal={modal}
+        setModal={setModal}
+        urlPtBr={urlLanguagePTbr}
+        urlEnUs={urlLanguageEnUs}
+      />
       <div className={styles["header-container"]}>
         {menuModalMobile && (
           <div className={styles["modal-mobile-container"]}>
@@ -95,7 +100,7 @@ const Header = ({
                 <Nav name={fourthbuttonlabel} link={fourthlinklabel} />
               </nav>
               <div className={styles["nav-buttons"]}>
-                <NavDropdwon name="PT" setModal={setModal}></NavDropdwon>
+                <NavLanguage name="PT" setModal={setModal} />
                 {buttonVisibility && (
                   <button
                     className={styles["buttun-menu"]}

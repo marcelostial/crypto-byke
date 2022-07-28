@@ -1,10 +1,10 @@
 import React from "react";
 import "./ModalLanguage.scss";
-import Languages from "../Languages";
+import Languages from "../Languages/Languages";
 import Logo from "../../../../assets/logo-horizontal-white.svg";
 import LogoVertical from "../../../../assets/logo-vertical-white.svg";
 
-const ModalLanguage = ({ modal, setModal, urlPtBr, urlEnUs}) => {
+const ModalLanguage = ({ modal, setModal, urlPtBr, urlEnUs }) => {
   if (modal === true)
     return (
       <div className="modal-language">
@@ -30,7 +30,11 @@ const ModalLanguage = ({ modal, setModal, urlPtBr, urlEnUs}) => {
         </div>
 
         <div className="container-modal">
-          <Languages label="Português (BR)" icon="ptBR" url={urlPtBr}></Languages>
+          <Languages
+            label="Português (BR)"
+            icon="ptBR"
+            url={urlPtBr}
+          ></Languages>
           <Languages url={urlEnUs}></Languages>
         </div>
       </div>
