@@ -49,24 +49,24 @@ const StaticRanking = ({ title, about, buttonTitle, buttonLink }) => {
   return (
     <div className="static-ranking--container">
       <div className="static-ranking--sub-container">
-        <div>
-          <h1 className="static-ranking--title">
-            {title}
-            <div className="static-ranking--line" />
-          </h1>
-          <h5>
-            <Text className="static-ranking--about" text={about} />
-          </h5>
-          <div className="static-ranking--content">
-            {data.map((item, index) => (
-              <RankingCard key={index} {...item} />
-            ))}
-          </div>
-          <a className="static-ranking--button" href={buttonLink}>
+        <h1 className="static-ranking--title">
+          {title}
+          <div className="static-ranking--line" />
+        </h1>
+        <h5>
+          <Text className="static-ranking--about" text={about} />
+        </h5>
+        <div className="static-ranking--content">
+          {data.map((item, index) => (
+            <RankingCard key={index} {...item} />
+          ))}
+        </div>
+        <a className="static-ranking--button" href={buttonLink}>
+          <div className="static-ranking--button-text">
             <p>{buttonTitle}</p>
             <img src={ArrowRight} alt="arrow" />
-          </a>
-        </div>
+          </div>
+        </a>
       </div>
     </div>
   );

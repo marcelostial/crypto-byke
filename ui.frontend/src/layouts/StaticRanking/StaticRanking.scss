@@ -13,6 +13,12 @@
     font-weight: 800;
     line-height: 60px;
     width: fit-content;
+    
+    @media (max-width: 768px) {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 36px;
+    }
   }
   .static-ranking--line {
     height: 7px;
@@ -28,6 +34,11 @@
     b {
       font-weight: 700;
     }
+
+    @media (max-width: 768px) {
+      font-size: 18px;
+      line-height: 27px;
+    }
   }
 
   .static-ranking--sub-container {
@@ -41,29 +52,53 @@
   flex-direction: column;
   gap: 40px;
   margin-bottom: 40px;
+
+  @media (max-width: 768px) {
+    gap: 13px;
+    margin-bottom: 32px;
+  }
 }
 
 .static-ranking--button {
   display: flex;
-  padding: 10px 16px;
-  gap: 10px;
   width: max-content;
-
-  background-color: $primary-200;
   color: $grey-500;
+  background-color: $primary-200;
 
-  p {
-    font-weight: 700;
-    line-height: 24px;
-    min-width: 146px;
+  @media (max-width: 768px) {
+    width: auto;
   }
 
-  &:hover {
-    background-color: $primary-300;
-  }
+  .static-ranking--button-text {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
 
-  img {
-    filter: brightness(0);
-    margin-right: 2px;
+    @media (max-width: 768px) {
+      flex-grow: 1;
+      justify-content: center;
+    }
+
+    p {
+      font-weight: 700;
+      line-height: 24px;
+      min-width: 146px;
+      text-align: center;
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+    }
+
+    &:hover {
+      background-color: $primary-300;
+    }
+
+    img {
+      width: 16px;
+      height: 12px;
+      filter: brightness(0);
+      margin-right: 2px;
+    }
   }
 }

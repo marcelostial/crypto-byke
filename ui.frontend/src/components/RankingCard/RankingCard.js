@@ -33,6 +33,11 @@ const RankingCard = ({
           <div className="ranking-card--info">
             <p className="p2">{name}</p>
             <span className="p3">{handle}</span>
+            <div className="ranking-card--country-mobile">
+              <img src={flag} alt="Some flag" />
+              <p className="p2">{country}</p>
+              <span className="p3">{city}</span>
+            </div>
           </div>
         </div>
         <div className="ranking-card--rest">
