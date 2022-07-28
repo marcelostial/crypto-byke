@@ -1,0 +1,69 @@
+@import "../../styles/variables.scss";
+
+.static-ranking--container {
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 96px 0;
+
+  .static-ranking--title {
+    font-weight: 800;
+    line-height: 60px;
+    width: fit-content;
+  }
+  .static-ranking--line {
+    height: 7px;
+    width: 50%;
+    background-color: $primary-200;
+    margin-top: 4px;
+    border-radius: 4px;
+  }
+
+  .static-ranking--about {
+    line-height: 36px;
+    margin: 24px 0 64px;
+    b {
+      font-weight: 700;
+    }
+  }
+
+  .static-ranking--sub-container {
+    max-width: 1114px;
+    width: 100%;
+  }
+}
+
+.static-ranking--content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.static-ranking--button {
+  display: flex;
+  padding: 10px 16px;
+  gap: 10px;
+  width: max-content;
+
+  background-color: $primary-200;
+  color: $grey-500;
+
+  p {
+    font-weight: 700;
+    line-height: 24px;
+    min-width: 146px;
+  }
+
+  &:hover {
+    background-color: $primary-300;
+  }
+
+  img {
+    filter: brightness(0);
+    margin-right: 2px;
+  }
+}

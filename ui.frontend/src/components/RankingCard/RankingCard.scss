@@ -1,0 +1,163 @@
+@import "../../styles/variables.scss";
+
+@mixin flex-row-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.ranking-card--container {
+  @include flex-row-center;
+  padding: 10px 32px;
+  gap: 16px;
+
+  background: $white;
+  border: 1px solid $grey-100;
+
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
+  }
+
+  @media (max-width: 768px) {
+    padding: 10px 12px;
+  }
+}
+
+.ranking-card--rank {
+  color: $grey-500;
+  font-weight: 700;
+  min-width: 78px;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    min-width: 35px;
+  }
+}
+
+.ranking-card--content {
+  @include flex-row-center;
+  padding: 0px;
+  width: 100%;
+  gap: 16px;
+
+  @media (max-width: 768px) {
+    justify-content: space-between;
+    gap: 0px;
+  }
+}
+
+.ranking-card--rest {
+  @include flex-row-center;
+  justify-content: space-between;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    width: auto;
+  }
+
+  h5 {
+    color: $grey-500;
+    font-weight: 700;
+    min-width: 160px;
+    text-align: center;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+      min-width: 50px;
+    }
+  }
+}
+
+.ranking-card--person {
+  @include flex-row-center;
+  justify-content: center;
+  padding: 0px;
+  gap: 29px;
+
+  @media (max-width: 768px) {
+    gap: 16px;
+  }
+}
+
+.ranking-card--avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: $grey-100;
+  object-fit: cover;
+
+  @media (max-width: 768px) {
+    height: 40px;
+    width: 40px;
+  }
+}
+
+.ranking-card--info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 4px;
+  width: 294px;
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    width: 175px;
+  }
+
+  @media (max-width: 768px) {
+    width: auto;
+    gap: 0px;
+  }
+
+  p {
+    color: $grey-500;
+    font-weight: 700;
+    line-height: 27px;
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  span {
+    color: $grey-400;
+    font-weight: 300;
+    line-height: 24px;
+    line-height: 24px;
+
+    @media (max-width: 768px) {
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+}
+
+.ranking-card--country {
+  @include flex-row-center;
+  padding: 0px;
+  gap: 16px;
+  min-width: 175px;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    p {
+      color: $grey-500;
+      line-height: 27px;
+      padding-bottom: 2px;
+    }
+    span {
+      color: $grey-400;
+      line-height: 24px;
+      padding-top: 2px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}

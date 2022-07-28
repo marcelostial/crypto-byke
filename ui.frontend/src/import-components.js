@@ -95,6 +95,10 @@ const ExampleComponent = withAsyncImport(() =>
 const Blog = withAsyncImport(() =>
   import(`./layouts/Blog/Blog`),
 );
+const StaticRanking = withAsyncImport(() =>
+  import(`./layouts/StaticRanking/StaticRanking`),
+);
 
 MapTo("compass/components/blog-posts")(Blog);
 MapTo('cryptobike/components/example')(ExampleComponent);
+MapTo('cryptobike/components/static-ranking')(StaticRanking);
