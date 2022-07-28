@@ -142,6 +142,8 @@ Header.propTypes = {
   fourthlinklabel: PropTypes.string,
   fourthbuttonmobile: PropTypes.string,
   fourthlinkmobile: PropTypes.string,
+  urlLanguagePTbr: PropTypes.string,
+  urlLanguageEnUs: PropTypes.string,
 };
 
 Header.defaultProps = {
@@ -164,6 +166,9 @@ Header.defaultProps = {
   fourthlinklabel: "/",
   fourthbuttonmobile: "Ranking",
   fourthlinkmobile: "/",
+
+  urlLanguagePTbr: "/",
+  urlLanguageEnUs: "/",
 };
 
 export default Header;
