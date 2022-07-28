@@ -45,21 +45,33 @@ public class HeaderImpl
     @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
     private String firstlinklabel;
     @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
+    private String firstbuttonmobile;
+    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
+    private String firstlinkmobile;
+    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
     private String secondbuttonlabel;
     @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
     private String secondlinklabel;
+    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
+    private String secondbuttonmobile;
+    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
+    private String secondlinkmobile;
     @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
     private String thirdbuttonlabel;
     @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
     private String thirdlinklabel;
     @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
+    private String thirdbuttonmobile;
+    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
+    private String thirdlinkmobile;
+    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
     private String fourthbuttonlabel;
     @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
     private String fourthlinklabel;
     @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
-    private String fifthbuttonlabel;
+    private String fourthbuttonmobile;
     @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
-    private String fifthlinklabel;
+    private String fourthlinkmobile;
     @SlingObject
     private Resource resource;
 
@@ -74,6 +86,16 @@ public class HeaderImpl
     }
 
     @Override
+    public String getFirstbuttonmobile() {
+        return firstbuttonmobile;
+    }
+
+    @Override
+    public String getFirstlinkmobile() {
+        return firstlinkmobile;
+    }
+
+    @Override
     public String getSecondbuttonlabel() {
         return secondbuttonlabel;
     }
@@ -81,6 +103,16 @@ public class HeaderImpl
     @Override
     public String getSecondlinklabel() {
         return secondlinklabel;
+    }
+
+    @Override
+    public String getSecondbuttonmobile() {
+        return secondbuttonmobile;
+    }
+
+    @Override
+    public String getSecondlinkmobile() {
+        return secondlinkmobile;
     }
 
     @Override
@@ -94,6 +126,16 @@ public class HeaderImpl
     }
 
     @Override
+    public String getThirdbuttonmobile() {
+        return thirdbuttonmobile;
+    }
+
+    @Override
+    public String getThirdlinkmobile() {
+        return thirdlinkmobile;
+    }
+
+    @Override
     public String getFourthbuttonlabel() {
         return fourthbuttonlabel;
     }
@@ -104,13 +146,13 @@ public class HeaderImpl
     }
 
     @Override
-    public String getFifthbuttonlabel() {
-        return fifthbuttonlabel;
+    public String getFourthbuttonmobile() {
+        return fourthbuttonmobile;
     }
 
     @Override
-    public String getFifthlinklabel() {
-        return fifthlinklabel;
+    public String getFourthlinkmobile() {
+        return fourthlinkmobile;
     }
 
     @Override

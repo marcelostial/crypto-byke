@@ -36,20 +36,32 @@ public interface Header
 
     String getFirstlinklabel();
 
+    String getFirstbuttonmobile();
+
+    String getFirstlinkmobile();
+
     String getSecondbuttonlabel();
 
     String getSecondlinklabel();
+
+    String getSecondbuttonmobile();
+
+    String getSecondlinkmobile();
 
     String getThirdbuttonlabel();
 
     String getThirdlinklabel();
 
+    String getThirdbuttonmobile();
+
+    String getThirdlinkmobile();
+
     String getFourthbuttonlabel();
 
     String getFourthlinklabel();
 
-    String getFifthbuttonlabel();
+    String getFourthbuttonmobile();
 
-    String getFifthlinklabel();
+    String getFourthlinkmobile();
 
 }

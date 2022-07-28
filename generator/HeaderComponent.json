@@ -31,72 +31,118 @@
       {
         "field": "firstbuttonlabel",
         "type": "textfield",
-        "label": "Text",
+        "label": "firstbuttonlabel",
         "json-expose": true
       }
       ,
       {
         "field": "firstlinklabel",
         "type": "pathfield",
-        "label": "Text",
+        "label": "firstlinklabel",
+        "json-expose": true
+      }
+      ,
+      {
+        "field": "firstbuttonmobile",
+        "type": "textfield",
+        "label": "firstbuttonmobile",
+        "json-expose": true
+      }
+      ,
+      {
+        "field": "firstlinkmobile",
+        "type": "pathfield",
+        "label": "firstlinkmobile",
         "json-expose": true
       }
       ,
       {
         "field": "secondbuttonlabel",
         "type": "textfield",
-        "label": "Text",
+        "label": "secondbuttonlabel",
+        "json-expose": true
+      }
+      ,
+      
+      {
+        "field": "secondlinklabel",
+        "type": "pathfield",
+        "label": "secondlinklabel",
         "json-expose": true
       }
       ,
       {
-        "field": "secondlinklabel",
+        "field": "secondbuttonmobile",
+        "type": "textfield",
+        "label": "secondbuttonmobile",
+        "json-expose": true
+      }
+      ,
+      
+      {
+        "field": "secondlinkmobile",
         "type": "pathfield",
-        "label": "Text",
+        "label": "secondlinkmobile",
         "json-expose": true
       }
       ,
       {
         "field": "thirdbuttonlabel",
         "type": "textfield",
-        "label": "Text",
+        "label": "thirdbuttonlabel",
         "json-expose": true
       }
       ,
       {
         "field": "thirdlinklabel",
         "type": "pathfield",
-        "label": "Text",
+        "label":"thirdlinklabel",
+        "json-expose": true
+      }
+      ,
+      {
+        "field": "thirdbuttonmobile",
+        "type": "textfield",
+        "label": "thirdbuttonmobile",
+        "json-expose": true
+      }
+      ,
+      {
+        "field": "thirdlinkmobile",
+        "type": "pathfield",
+        "label":"thirdlinkmobile",
         "json-expose": true
       }
       ,
       {
         "field": "fourthbuttonlabel",
         "type": "textfield",
-        "label": "Text",
+        "label": "fourthbuttonlabel",
         "json-expose": true
       }
       ,
       {
         "field": "fourthlinklabel",
         "type": "pathfield",
-        "label": "Text",
+        "label": "fourthlinklabel",
         "json-expose": true
       }
       ,
       {
-        "field": "fifthbuttonlabel",
+        "field": "fourthbuttonmobile",
         "type": "textfield",
-        "label": "Text",
+        "label": "fourthbuttonmobile",
         "json-expose": true
       }
       ,
       {
-        "field": "fifthlinklabel",
+        "field": "fourthlinkmobile",
         "type": "pathfield",
-        "label": "Text",
+        "label": "fourthlinkmobile",
         "json-expose": true
       }
+ 
+      
 
     ]
   }

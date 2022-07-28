@@ -1,7 +1,7 @@
 import React from 'react'
-import RichText from "../RichText/RichText"
-import enUSicon from "../../../../assets/enUS.png"
-import ptBRicon from "../../../../assets/ptBR.png"
+import Text from "../../../../components/Text/Text";
+import enUSicon from "../../../../assets/enUS.svg"
+import ptBRicon from "../../../../assets/ptBR.svg"
 import "./index.css"
 
 const enUSAlt = "enUS logo";
@@ -21,7 +21,7 @@ const Languages = ({ label, icon, url }) => {
           src={icon === "ptBR" ? ptBRicon : enUSicon}
           alt={icon === "ptBR" ? ptBReAlt : enUSAlt}
         />
-        <RichText className="text-language" text={label}></RichText>
+        <Text className="text-language" text={label}></Text>
       </a>
     );
   };

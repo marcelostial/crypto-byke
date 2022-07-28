@@ -43,6 +43,16 @@
                                jcr:primaryType="nt:unstructured"
                                name="./firstlinklabel"
                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
+               <firstbuttonmobile cq-msm-lockable="./firstbuttonmobile"
+                                  fieldLabel="firstbuttonmobile"
+                                  jcr:primaryType="nt:unstructured"
+                                  name="./firstbuttonmobile"
+                                  sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+               <firstlinkmobile cq-msm-lockable="./firstlinkmobile"
+                                fieldLabel="firstlinkmobile"
+                                jcr:primaryType="nt:unstructured"
+                                name="./firstlinkmobile"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
                <secondbuttonlabel cq-msm-lockable="./secondbuttonlabel"
                                   fieldLabel="secondbuttonlabel"
                                   jcr:primaryType="nt:unstructured"
@@ -53,6 +63,16 @@
                                 jcr:primaryType="nt:unstructured"
                                 name="./secondlinklabel"
                                 sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
+               <secondbuttonmobile cq-msm-lockable="./secondbuttonmobile"
+                                   fieldLabel="secondbuttonmobile"
+                                   jcr:primaryType="nt:unstructured"
+                                   name="./secondbuttonmobile"
+                                   sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+               <secondlinkmobile cq-msm-lockable="./secondlinkmobile"
+                                 fieldLabel="secondlinkmobile"
+                                 jcr:primaryType="nt:unstructured"
+                                 name="./secondlinkmobile"
+                                 sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
                <thirdbuttonlabel cq-msm-lockable="./thirdbuttonlabel"
                                  fieldLabel="thirdbuttonlabel"
                                  jcr:primaryType="nt:unstructured"
@@ -63,6 +83,16 @@
                                jcr:primaryType="nt:unstructured"
                                name="./thirdlinklabel"
                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
+               <thirdbuttonmobile cq-msm-lockable="./thirdbuttonmobile"
+                                  fieldLabel="thirdbuttonmobile"
+                                  jcr:primaryType="nt:unstructured"
+                                  name="./thirdbuttonmobile"
+                                  sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+               <thirdlinkmobile cq-msm-lockable="./thirdlinkmobile"
+                                fieldLabel="thirdlinkmobile"
+                                jcr:primaryType="nt:unstructured"
+                                name="./thirdlinkmobile"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
                <fourthbuttonlabel cq-msm-lockable="./fourthbuttonlabel"
                                   fieldLabel="fourthbuttonlabel"
                                   jcr:primaryType="nt:unstructured"
@@ -73,6 +103,16 @@
                                 jcr:primaryType="nt:unstructured"
                                 name="./fourthlinklabel"
                                 sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
+               <fourthbuttonmobile cq-msm-lockable="./fourthbuttonmobile"
+                                   fieldLabel="fourthbuttonmobile"
+                                   jcr:primaryType="nt:unstructured"
+                                   name="./fourthbuttonmobile"
+                                   sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+               <fourthlinkmobile cq-msm-lockable="./fourthlinkmobile"
+                                 fieldLabel="fourthlinkmobile"
+                                 jcr:primaryType="nt:unstructured"
+                                 name="./fourthlinkmobile"
+                                 sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
             </items>
          </column>
       </items>

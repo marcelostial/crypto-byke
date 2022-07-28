@@ -21,7 +21,6 @@
 .language-icon {
   width: 53px;
   height: 40px;
-  background: #229e45;
 }
 
 .language-container {
@@ -34,5 +33,30 @@
   width: 264px;
   height: 40px;
   text-decoration: none;
+}
+
+@media (max-width: 560px) {
+  .text-language {
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 27px;
+  }
+  .language-icon {
+    width: 42px;
+    height: 32px;
+  }
+  
+}
+
+@media (max-width: 200px) {
+
+  .text-language{
+    display: none;
+  }
+
+  .language-icon {
+    width: 53px;
+    height: 40px;
+  }
 }
 
