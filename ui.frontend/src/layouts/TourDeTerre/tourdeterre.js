@@ -7,9 +7,20 @@ import Text from "../../components/Text/Text";
 const TourDeTerre = ({ title, text, image = {} }) => {
   return (
     <>
-      <Title text={title} />
-      {text && <Text text={text} richText={true} />}
-      <img src={image.src} />
+      {/* Desktop View  */}
+      <div className={styles["desktop"]}>
+        <div className={styles["container"]}>
+          <div className={styles["subcontainer"]}>
+            <Title text={title} variant="dark" />
+            <div className={styles["textcontainer"]}>
+              {text && <Text text={text} richText={true} />}
+            </div>
+          </div>
+          <div className={styles["imagecontainer"]}>
+            <img src={image.src} alt="alt" />
+          </div>
+        </div>
+      </div>
     </>
   );
 };

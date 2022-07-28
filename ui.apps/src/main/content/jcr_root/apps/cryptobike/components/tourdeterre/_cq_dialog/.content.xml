@@ -41,7 +41,7 @@
                      </misctools>
                      <paraformat jcr:primaryType="nt:unstructured" features="*">
                         <formats jcr:primaryType="nt:unstructured">
-                           <default_h3 jcr:primaryType="nt:unstructured" description="Heading 3" tag="h3" />
+                           <default_p jcr:primaryType="nt:unstructured" description="Text" tag="p" />
                         </formats>
                      </paraformat>
                      <links jcr:primaryType="nt:unstructured" features="modifylink,unlink" />
