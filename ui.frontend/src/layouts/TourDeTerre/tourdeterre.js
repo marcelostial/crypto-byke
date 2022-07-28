@@ -1,8 +1,17 @@
 import styles from "./tourdeterre.module.scss";
 import PropTypes from "prop-types";
+import { Grid } from "../../components/Grid/Grid";
+import Title from "../../components/Title/Title";
+import Text from "../../components/Text/Text";
 
 const TourDeTerre = ({ title, text, image = {} }) => {
-  return <h1>{title}</h1>;
+  return (
+    <>
+      <Title text={title} />
+      {text && <Text text={text} richText={true} />}
+      <img src={image.src} />
+    </>
+  );
 };
 
 TourDeTerre.propTypes = {
