@@ -60,6 +60,8 @@ const CarouselV1 = withAsyncImport(() =>
   ),
 );
 
+
+
 MapTo('cryptobike/components/navigation')(NavigationV1);
 MapTo('cryptobike/components/text')(LazyTextComponent, TextEditConfig);
 MapTo('cryptobike/components/languagenavigation')(LanguageNavigationV1);
@@ -95,6 +97,11 @@ const ExampleComponent = withAsyncImport(() =>
 const Blog = withAsyncImport(() =>
   import(`./layouts/Blog/Blog`),
 );
+const Header = withAsyncImport(() =>
+  import(`./layouts/HeaderComponent/Header`),
+);
 
 MapTo("compass/components/blog-posts")(Blog);
 MapTo('cryptobike/components/example')(ExampleComponent);
+
+MapTo('cryptobike/components/header')(Header);
