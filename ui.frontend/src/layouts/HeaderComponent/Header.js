@@ -9,7 +9,6 @@ import Nav from "./Components/NavLink/NavLink";
 import NavDropdwon from "../HeaderComponent/Components/NavDropdown";
 import ModalLanguage from "./Components/ModalLanguage/ModalLanguage";
 
-import MenuModal from "../HeaderComponent/Components/MenuModal";
 import { useRef } from "react";
 
 const Header = ({
@@ -23,23 +22,25 @@ const Header = ({
   fourthlinklabel,
 }) => {
   const [modal, setModal] = React.useState(false);
-  const [menuModal, setMenuModal] = React.useState(false);
+  const [menuModalMobile, setMenuModalMobile] = React.useState(false);
   const [buttonVisibility, setButtonVisibility] = React.useState(true);
-  const [buttonCloseVisibility, setbuttonCloseVisibility] = React.useState(false);
+  const [buttonCloseVisibility, setbuttonCloseVisibility] =
+    React.useState(false);
   const ref = useRef();
 
-  const handleClick = () => {
-    setMenuModal(true);
-    ref.current.style.display = "flex";
+  const clickButtonMenu = () => {
+    setMenuModalMobile(true);
+  };
+
+  const clickButtonClose = () => {
+    setMenuModalMobile(null);
   };
 
   const hiddenButton = () => {
-    if (menuModal === true) {
-      console.log("ta ativo");
+    if (menuModalMobile === true) {
       setButtonVisibility(false);
       setbuttonCloseVisibility(true);
     } else {
-      console.log("não esta ativo")
       setButtonVisibility(true);
       setbuttonCloseVisibility(false);
     }
@@ -52,7 +53,18 @@ const Header = ({
   return (
     <div>
       <ModalLanguage modal={modal} setModal={setModal} />
-      <MenuModal menuModal={menuModal} setMenuModal={setMenuModal} />
+
+      {menuModalMobile && (
+        <div className={styles["modal-mobile-container"]}>
+          <nav className={styles["modal-nav-navigation"]}>
+            <Nav name={firstbuttonlabel} link={firstlinklabel} />
+            <Nav name={secondbuttonlabel} link={secondlinklabel} />
+            <Nav name={thirdbuttonlabel} link={thirdlinklabel} />
+            <Nav name={fourthbuttonlabel} link={fourthlinklabel} />
+          </nav>
+        </div>
+      )}
+
       <div className={styles["header-navigation"]}>
         <div className={styles["subContainer"]}>
           <img
@@ -80,12 +92,14 @@ const Header = ({
               {buttonVisibility && (
                 <button
                   className={styles["buttun-menu"]}
-                  onClick={handleClick}
+                  onClick={clickButtonMenu}
                 ></button>
               )}
               {buttonCloseVisibility && (
-                <button className={styles["buttonClose"]} onClick={() => setMenuModal(false)}>
-                </button>
+                <button
+                  className={styles["buttonClose"]}
+                  onClick={clickButtonClose}
+                ></button>
               )}
             </div>
           </div>
@@ -111,9 +125,9 @@ Header.defaultProps = {
   firstlinklabel: "/",
   secondbuttonlabel: "Sobre nós",
   secondlinklabel: "/",
-  thirdbuttonlabel: "Ranking",
+  thirdbuttonlabel: "Como Participar",
   thirdlinklabel: "/",
-  fourthbuttonlabel: "Como funciona",
+  fourthbuttonlabel: "Ranking",
   fourthlinklabel: "/",
 };
 
