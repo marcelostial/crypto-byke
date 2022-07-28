@@ -72,6 +72,10 @@ public class HeaderImpl
     private String fourthbuttonmobile;
     @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
     private String fourthlinkmobile;
+    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
+    private String urlLanguagePTbr;
+    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
+    private String urlLanguageEnUs;
     @SlingObject
     private Resource resource;
 
@@ -153,6 +157,16 @@ public class HeaderImpl
     @Override
     public String getFourthlinkmobile() {
         return fourthlinkmobile;
+    }
+
+    @Override
+    public String getUrlLanguagePTbr() {
+        return urlLanguagePTbr;
+    }
+
+    @Override
+    public String getUrlLanguageEnUs() {
+        return urlLanguageEnUs;
     }
 
     @Override

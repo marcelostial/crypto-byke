@@ -141,6 +141,20 @@
         "label": "fourthlinkmobile",
         "json-expose": true
       }
+      ,
+      {
+        "field": "urlLanguagePTbr",
+        "type": "pathfield",
+        "label": "urlLanguagePTbr",
+        "json-expose": true
+      }
+      ,
+      {
+        "field": "urlLanguageEnUs",
+        "type": "pathfield",
+        "label": "urlLanguageEnUs",
+        "json-expose": true
+      }
  
       
 

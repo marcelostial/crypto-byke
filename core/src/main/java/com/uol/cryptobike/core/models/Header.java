@@ -64,4 +64,8 @@ public interface Header
 
     String getFourthlinkmobile();
 
+    String getUrlLanguagePTbr();
+
+    String getUrlLanguageEnUs();
+
 }

@@ -26,6 +26,8 @@ const Header = ({
   fourthlinklabel,
   fourthbuttonmobile,
   fourthlinkmobile,
+  urlLanguagePTbr,
+  urlLanguageEnUs,
 }) => {
   const [modal, setModal] = React.useState(false);
   const [menuModalMobile, setMenuModalMobile] = React.useState(false);
@@ -57,7 +59,7 @@ const Header = ({
 
   return (
     <>
-      <ModalLanguage modal={modal} setModal={setModal} />
+      <ModalLanguage modal={modal} setModal={setModal} urlPtBr={urlLanguagePTbr} urlEnUs={urlLanguageEnUs}/>
       <div className={styles["header-container"]}>
         {menuModalMobile && (
           <div className={styles["modal-mobile-container"]}>

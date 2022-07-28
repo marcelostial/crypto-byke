@@ -28,3 +28,4 @@ Passo 2: No terminal, executar:
 cd generator
 java -jar cmp-generator.jar NomedoArquivo.json
 Passo 3: Apagar o arquivo html(htl) gerado na ui.apps
+java -jar cmp-generator.jar HeaderComponent.json

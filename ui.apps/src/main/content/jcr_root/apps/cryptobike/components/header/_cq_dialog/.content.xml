@@ -113,6 +113,16 @@
                                  jcr:primaryType="nt:unstructured"
                                  name="./fourthlinkmobile"
                                  sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
+               <urlLanguagePTbr cq-msm-lockable="./urlLanguagePTbr"
+                                fieldLabel="urlLanguagePTbr"
+                                jcr:primaryType="nt:unstructured"
+                                name="./urlLanguagePTbr"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
+               <urlLanguageEnUs cq-msm-lockable="./urlLanguageEnUs"
+                                fieldLabel="urlLanguageEnUs"
+                                jcr:primaryType="nt:unstructured"
+                                name="./urlLanguageEnUs"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
             </items>
          </column>
       </items>
