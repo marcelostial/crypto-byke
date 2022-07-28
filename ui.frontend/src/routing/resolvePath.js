@@ -31,27 +31,27 @@ export default function resolvePath(path) {
   return path;
 }
 
-function addDefaultPageExtension(path) {
-  // if (!HAS_EXTENSION.test(path)) path += DEFAULT_EXTENSION;
-  return path;
-}
+// function addDefaultPageExtension(path) {
+//   // if (!HAS_EXTENSION.test(path)) path += DEFAULT_EXTENSION;
+//   return path;
+// }
 
-function preserveParams(path) {
-  // const wcmMode = getWCMparam();
+// function preserveParams(path) {
+//   // const wcmMode = getWCMparam();
 
-  // if (wcmMode) {
-  //   path += `?wcmmode=${wcmMode}`;
-  // }
+//   // if (wcmMode) {
+//   //   path += `?wcmmode=${wcmMode}`;
+//   // }
 
-  return path;
-}
+//   return path;
+// }
 
-function getWCMparam() {
-  const params = new URLSearchParams(window.location.search);
-  const wcmMode = params.get("wcmmode");
+// function getWCMparam() {
+//   const params = new URLSearchParams(window.location.search);
+//   const wcmMode = params.get("wcmmode");
 
-  return wcmMode;
-}
+//   return wcmMode;
+// }
 
 function applyAliases(path) {
   // if (path.includes(PORTUGUESE_ID)) {
