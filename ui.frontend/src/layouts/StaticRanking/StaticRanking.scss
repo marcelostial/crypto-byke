@@ -1,25 +1,29 @@
 @import "../../styles/variables.scss";
 
 .static-ranking--container {
-  width: 100%;
-  background-color: #fff;
+  background-color: $white;
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  padding: 96px 0;
+  padding: 96px 32px;
+
+  @include breakpoint("lg") {
+    padding: 96px 16px;
+  }
 
   .static-ranking--title {
     font-weight: 800;
     line-height: 60px;
     width: fit-content;
-    
-    @media (max-width: 768px) {
+
+    @include breakpoint("lg") {
       font-weight: 700;
       font-size: 24px;
       line-height: 36px;
     }
   }
+
   .static-ranking--line {
     height: 7px;
     width: 50%;
@@ -35,7 +39,7 @@
       font-weight: 700;
     }
 
-    @media (max-width: 768px) {
+    @include breakpoint("lg") {
       font-size: 18px;
       line-height: 27px;
     }
@@ -53,7 +57,7 @@
   gap: 40px;
   margin-bottom: 40px;
 
-  @media (max-width: 768px) {
+  @include breakpoint("lg") {
     gap: 13px;
     margin-bottom: 32px;
   }
@@ -65,7 +69,7 @@
   color: $grey-500;
   background-color: $primary-200;
 
-  @media (max-width: 768px) {
+  @include breakpoint("lg") {
     width: auto;
   }
 
@@ -75,7 +79,7 @@
     gap: 10px;
     padding: 10px 16px;
 
-    @media (max-width: 768px) {
+    @include breakpoint("lg") {
       flex-grow: 1;
       justify-content: center;
     }
@@ -85,7 +89,7 @@
       line-height: 24px;
       min-width: 146px;
       text-align: center;
-      @media (max-width: 768px) {
+      @include breakpoint("lg") {
         width: 100%;
       }
     }
