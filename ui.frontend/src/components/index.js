@@ -4,6 +4,6 @@ import Download from "./Download/Download";
 import { Grid } from "./Grid/Grid";
 import Button from "./Button/Button";
 import BlogCard from "./BlogCard/BlogCard";
-import CarouselReact from "./CarouselReact/CarouselReact";
+import Carousel from "./Carousel/Carousel";
 
-export { Title, Text, Download, Grid, Button, BlogCard, CarouselReact };
+export { Title, Text, Download, Grid, Button, BlogCard, Carousel };
