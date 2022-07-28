@@ -10,10 +10,30 @@ const TourDeTerre = ({ title, text, image = {} }) => {
       {/* Desktop View  */}
       <div className={styles["desktop"]}>
         <div className={styles["container"]}>
+          <div className={styles["wrapper"]}>
+            <div className={styles["subcontainer"]}>
+              <div className={styles["textcontainer"]}>
+                <Title text={title} variant="dark" />
+                <div className={styles["text"]}>
+                  {text && <Text text={text} richText={true} />}
+                </div>
+              </div>
+            </div>
+            <div className={styles["imagecontainer"]}>
+              <img src={image.src} alt="alt" />
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* Mobile View */}
+      <div className={styles["mobile"]}>
+        <div className={styles["container"]}>
           <div className={styles["subcontainer"]}>
-            <Title text={title} variant="dark" />
             <div className={styles["textcontainer"]}>
-              {text && <Text text={text} richText={true} />}
+              <Title text={title} variant="dark" />
+              <div className={styles["text"]}>
+                {text && <Text text={text} richText={true} />}
+              </div>
             </div>
           </div>
           <div className={styles["imagecontainer"]}>

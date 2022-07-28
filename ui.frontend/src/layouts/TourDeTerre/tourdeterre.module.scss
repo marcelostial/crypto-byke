@@ -8,7 +8,7 @@
 }
 
 .mobile {
-  @media all and (max-width: 480px) {
+  @media all and (max-width: 1210px) {
     display: flex;
   }
   display: none;
@@ -17,25 +17,36 @@
   width: 100%;
   display: flex;
   background-color: #111213;
-  height: 683px;
+  height: 603px;
   justify-content: center;
   @media all and (max-width: 1210px) {
     display: block;
+    height: 871px;
   }
 }
 
 .subcontainer {
+  @media all and (max-width: 992px) {
+    display: block;
+    height: 871px;
+    padding: 0px 16px;
+  }
+  width: 100%;
+  margin-top: 96px;
+}
+.wrapper {
   width: 100%;
   max-width: 1114px;
-  margin-top: 96px;
-  padding-left: 126px;
+  display: flex;
 }
 
 .textcontainer {
   display: flex;
   flex-direction: column;
-  margin-top: 64px;
+}
 
+.text {
+  margin-top: 64px;
   p {
     width: 464px;
     height: 220px;
@@ -54,5 +65,4 @@
   width: 600px;
   height: 356.65px;
   margin-top: 123px;
-  margin-right: 126px;
 }
