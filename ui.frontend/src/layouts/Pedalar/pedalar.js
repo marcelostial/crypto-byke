@@ -1,65 +1,47 @@
+import React from "react";
 import styles from "./pedalar.module.scss";
 import PropTypes from "prop-types";
 import Title from "../../components/Title/Title";
-import { CarouselReact } from "../../components";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-// import { Carousel } from "react-responsive-carousel";
-// import "react-responsive-carousel/lib/styles/carousel.min.css";
+import Carousel from "../../components/Carousel/Carousel";
+import { Card } from "../../components/Pedalar/Card";
+import { Grid } from "../../components";
 
 const Pedalar = ({ maintitle, cards }) => {
+  React.useEffect(() => {
+    console.log(cards);
+  });
   return (
-    <>
-      {/* Desktop View  */}
-      <div className={styles["desktop"]}>
-        <div className={styles["container"]}>
-          <div className={styles["subcontainer"]}>
-            <Title text={maintitle} />
-            <div className={styles["cardscontainer"]}>
-              {cards.map(({ icon, title, description }, index) => (
-                <div className={styles["card"]} key={index}>
-                  <img src={icon.src} className={styles["icon"]} alt="svg" />
-                  <div className={styles["textcontainer"]}>
-                    <p className={styles["title"]}>{title}</p>
-                    <p className={styles["description"]}>{description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+    <Grid>
+      <Title text={maintitle} />
+      <div className={styles["cardscontainer"]}>
+        <Carousel
+          slidesToShow={3}
+          slidesToScroll={3}
+          toShowMobile={1}
+          toScrollMobile={1}
+        >
+          {cards.map(({ icon, title, description }, index) => (
+            <Card
+              key={"pedalar_" + index}
+              icon={icon}
+              title={title}
+              description={description}
+            />
+          ))}
+        </Carousel>
       </div>
-      {/* Movile View */}
-      <div className={styles["mobile"]}>
-        <div className={styles["container"]}>
-          <div className={styles["subcontainer"]}>
-            <Title text={maintitle} />
-            <div className={styles["cardscontainer"]}>
-              {cards.map(({ icon, title, description }, index) => (
-                <div className={styles["card"]} key={index}>
-                  <img src={icon.src} className={styles["icon"]} alt="svg" />
-                  <div className={styles["textcontainer"]}>
-                    <p className={styles["title"]}>{title}</p>
-                    <p className={styles["description"]}>{description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
+    </Grid>
   );
 };
 
-Pedalar.propTypes = {
-  maintitle: PropTypes.string,
-  cards: PropTypes.array,
-};
+// Pedalar.propTypes = {
+//   maintitle: PropTypes.string,
+//   cards: PropTypes.array,
+// };
 
-Pedalar.propTypes = {
-  maintitle: "Comece a pedalar!",
-  cards: [],
-};
+// Pedalar.propTypes = {
+//   maintitle: "Comece a pedalar!",
+//   cards: [],
+// };
 
 export default Pedalar;
