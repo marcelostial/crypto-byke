@@ -5,5 +5,6 @@ import { Grid } from "./Grid/Grid";
 import Button from "./Button/Button";
 import BlogCard from "./BlogCard/BlogCard";
 import Carousel from "./Carousel/Carousel";
+import { PedalarCard } from "./PedalarCard/PedalarCard";
 
-export { Title, Text, Download, Grid, Button, BlogCard, Carousel };
+export { Title, Text, Download, Grid, Button, BlogCard, Carousel, PedalarCard };
