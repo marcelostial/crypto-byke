@@ -1,37 +1,57 @@
-.desktop {
-  @media all and (max-width: 1210px) {
-    display: none;
-  }
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.mobile {
-  @media all and (max-width: 992px) {
-    display: flex;
-  }
-  display: none;
-}
+@import "../../styles/variables.scss";
 
 .pedalar--container {
-  width: 100%;
-  background-color: #e5e5e5;
-  height: 800px;
-  justify-content: center;
-
-  @media all and (max-width: 1210px) {
-    display: block;
+  .grid--inner {
+    @include breakpoint("sm") {
+      margin-bottom: 34px;
+    }
   }
-}
 
-.subcontainer {
-  width: 100%;
-  max-width: 1114px;
-  margin-top: 96px;
-  padding-left: 126px;
-}
+  .title--container {
+    padding-bottom: 48px;
+  }
 
-.cardscontainer {
-  padding-top: 106px;
+  @include breakpoint-up("xl") {
+    .slick-slide {
+      max-width: 350px;
+      margin-right: 32px;
+    }
+  }
+
+  .slick-slide:last-child {
+    margin-right: 0;
+  }
+
+  .slick-slide > div {
+    padding: 0;
+  }
+
+  .button--container {
+    button {
+      background-color: $primary-200;
+
+      img {
+        filter: grayscale(1) invert(1) brightness(1);
+      }
+
+      &:active {
+        background-color: $grey-500;
+        img {
+          filter: grayscale(1) brightness(1);
+        }
+      }
+    }
+  }
+
+  .slick-dots {
+    li {
+      background-color: $grey-500;
+      border-color: $grey-500;
+    }
+
+    li.slick-active {
+      background-color: $primary-200;
+      border-color: $primary-200;
+    }
+  }
 }
