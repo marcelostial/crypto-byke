@@ -56,3 +56,11 @@ $widths: (
     }
   }
 }
+
+@mixin breakpoint-up($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media all and (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+}
