@@ -48,11 +48,11 @@
                             jcr:primaryType="nt:unstructured"
                             name="./buttonTitle"
                             sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
-               <buttonLink cq-msm-lockable="./buttonLink"
-                           fieldLabel="Button URL"
-                           jcr:primaryType="nt:unstructured"
-                           name="./buttonLink"
-                           sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+               <buttonUrl cq-msm-lockable="./buttonUrl"
+                          fieldLabel="Button URL"
+                          jcr:primaryType="nt:unstructured"
+                          name="./buttonUrl"
+                          sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
             </items>
          </column>
       </items>

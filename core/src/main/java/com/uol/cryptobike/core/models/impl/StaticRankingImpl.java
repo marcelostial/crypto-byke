@@ -20,6 +20,7 @@ package com.uol.cryptobike.core.models.impl;
 
 import com.adobe.cq.export.json.ComponentExporter;
 import com.adobe.cq.export.json.ExporterConstants;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.uol.cryptobike.core.models.StaticRanking;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
@@ -47,7 +48,7 @@ public class StaticRankingImpl
     @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
     private String buttonTitle;
     @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
-    private String buttonLink;
+    private String buttonUrl;
     @SlingObject
     private Resource resource;
 
@@ -67,8 +68,9 @@ public class StaticRankingImpl
     }
 
     @Override
-    public String getButtonLink() {
-        return buttonLink;
+    @JsonProperty("buttonUrl")
+    public String getButtonUrl() {
+        return buttonUrl;
     }
 
     @Override

@@ -19,6 +19,7 @@
 package com.uol.cryptobike.core.models;
 
 import com.adobe.cq.export.json.ComponentExporter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.osgi.annotation.versioning.ConsumerType;
 
 
@@ -38,6 +39,7 @@ public interface StaticRanking
 
     String getButtonTitle();
 
-    String getButtonLink();
+    @JsonProperty("buttonUrl")
+    String getButtonUrl();
 
 }
