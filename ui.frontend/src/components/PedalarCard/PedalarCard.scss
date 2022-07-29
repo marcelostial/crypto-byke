@@ -1,0 +1,51 @@
+@import "../../styles/variables.scss";
+
+.pedalar--card {
+  display: flex;
+  flex-direction: column;
+  padding: 32px 32px;
+  gap: 24px;
+
+  @include breakpoint("sm") {
+    padding: 32px 16px;
+  }
+
+  .icon {
+    width: 80px;
+    height: 80px;
+
+    @include breakpoint("sm") {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include breakpoint("sm") {
+      gap: 7px;
+      font-size: 20px;
+    }
+
+    .title {
+      font-weight: 700;
+      line-height: 36px;
+      color: $grey-500;
+
+      @include breakpoint-up("sm") {
+        min-height: 73px;
+      }
+
+      @include breakpoint("sm") {
+        font-size: 20px;
+      }
+    }
+
+    .description {
+      color: $grey-400;
+    }
+  }
+}
