@@ -1,13 +1,17 @@
 import styles from './ExampleComponent.module.scss';
 import PropTypes from 'prop-types';
+import Text from '../../components/Text/Text';
 
 const ExampleComponent = ({ title, text }) => {
   return (
     <div className={styles['container']}>
       <div className={styles['subcontainer']}>
-        <p className={styles['title']}>{title}</p>
-        <div className={styles['divider']} />
-        <p className={styles['text']}>{text}</p>
+        <div className={styles['titlecontainer']}>
+          <p className={styles['title']}>{title}</p>
+          <div className={styles['divider']} />
+        </div>
+
+        <Text text={text} richText={true} />
       </div>
     </div>
   );
