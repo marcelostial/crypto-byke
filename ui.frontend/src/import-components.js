@@ -64,6 +64,7 @@ const ExampleComponent = withAsyncImport(() =>
   import(`./layouts/ExampleComponent/ExampleComponent`),
 );
 
+
 MapTo('cryptobike/components/navigation')(NavigationV1);
 MapTo('cryptobike/components/text')(LazyTextComponent, TextEditConfig);
 MapTo('cryptobike/components/languagenavigation')(LanguageNavigationV1);
@@ -92,4 +93,22 @@ MapTo('cryptobike/components/breadcrumb')(BreadCrumbV2, {
   isEmpty: BreadCrumbV2IsEmptyFn,
 });
 
+
+const Blog = withAsyncImport(() =>
+  import(`./layouts/Blog/Blog`),
+);
+const Header = withAsyncImport(() =>
+import(`./layouts/HeaderComponent/Header`),
+);
+const Pedalar = withAsyncImport(() =>
+import(`./layouts/Pedalar/pedalar`),
+);
+const StaticRanking = withAsyncImport(() =>
+  import(`./layouts/StaticRanking/StaticRanking`),
+);
+
+MapTo("compass/components/blog-posts")(Blog);
+MapTo('cryptobike/components/header')(Header);
+MapTo('cryptobike/components/pedalar')(Pedalar);
 MapTo('cryptobike/components/example')(ExampleComponent);
+MapTo('cryptobike/components/static-ranking')(StaticRanking);

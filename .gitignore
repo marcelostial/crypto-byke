@@ -107,3 +107,5 @@ ui.tests/test-module/assets/form/themes/**/*current.png
 ui.apps/src/main/content/jcr_root/apps/cryptobike/clientlibs/clientlib-react
 
 .generator/
+
+generator/

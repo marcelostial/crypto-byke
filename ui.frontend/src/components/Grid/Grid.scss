@@ -1,0 +1,34 @@
+@import "../../styles/variables.scss";
+
+.grid--container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: $padding-y $padding-x;
+
+  @include breakpoint("md") {
+    padding: $padding-y 27px;
+  }
+
+  .grid--inner {
+    width: 100%;
+    max-width: map-get($widths, "desk");
+
+    @include breakpoint("xl") {
+      max-width: map-get($widths, "xl");
+    }
+
+    @include breakpoint("lg") {
+      max-width: map-get($widths, "lg");
+    }
+
+    @include breakpoint("md") {
+      max-width: map-get($widths, "md");
+    }
+
+    @include breakpoint("sm") {
+      max-width: map-get($widths, "sm");
+    }
+  }
+}

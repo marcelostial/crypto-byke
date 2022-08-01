@@ -1,0 +1,156 @@
+$breakpoints: (
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px,
+  "desk": 1366px,
+  "hd": 1920px,
+  "xxl": 2000px,
+) !default;
+
+@mixin media-breakpoint-up($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media all and (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+}
+
+@mixin media-breakpoint-down($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media all and (max-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+}
+
+@mixin remove-padding {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+@mixin animationAppearFromBottom {
+  overflow: hidden;
+  animation: appearFromBottom ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  @keyframes appearFromBottom {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: 65px;
+      @include media-breakpoint-up("lg") {
+        height: 72px;
+      }
+    }
+  }
+}
+
+@mixin animationAppearFromLeft {
+  animation: appearFromLeft ease 1s;
+  animation-delay: $carousselAnimationStage-3;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  overflow: hidden;
+  margin-right: 495px;
+  max-width: 0;
+  @keyframes appearFromLeft {
+    0% {
+      max-width: 0;
+      margin-right: 495px;
+    }
+    100% {
+      max-width: 100%;
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+}
+
+@mixin fadeAnimation {
+  animation: appearFade ease 1s;
+  animation-iteration-count: 1;
+  animation-delay: $carousselAnimationStage-4;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  @keyframes appearFade {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+@mixin animationAppearFromBottomAndSpin {
+  animation: appearFromBottomAndSpin ease 1s;
+  animation-delay: $carousselAnimationStage-3;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  overflow: hidden;
+  @keyframes appearFromBottomAndSpin {
+    0% {
+      padding-top: 70px;
+      transform: rotate(-90deg);
+    }
+    100% {
+      transform: none;
+      padding-top: 0;
+    }
+  }
+}
+
+@mixin flickAnimation {
+  animation: appearFade linear 1s;
+  animation-iteration-count: 1;
+  animation-delay: $carousselAnimationStage-2;
+  animation-fill-mode: forwards;
+  @keyframes appearFade {
+    0% {
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+      font-size: clamp(5.625rem, 0.75vw, 22.5rem);
+    }
+    40% {
+      opacity: 0;
+    }
+    60% {
+      font-size: clamp(4.5rem, 0.75vw, 18rem);
+      margin-bottom: 40px;
+      margin-top: -40px;
+      margin-left: 40px;
+      margin-right: -40px;
+      opacity: 1;
+    }
+    80% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      margin-bottom: 0;
+      margin-top: 0;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}
+
+@mixin animationAppearFromTop {
+  animation: appearFromTop alternate 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  overflow: hidden;
+  place-items: flex-end;
+  @keyframes appearFromTop {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: 72px;
+    }
+  }
+}

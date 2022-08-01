@@ -1,0 +1,32 @@
+@import "../../styles/variables.scss";
+
+.title--container {
+  width: 100%;
+
+  .title--text {
+    font-weight: 800;
+    line-height: 48px;
+    width: fit-content;
+
+    @include breakpoint("sm") {
+      font-size: 24px;
+      line-height: 36px;
+    }
+  }
+
+  .title--underline {
+    height: 7px;
+    width: 50%;
+    background-color: $primary-200;
+    margin-top: 4px;
+    border-radius: 4px;
+  }
+}
+
+.title--light {
+  color: $grey-500;
+}
+
+.title--dark {
+  color: $white;
+}
