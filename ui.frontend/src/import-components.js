@@ -103,6 +103,9 @@ import(`./layouts/HeaderComponent/Header`),
 const Pedalar = withAsyncImport(() =>
 import(`./layouts/Pedalar/pedalar`),
 );
+const NossosNFTs = withAsyncImport(() =>
+import(`./layouts/NossosNFTs/nossosnfts`),
+);
 const StaticRanking = withAsyncImport(() =>
   import(`./layouts/StaticRanking/StaticRanking`),
 );
@@ -110,5 +113,6 @@ const StaticRanking = withAsyncImport(() =>
 MapTo("compass/components/blog-posts")(Blog);
 MapTo('cryptobike/components/header')(Header);
 MapTo('cryptobike/components/pedalar')(Pedalar);
+MapTo('cryptobike/components/nossosnfts')(NossosNFTs);
 MapTo('cryptobike/components/example')(ExampleComponent);
 MapTo('cryptobike/components/static-ranking')(StaticRanking);
