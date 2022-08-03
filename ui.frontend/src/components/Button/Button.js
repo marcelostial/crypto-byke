@@ -59,7 +59,7 @@ const Button = ({
       ${styles[className]}
     `}
     >
-      {label}
+      <p>{label}</p>
       {!!icon && getIcon(icon)}
     </button>
   );
@@ -125,6 +125,7 @@ Button.propTypes = {
     "secondary",
     "tertiary",
     "quaternary",
+    "quinary",
     "playVideoCard",
   ]),
   submit: PropTypes.bool,

@@ -160,6 +160,27 @@
   }
 }
 
+.quinary {
+  background-color: $color-yellow;
+  color: $color-neutral90;
+  font-weight: 700;
+
+  img {
+    filter: brightness(0);
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      cursor: pointer;
+      background: #e6a919;
+    }
+  }
+
+  &:active {
+    background: #e6a919;
+  }
+}
+
 .playVideoCard {
   width: 56px;
   height: 56px;

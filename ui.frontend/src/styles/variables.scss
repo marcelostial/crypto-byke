@@ -30,11 +30,24 @@ $border-radius: (
   "xl": 12px,
 );
 
+$padding-y: 96px;
+$padding-x: 12px;
+
 $breakpoints: (
-  "mobile": 992px,
-  "desktop": 1366px,
-  "wide": 1920px,
-) !default;
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px,
+  "desk": 1366px,
+);
+
+$widths: (
+  "sm": 100%,
+  "md": 540px,
+  "lg": 740px,
+  "xl": 960px,
+  "desk": 1140px,
+);
 
 @mixin breakpoint($breakpoint) {
   @if map-has-key($breakpoints, $breakpoint) {
@@ -44,9 +57,10 @@ $breakpoints: (
   }
 }
 
-$widths: (
-  "mobile": 328px,
-  "desktop": 1114px,
-);
-
-$padding-y: 96px;
+@mixin breakpoint-up($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media all and (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+}

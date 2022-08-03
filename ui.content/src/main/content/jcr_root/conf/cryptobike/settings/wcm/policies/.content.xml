@@ -23,7 +23,7 @@
                     jcr:title="Crypto Bike Language Navigation - Experience Fragment"
                     sling:resourceType="wcm/core/components/policy/policy"
                     navigationRoot="/content/cryptobike"
-                    structureDepth="1">
+                    structureDepth="0">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                 </policy_xfm>
             </languagenavigation>
@@ -353,7 +353,7 @@
                     sling:resourceType="wcm/core/components/policy/policy"
                     clientlibs="[cryptobike.react]"
                     isRoot="{Boolean}true"
-                    structureDepth="3"
+                    structureDepth="0"
                 />
             </spa>
         </components>

@@ -1,4 +1,4 @@
-import styles from "./tourdeterre.module.scss";
+import "./tourdeterre.scss";
 import PropTypes from "prop-types";
 import { Grid } from "../../components/Grid/Grid";
 import Title from "../../components/Title/Title";
@@ -7,8 +7,19 @@ import Text from "../../components/Text/Text";
 const TourDeTerre = ({ title, text, image = {} }) => {
   return (
     <>
+      <Grid className="tourdeterre--container">
+        <div className="textcontainer">
+          <Title text={title} variant="dark" />
+          <div className="text">
+            {text && <Text text={text} richText={true} />}
+          </div>
+        </div>
+        <div className="imagecontainer">
+          <img src={image.src} alt="alt" />
+        </div>
+      </Grid>
       {/* Desktop View  */}
-      <div className={styles["desktop"]}>
+      {/* <div className={styles["desktop"]}>
         <div className={styles["container"]}>
           <div className={styles["wrapper"]}>
             <div className={styles["subcontainer"]}>
@@ -24,9 +35,9 @@ const TourDeTerre = ({ title, text, image = {} }) => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* Mobile View */}
-      <div className={styles["mobile"]}>
+      {/* <div className={styles["mobile"]}>
         <div className={styles["container"]}>
           <div className={styles["subcontainer"]}>
             <div className={styles["textcontainer"]}>
@@ -40,7 +51,7 @@ const TourDeTerre = ({ title, text, image = {} }) => {
             <img src={image.src} alt="alt" />
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };
