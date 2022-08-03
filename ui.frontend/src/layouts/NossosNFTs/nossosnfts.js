@@ -23,7 +23,7 @@ const NossosNFTs = ({ maintitle, nftcards }) => {
 };
 
 NossosNFTs.defaultProps = {
-  maintitle: "Nossos NFTs",
+  maintitle: "Ganhe NFTs",
   nftcards: [
     {
       icon: "",

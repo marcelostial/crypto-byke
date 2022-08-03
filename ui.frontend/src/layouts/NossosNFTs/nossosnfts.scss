@@ -8,6 +8,10 @@
     display: flex;
     flex-direction: row;
     margin-top: 64px;
+    @include breakpoint("xl") {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   .cardbottom {
@@ -28,5 +32,8 @@
   .card {
     display: flex;
     margin-right: 56px;
+    @include breakpoint("xl") {
+      margin-bottom: 40px;
+    }
   }
 }
