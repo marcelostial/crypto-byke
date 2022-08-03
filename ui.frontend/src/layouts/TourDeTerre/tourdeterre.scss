@@ -49,8 +49,10 @@
   }
 
   .image {
-    width: 328px;
-    height: 184px;
+    @include breakpoint("lg") {
+      width: 328px;
+      height: 184px;
+    }
   }
 }
 
