@@ -15,7 +15,7 @@ const TourDeTerre = ({ title, text, image = {} }) => {
           </div>
         </div>
         <div className="imagecontainer">
-          <img src={image.src} alt="alt" />
+          <img src={image.src} className="image" alt="alt" />
         </div>
       </Grid>
     </>

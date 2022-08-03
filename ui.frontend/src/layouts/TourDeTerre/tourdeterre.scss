@@ -1,3 +1,4 @@
+@import "../../styles/variables.scss";
 .tourdeterre--container {
   width: 100%;
   display: flex;
@@ -7,6 +8,9 @@
   .grid--inner {
     display: flex;
     justify-content: space-between;
+    @include breakpoint("lg") {
+      flex-direction: column;
+    }
   }
 
   .textcontainer {
@@ -23,6 +27,11 @@
       font-size: 16px;
       line-height: 24px;
       color: #ffffff;
+      @include breakpoint("lg") {
+        width: 328px;
+        height: 300px;
+      }
+
       b {
         font-weight: bold;
         color: #fece00;
@@ -34,6 +43,14 @@
     width: 600px;
     height: 356.65px;
     margin-top: 40px;
+    @include breakpoint("lg") {
+      margin-top: -150px;
+    }
+  }
+
+  .image {
+    width: 328px;
+    height: 184px;
   }
 }
 
