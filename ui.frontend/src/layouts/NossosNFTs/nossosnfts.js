@@ -4,16 +4,20 @@ import "./nossosnfts.scss";
 
 const NossosNFTs = ({ maintitle, nftcards }) => {
   return (
-    <Grid>
-      <Title text={maintitle} />
-      {nftcards.map(({ icon, label, path }, index) => (
-        <div className="card">
-          <a href={path}>
-            <img src={icon.src} alt="icon" />
-            <div>{label}</div>
-          </a>
-        </div>
-      ))}
+    <Grid className="nossosnfts--container">
+      <Title text={maintitle} variant="dark" />
+      <div className="cardcontainer">
+        {nftcards.map(({ icon, label, path }, index) => (
+          <div className="card">
+            <a href={path}>
+              <img src={icon.src} alt="icon" />
+              <div className="cardbottom">
+                <p className="label">{label}</p>
+              </div>
+            </a>
+          </div>
+        ))}
+      </div>
     </Grid>
   );
 };

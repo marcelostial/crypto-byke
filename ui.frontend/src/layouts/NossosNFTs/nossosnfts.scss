@@ -2,7 +2,31 @@
 
 .nossosnfts--container {
   background: #111213;
+  display: flex;
 
+  .cardcontainer {
+    display: flex;
+    flex-direction: row;
+    margin-top: 64px;
+  }
+
+  .cardbottom {
+    box-sizing: border-box;
+    display: flex;
+    background: #fece00;
+    border: 1px solid #fece00;
+    margin-top: -0.4rem;
+    align-items: baseline;
+    justify-content: center;
+  }
+  .label {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    color: #111213;
+  }
   .card {
+    display: flex;
+    margin-right: 56px;
   }
 }
