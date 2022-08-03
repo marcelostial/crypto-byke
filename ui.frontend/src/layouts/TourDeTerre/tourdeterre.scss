@@ -2,8 +2,12 @@
   width: 100%;
   display: flex;
   background-color: #111213;
-  height: 603px;
   justify-content: center;
+
+  .grid--inner {
+    display: flex;
+    justify-content: space-between;
+  }
 
   .textcontainer {
     display: flex;
@@ -29,7 +33,7 @@
   .imagecontainer {
     width: 600px;
     height: 356.65px;
-    margin-top: 123px;
+    margin-top: 40px;
   }
 }
 
