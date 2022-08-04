@@ -58,7 +58,7 @@ const Header = ({
   });
 
   return (
-    <Grid className="container-global-header">
+    <Grid className="container-global-header-style">
     <ModalLanguage
       modal={modal}
       setModal={setModal}
