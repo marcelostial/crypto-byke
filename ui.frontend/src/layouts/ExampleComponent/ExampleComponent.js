@@ -1,19 +1,19 @@
-import styles from './ExampleComponent.module.scss';
-import PropTypes from 'prop-types';
-import Text from '../../components/Text/Text';
+import styles from "./ExampleComponent.scss";
+import PropTypes from "prop-types";
+import Text from "../../components/Text/Text";
+import { Grid } from "../../components/Grid/Grid";
 
 const ExampleComponent = ({ title, text }) => {
   return (
-    <div className={styles['container']}>
-      <div className={styles['subcontainer']}>
-        <div className={styles['titlecontainer']}>
-          <p className={styles['title']}>{title}</p>
-          <div className={styles['divider']} />
-        </div>
-
-        <Text text={text} richText={true} />
+    <Grid className="exampleComponent--container">
+      {/* <div className={styles["subcontainer"]}> */}
+      <div className="titlecontainer">
+        <p className="title">{title}</p>
+        <div className="divider" />
       </div>
-    </div>
+
+      <Text text={text} richText={true} />
+    </Grid>
   );
 };
 
@@ -23,7 +23,7 @@ ExampleComponent.propTypes = {
 };
 
 ExampleComponent.defaultProps = {
-  title: 'Cryptobike por Compass',
+  title: "Cryptobike por Compass",
 
   text: `Pedalar é o jeito mais sustentável e saudável de locomoção. Grandes cidades ao redor do mundo estão preparadas para o ciclismo. Mas a “cultura do carro” ainda é muito maior e mais forte
   Então pensamos: e se pedalar tivesse uma recompensa extra? E se a gente apontasse um norte para esse meio de transporte com o objetivo de incentivar uma mudança de hábito?

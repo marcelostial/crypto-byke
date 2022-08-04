@@ -1,0 +1,43 @@
+@import "../../styles/variables.scss";
+
+.CryptoPorCompass--container {
+  width: 100%;
+  background-color: white;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .subcontainer {
+    width: 100%;
+    max-width: 1114px;
+  }
+
+  .CryptoPorCompass--textContainer {
+    margin-top: 64px;
+  }
+
+  .titlecontainer {
+    height: 30px;
+    width: auto;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 24px;
+    color: #111213;
+  }
+  h3 {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+    color: #111213;
+  }
+
+  .title {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 48px;
+    color: #111213;
+  }
+}
