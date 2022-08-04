@@ -98,7 +98,7 @@ const Blog = withAsyncImport(() =>
   import(`./layouts/Blog/Blog`),
 );
 const Header = withAsyncImport(() =>
-import(`./layouts/HeaderComponent/Header`),
+import(`./layouts/Header/Header`),
 );
 const Pedalar = withAsyncImport(() =>
 import(`./layouts/Pedalar/pedalar`),

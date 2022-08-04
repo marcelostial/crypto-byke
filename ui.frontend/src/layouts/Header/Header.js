@@ -1,14 +1,14 @@
 import React from "react";
-import styles from "./Header.module.scss";
 import PropTypes from "prop-types";
 
 import Logo from "../../assets/logo-horizontal-white.svg";
 import LogoVertical from "../../assets/logo-vertical-white.svg";
+import { Grid } from "../../components";
+import Nav from "./NavLink/NavLink";
+import NavLanguage from "./NavLanguage/NavLanguage";
+import ModalLanguage from "./ModalLanguage/ModalLanguage";
 
-import Nav from "./Components/NavLink/NavLink";
-import NavLanguage from "../HeaderComponent/Components/NavLanguage/NavLanguage";
-import ModalLanguage from "./Components/ModalLanguage/ModalLanguage";
-
+import "./Header.scss";
 const Header = ({
   firstbuttonlabel,
   firstlinklabel,
@@ -58,67 +58,67 @@ const Header = ({
   });
 
   return (
-    <>
-      <ModalLanguage
-        modal={modal}
-        setModal={setModal}
-        urlPtBr={urlLanguagePTbr}
-        urlEnUs={urlLanguageEnUs}
-      />
-      <div className={styles["header-container"]}>
-        {menuModalMobile && (
-          <div className={styles["modal-mobile-container"]}>
-            <nav className={styles["modal-nav-navigation"]}>
-              <Nav name={firstbuttonmobile} link={firstlinkmobile} />
-              <Nav name={secondbuttonmobile} link={secondlinkmobile} />
-              <Nav name={thirdbuttonmobile} link={thirdlinkmobile} />
-              <Nav name={fourthbuttonmobile} link={fourthlinkmobile} />
+    <Grid className="container-global-header">
+    <ModalLanguage
+      modal={modal}
+      setModal={setModal}
+      urlPtBr={urlLanguagePTbr}
+      urlEnUs={urlLanguageEnUs}
+    />
+    <div className="header-container">
+      {menuModalMobile && (
+        <div className="modal-mobile-container">
+          <nav className="modal-nav-navigation">
+            <Nav name={firstbuttonmobile} link={firstlinkmobile} />
+            <Nav name={secondbuttonmobile} link={secondlinkmobile} />
+            <Nav name={thirdbuttonmobile} link={thirdlinkmobile} />
+            <Nav name={fourthbuttonmobile} link={fourthlinkmobile} />
+          </nav>
+        </div>
+      )}
+
+      <div className="header-navigation">
+        <div className="subContainer">
+          <img
+            className="logo-header"
+            draggable="false"
+            src={Logo}
+            alt="logo"
+          ></img>
+          <img
+            draggable="false"
+            src={LogoVertical}
+            className="logo-vertical"
+            alt="logo-vertical"
+          ></img>
+
+          <div className="nav-navigation">
+            <nav className="navLink-container">
+              <Nav name={firstbuttonlabel} link={firstlinklabel} />
+              <Nav name={secondbuttonlabel} link={secondlinklabel} />
+              <Nav name={thirdbuttonlabel} link={thirdlinklabel} />
+              <Nav name={fourthbuttonlabel} link={fourthlinklabel} />
             </nav>
-          </div>
-        )}
-
-        <div className={styles["header-navigation"]}>
-          <div className={styles["subContainer"]}>
-            <img
-              className={styles["logo-header"]}
-              draggable="false"
-              src={Logo}
-              alt="logo"
-            ></img>
-            <img
-              draggable="false"
-              src={LogoVertical}
-              className={styles["logo-vertical"]}
-              alt="logo-vertical"
-            ></img>
-
-            <div className={styles["nav-navigation"]}>
-              <nav className={styles["navLink-container"]}>
-                <Nav name={firstbuttonlabel} link={firstlinklabel} />
-                <Nav name={secondbuttonlabel} link={secondlinklabel} />
-                <Nav name={thirdbuttonlabel} link={thirdlinklabel} />
-                <Nav name={fourthbuttonlabel} link={fourthlinklabel} />
-              </nav>
-              <div className={styles["nav-buttons"]}>
-                <NavLanguage name="PT" setModal={setModal} />
-                {buttonVisibility && (
-                  <button
-                    className={styles["buttun-menu"]}
-                    onClick={clickButtonMenu}
-                  ></button>
-                )}
-                {buttonCloseVisibility && (
-                  <button
-                    className={styles["buttonClose"]}
-                    onClick={clickButtonClose}
-                  ></button>
-                )}
-              </div>
+            <div className="nav-buttons">
+              <NavLanguage name="PT" setModal={setModal} />
+              {buttonVisibility && (
+                <button
+                  className="buttun-menu"
+                  onClick={clickButtonMenu}
+                ></button>
+              )}
+              {buttonCloseVisibility && (
+                <button
+                  className="buttonClose"
+                  onClick={clickButtonClose}
+                ></button>
+              )}
             </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
+  </Grid>
   );
 };
 

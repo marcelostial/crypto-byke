@@ -1,8 +1,8 @@
 import React from "react";
 import "./ModalLanguage.scss";
 import Languages from "../Languages/Languages";
-import Logo from "../../../../assets/logo-horizontal-white.svg";
-import LogoVertical from "../../../../assets/logo-vertical-white.svg";
+import Logo from "../../../assets/logo-horizontal-white.svg";
+import LogoVertical from "../../../assets/logo-vertical-white.svg";
 
 const ModalLanguage = ({ modal, setModal, urlPtBr, urlEnUs }) => {
   if (modal === true)

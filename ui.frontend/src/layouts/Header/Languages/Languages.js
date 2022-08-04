@@ -1,7 +1,7 @@
 import React from "react";
-import Text from "../../../../components/Text/Text";
-import enUSicon from "../../../../assets/enUS.svg";
-import ptBRicon from "../../../../assets/ptBR.svg";
+import Text from "../../../components/Text/Text";
+import enUSicon from "../../../assets/enUS.svg";
+import ptBRicon from "../../../assets/ptBR.svg";
 import "./Languages.scss";
 
 const enUSAlt = "enUS logo";
