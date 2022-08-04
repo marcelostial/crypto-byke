@@ -1,0 +1,29 @@
+@import "../../styles/variables.scss";
+
+.footer--container {
+  //   display: flex;
+  //   flex-direction: column;
+  //   align-items: flex-start;
+  //   padding: 40px 126px 0px;
+  //   gap: 48px;
+
+  //   position: absolute;
+  //   width: 1366px;
+  //   height: 308px;
+  //   left: 0px;
+  //   top: 7120px;
+
+  /* Tons de Cinza/500 */
+
+  background: #111213;
+
+  .topcontainer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .bottomcontainer {
+    display: flex;
+    justify-content: space-between;
+  }
+}
