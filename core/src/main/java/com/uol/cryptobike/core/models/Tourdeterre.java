@@ -19,15 +19,16 @@
 package com.uol.cryptobike.core.models;
 
 import com.adobe.cq.export.json.ComponentExporter;
+import com.adobe.cq.wcm.core.components.models.Image;
 import org.osgi.annotation.versioning.ConsumerType;
 
 
 /**
- * Defines the {@code Example} Sling Model used for the {@code cryptobike/components/example} component.
+ * Defines the {@code Tourdeterre} Sling Model used for the {@code cryptobike/components/tourdeterre} component.
  * 
  */
 @ConsumerType
-public interface Example
+public interface Tourdeterre
     extends ComponentExporter
 {
 
@@ -35,5 +36,7 @@ public interface Example
     String getTitle();
 
     String getText();
+
+    Image getImage();
 
 }
