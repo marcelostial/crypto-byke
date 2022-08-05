@@ -1,0 +1,92 @@
+@import "../../styles/variables.scss";
+
+.container-global-download {
+    background: url(../../assets/BackgroundDownload.svg);
+    position: relative;
+    background-repeat: no-repeat;
+}
+
+.background-page {
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    bottom: 0;
+    left: 0;
+}
+
+.decoration-container {
+    background: url(../../assets/Decoration.svg);
+    background-size: auto;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 300px;
+}
+
+.sub-container-download {
+    position: relative;
+    z-index: 1;
+}
+
+.container-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.textlabel {
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 60px;
+
+    /* Tons de Cinza/White */
+
+    color: #FFFFFF;
+
+}
+
+.secondtextlabel {
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 60px;
+
+    /* Tons de Cinza/White */
+
+    color: #FFFFFF;
+    margin-left: 56px;
+
+}
+
+.fourthtextlabel {
+    font-family: 'Mulish';
+    font-style: italic;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 60px;
+
+    /* Cor Primária/Primary-200 */
+
+    color: #FECE00;
+
+}
+
+.Arrow {
+    position: absolute;
+    left: 25.95%;
+    right: 4.85%;
+    top: 0%;
+    bottom: 51.69%;
+}
+
+.container-text-second {
+    display: flex;
+    width: 100%;
+    gap: 15px;
+}
+
+.LogoVertical {
+    width: 283px;
+    height: 64px;
+}

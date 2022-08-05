@@ -115,4 +115,4 @@ MapTo('cryptobike/components/header')(Header);
 MapTo('cryptobike/components/pedalar')(Pedalar);
 MapTo('cryptobike/components/example')(ExampleComponent);
 MapTo('cryptobike/components/static-ranking')(StaticRanking);
-MapTo('cryptobike/components/section-download')(SectionDownload);
+MapTo('cryptobike/components/sectiondownload')(SectionDownload);
