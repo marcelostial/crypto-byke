@@ -106,9 +106,13 @@ import(`./layouts/Pedalar/pedalar`),
 const StaticRanking = withAsyncImport(() =>
   import(`./layouts/StaticRanking/StaticRanking`),
 );
+const DynamicRanking = withAsyncImport(() =>
+  import(`./layouts/DynamicRanking/DynamicRanking`),
+);
 
 MapTo("compass/components/blog-posts")(Blog);
 MapTo('cryptobike/components/header')(Header);
 MapTo('cryptobike/components/pedalar')(Pedalar);
 MapTo('cryptobike/components/example')(ExampleComponent);
 MapTo('cryptobike/components/static-ranking')(StaticRanking);
+MapTo('cryptobike/components/dynamic-ranking')(DynamicRanking);

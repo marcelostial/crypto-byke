@@ -1,0 +1,146 @@
+@import "../../styles/variables.scss";
+
+.dynamic-ranking--container {
+  padding-bottom: 0px !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: $black;
+
+  .dynamic-ranking--heading {
+    margin-bottom: 96px;
+    @include breakpoint("lg") {
+      margin-bottom: 40px;
+    }
+
+    .title--container {
+      margin-bottom: 24px;
+      @include breakpoint("lg") {
+        margin-bottom: 16px;
+        font-weight: 700;
+      }
+    }
+
+    .dynamic-ranking--description {
+      margin-bottom: 152px;
+      color: $white;
+
+      @include breakpoint("sm") {
+        margin-bottom: 32px;
+        font-size: 18px;
+        line-height: 24px;
+      }
+
+      b {
+        color: $primary-200;
+        font-weight: 700;
+      }
+    }
+
+    .dynamic-ranking--search {
+      display: flex;
+      gap: 32px;
+
+      @include breakpoint("lg") {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .drop-down--container {
+        min-width: 238px;
+        @include breakpoint("lg") {
+          min-width: auto;
+        }
+      }
+    }
+  }
+}
+
+.dynamic-ranking--content {
+  @include breakpoint("lg") {
+    padding-top: 40px;
+  }
+
+  .grid--inner {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @include breakpoint("lg") {
+      gap: 8px;
+    }
+
+    .dynamic-ranking--table-head {
+      display: flex;
+      align-items: center;
+      padding: 26.5px 32px;
+      background-color: $grey-100;
+
+      @include breakpoint("lg") {
+        padding: 10px 16px;
+      }
+
+      p {
+        font-weight: 700;
+        @include breakpoint("lg") {
+          font-size: 14px !important;
+        }
+      }
+
+      .dynamic-ranking--table-rank {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        width: 85px;
+
+        @include breakpoint("lg") {
+          gap: 4px;
+        }
+
+        img {
+          filter: brightness(0);
+          width: 30px;
+          height: 30px;
+
+          &:hover {
+            cursor: pointer;
+          }
+
+          @include breakpoint("lg") {
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }
+
+      .dynamic-ranking--table-name {
+        width: 310px;
+        margin-left: 122px;
+        @include breakpoint("lg") {
+          flex: 1;
+          margin-left: 15px;
+        }
+        span {
+          display: none;
+          @include breakpoint("lg") {
+            display: inline;
+          }
+        }
+      }
+
+      .dynamic-ranking--table-country {
+        flex: 1;
+        @include breakpoint("lg") {
+          display: none;
+        }
+
+       
+      }
+
+      .dynamic-ranking--table-score {
+        flex: 1;
+        text-align: end;
+      }
+    }
+  }
+}

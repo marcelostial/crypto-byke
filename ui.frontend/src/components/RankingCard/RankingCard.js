@@ -1,54 +1,50 @@
 import React from "react";
 import PropTypes from "prop-types";
+
 import "./RankingCard.scss";
 
-/**
- * @param {string} rank
- * @param {string} name
- * @param {string} handle
- * @param {string} score
- * @param {string} avatar
- */
 const RankingCard = ({
-  rank,
+  ranking,
+  profile_img,
   name,
-  handle,
-  flag,
+  nickname,
+  country_code,
   country,
-  city,
-  score,
-  avatar = {},
+  place,
+  distance,
 }) => {
+  const flag = `https://countryflagsapi.com/svg/${country_code}`;
+
   return (
-    <li className="ranking-card--container">
-      <h4 className="ranking-card--rank">{rank}</h4>
+    <li key={nickname} className="ranking-card--container">
+      <h4 className="ranking-card--rank">{ranking}º</h4>
       <div className="ranking-card--content">
         <div className="ranking-card--person">
           <img
             draggable="false"
             className="ranking-card--avatar"
-            src={avatar}
+            src={profile_img}
             alt={`${name}'s avatar`}
           />
           <div className="ranking-card--info">
             <p className="p2">{name}</p>
-            <span className="p3">{handle}</span>
+            <span className="p3">{nickname}</span>
             <div className="ranking-card--country-mobile">
-              <img src={flag} alt="Some flag" />
+              <img src={flag} alt="Flag" />
               <p className="p2">{country}</p>
-              <span className="p3">{city}</span>
+              <span className="p3">{place}</span>
             </div>
           </div>
         </div>
         <div className="ranking-card--rest">
           <div className="ranking-card--country">
-            <img src={flag} alt="Some flag" />
+            <img src={flag} alt="Flag" />
             <div>
               <p className="p2">{country}</p>
-              <span className="p3">{city}</span>
+              <span className="p3">{place}</span>
             </div>
           </div>
-          <h5 className="p1">{score}</h5>
+          <h5 className="p1">{distance}</h5>
         </div>
       </div>
     </li>
@@ -56,19 +52,19 @@ const RankingCard = ({
 };
 
 RankingCard.propTypes = {
-  rank: PropTypes.string,
+  ranking: PropTypes.number,
+  profile_img: PropTypes.string,
   name: PropTypes.string,
-  handle: PropTypes.string,
-  flag: PropTypes.string,
+  nickname: PropTypes.string,
+  country_code: PropTypes.string,
   country: PropTypes.string,
-  city: PropTypes.string,
-  score: PropTypes.string,
-  avatar: PropTypes.string,
+  place: PropTypes.string,
+  distance: PropTypes.string,
 };
 
 RankingCard.defaultProps = {
   rank: "?",
-  score: "0 km",
+  distance: "0 km",
 };
 
 export default RankingCard;

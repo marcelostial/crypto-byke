@@ -7,6 +7,8 @@ import BlogCard from "./BlogCard/BlogCard";
 import Carousel from "./Carousel/Carousel";
 import { PedalarCard } from "./PedalarCard/PedalarCard";
 import RankingCard from "./RankingCard/RankingCard";
+import DropDown from "./DropDown/DropDown";
+import SearchBar from "./SearchBar/SearchBar";
 
 export {
   Title,
@@ -18,4 +20,6 @@ export {
   Carousel,
   PedalarCard,
   RankingCard,
+  DropDown,
+  SearchBar,
 };
