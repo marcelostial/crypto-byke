@@ -18,22 +18,23 @@
 
 package com.uol.cryptobike.core.models;
 
+import java.util.List;
 import com.adobe.cq.export.json.ComponentExporter;
 import org.osgi.annotation.versioning.ConsumerType;
 
 
 /**
- * Defines the {@code Example} Sling Model used for the {@code cryptobike/components/example} component.
+ * Defines the {@code Nossosnfts} Sling Model used for the {@code cryptobike/components/nossosnfts} component.
  * 
  */
 @ConsumerType
-public interface Example
+public interface Nossosnfts
     extends ComponentExporter
 {
 
 
-    String getTitle();
+    String getMaintitle();
 
-    String getText();
+    List<NFTCards> getNftcards();
 
 }
