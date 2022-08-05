@@ -60,11 +60,6 @@ const CarouselV1 = withAsyncImport(() =>
   ),
 );
 
-const ExampleComponent = withAsyncImport(() =>
-  import(`./layouts/ExampleComponent/ExampleComponent`),
-);
-
-
 MapTo('cryptobike/components/navigation')(NavigationV1);
 MapTo('cryptobike/components/text')(LazyTextComponent, TextEditConfig);
 MapTo('cryptobike/components/languagenavigation')(LanguageNavigationV1);
@@ -93,16 +88,24 @@ MapTo('cryptobike/components/breadcrumb')(BreadCrumbV2, {
   isEmpty: BreadCrumbV2IsEmptyFn,
 });
 
+// --------------------------- Custom components ---------------------------
 
 const Blog = withAsyncImport(() =>
   import(`./layouts/Blog/Blog`),
 );
+
 const Header = withAsyncImport(() =>
-import(`./layouts/HeaderComponent/Header`),
+  import(`./layouts/HeaderComponent/Header`),
 );
+
 const Pedalar = withAsyncImport(() =>
-import(`./layouts/Pedalar/pedalar`),
+  import(`./layouts/Pedalar/pedalar`),
 );
+
+const OurNFTs = withAsyncImport(() =>
+  import(`./layouts/OurNFTs/OurNFTs`),
+);
+
 const StaticRanking = withAsyncImport(() =>
   import(`./layouts/StaticRanking/StaticRanking`),
 );
@@ -110,9 +113,14 @@ const DynamicRanking = withAsyncImport(() =>
   import(`./layouts/DynamicRanking/DynamicRanking`),
 );
 
+const Tour = withAsyncImport(() =>
+  import(`./layouts/Tour/Tour`),
+);
+
 MapTo("compass/components/blog-posts")(Blog);
 MapTo('cryptobike/components/header')(Header);
 MapTo('cryptobike/components/pedalar')(Pedalar);
-MapTo('cryptobike/components/example')(ExampleComponent);
+MapTo("cryptobike/components/tourdeterre")(Tour);
+MapTo('cryptobike/components/nossosnfts')(OurNFTs);
 MapTo('cryptobike/components/static-ranking')(StaticRanking);
 MapTo('cryptobike/components/dynamic-ranking')(DynamicRanking);

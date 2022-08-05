@@ -13,8 +13,7 @@
  |  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  |  See the License for the specific language governing permissions and
  |  limitations under the License.
--->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+--><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
       
   <modelVersion>4.0.0</modelVersion>
       
@@ -43,6 +42,8 @@
     <module>ui.apps.structure</module>
             
     <module>ui.config</module>
+            
+    <module>ui.content</module>
       
   </modules>
       
@@ -322,434 +323,435 @@ Bundle-Category: ${componentGroupName}
 Bundle-DocURL:
 -plugin org.apache.sling.caconfig.bndplugin.ConfigurationClassScannerPlugin
 -plugin org.apache.sling.bnd.models.ModelsScannerPlugin
-                                ]]></bnd>
+                                ]]>
+                </bnd>
                                             
-                </configuration>
+              </configuration>
                                       
-              </execution>
+            </execution>
                                 
-            </executions>
+          </executions>
                               
-            <dependencies>
+          <dependencies>
                                     
-              <dependency>
+            <dependency>
                                           
-                <groupId>org.apache.sling</groupId>
+              <groupId>org.apache.sling</groupId>
                                           
-                <artifactId>org.apache.sling.caconfig.bnd-plugin</artifactId>
+              <artifactId>org.apache.sling.caconfig.bnd-plugin</artifactId>
                                           
-                <version>1.0.2</version>
+              <version>1.0.2</version>
                                       
-              </dependency>
+            </dependency>
                                     
-              <dependency>
+            <dependency>
                                           
-                <groupId>org.apache.sling</groupId>
+              <groupId>org.apache.sling</groupId>
                                           
-                <artifactId>org.apache.sling.bnd.models</artifactId>
+              <artifactId>org.apache.sling.bnd.models</artifactId>
                                           
-                <version>1.0.0</version>
+              <version>1.0.0</version>
                                       
-              </dependency>
+            </dependency>
                                     
-              <dependency>
+            <dependency>
                                           
-                <groupId>org.apache.sling</groupId>
+              <groupId>org.apache.sling</groupId>
                                           
-                <artifactId>scriptingbundle-maven-plugin</artifactId>
+              <artifactId>scriptingbundle-maven-plugin</artifactId>
                                           
-                <version>0.5.0</version>
+              <version>0.5.0</version>
                                       
-              </dependency>
+            </dependency>
                                 
-            </dependencies>
+          </dependencies>
                           
-          </plugin>
+        </plugin>
                         
-          <plugin>
+        <plugin>
                               
-            <groupId>biz.aQute.bnd</groupId>
+          <groupId>biz.aQute.bnd</groupId>
                               
-            <artifactId>bnd-baseline-maven-plugin</artifactId>
+          <artifactId>bnd-baseline-maven-plugin</artifactId>
                               
-            <version>${bnd.version}</version>
+          <version>${bnd.version}</version>
                           
-          </plugin>
+        </plugin>
                         
-          <!-- Maven Resources Plugin -->
+        <!-- Maven Resources Plugin -->
                         
-          <plugin>
+        <plugin>
                               
-            <groupId>org.apache.maven.plugins</groupId>
+          <groupId>org.apache.maven.plugins</groupId>
                               
-            <artifactId>maven-resources-plugin</artifactId>
+          <artifactId>maven-resources-plugin</artifactId>
                               
-            <version>3.0.2</version>
+          <version>3.0.2</version>
                           
-          </plugin>
+        </plugin>
                         
-          <!-- Maven Compiler Plugin -->
+        <!-- Maven Compiler Plugin -->
                         
-          <plugin>
+        <plugin>
                               
-            <groupId>org.apache.maven.plugins</groupId>
+          <groupId>org.apache.maven.plugins</groupId>
                               
-            <artifactId>maven-compiler-plugin</artifactId>
+          <artifactId>maven-compiler-plugin</artifactId>
                               
-            <version>3.8.1</version>
+          <version>3.8.1</version>
                           
-          </plugin>
+        </plugin>
                         
-          <!-- Maven Installer Plugin -->
+        <!-- Maven Installer Plugin -->
                         
-          <plugin>
+        <plugin>
                               
-            <groupId>org.apache.maven.plugins</groupId>
+          <groupId>org.apache.maven.plugins</groupId>
                               
-            <artifactId>maven-install-plugin</artifactId>
+          <artifactId>maven-install-plugin</artifactId>
                               
-            <version>2.5.2</version>
+          <version>2.5.2</version>
                           
-          </plugin>
+        </plugin>
                         
-          <!-- Maven Surefire Plugin -->
+        <!-- Maven Surefire Plugin -->
                         
-          <plugin>
+        <plugin>
                               
-            <groupId>org.apache.maven.plugins</groupId>
+          <groupId>org.apache.maven.plugins</groupId>
                               
-            <artifactId>maven-surefire-plugin</artifactId>
+          <artifactId>maven-surefire-plugin</artifactId>
                               
-            <version>2.22.1</version>
+          <version>2.22.1</version>
                               
-            <configuration>
+          <configuration>
                                     
-              <useSystemClassLoader>false</useSystemClassLoader>
+            <useSystemClassLoader>false</useSystemClassLoader>
                                 
-            </configuration>
+          </configuration>
                           
-          </plugin>
+        </plugin>
                         
-          <!-- Maven Failsafe Plugin -->
+        <!-- Maven Failsafe Plugin -->
                         
-          <plugin>
+        <plugin>
                               
-            <groupId>org.apache.maven.plugins</groupId>
+          <groupId>org.apache.maven.plugins</groupId>
                               
-            <artifactId>maven-failsafe-plugin</artifactId>
+          <artifactId>maven-failsafe-plugin</artifactId>
                               
-            <version>2.22.1</version>
+          <version>2.22.1</version>
                           
-          </plugin>
+        </plugin>
                         
-          <!-- Maven Deploy Plugin -->
+        <!-- Maven Deploy Plugin -->
                         
-          <plugin>
+        <plugin>
                               
-            <groupId>org.apache.maven.plugins</groupId>
+          <groupId>org.apache.maven.plugins</groupId>
                               
-            <artifactId>maven-deploy-plugin</artifactId>
+          <artifactId>maven-deploy-plugin</artifactId>
                               
-            <version>2.8.2</version>
+          <version>2.8.2</version>
                           
-          </plugin>
+        </plugin>
                         
-          <!-- Apache Sling Plugin -->
+        <!-- Apache Sling Plugin -->
                         
-          <plugin>
+        <plugin>
                               
-            <groupId>org.apache.sling</groupId>
+          <groupId>org.apache.sling</groupId>
                               
-            <artifactId>sling-maven-plugin</artifactId>
+          <artifactId>sling-maven-plugin</artifactId>
                               
-            <version>2.4.0</version>
+          <version>2.4.0</version>
                               
-            <configuration>
+          <configuration>
                                     
-              <slingUrl>http://${aem.host}:${aem.port}/system/console</slingUrl>
+            <slingUrl>http://${aem.host}:${aem.port}/system/console</slingUrl>
                                     
-              <deploymentMethod>WebConsole</deploymentMethod>
+            <deploymentMethod>WebConsole</deploymentMethod>
                                 
-            </configuration>
+          </configuration>
                           
-          </plugin>
+        </plugin>
                         
-          <!-- HTL Maven Plugin -->
+        <!-- HTL Maven Plugin -->
                         
-          <plugin>
+        <plugin>
                               
-            <groupId>org.apache.sling</groupId>
+          <groupId>org.apache.sling</groupId>
                               
-            <artifactId>htl-maven-plugin</artifactId>
+          <artifactId>htl-maven-plugin</artifactId>
                               
-            <version>2.0.2-1.4.0</version>
+          <version>2.0.2-1.4.0</version>
                               
-            <configuration>
+          <configuration>
                                     
-              <failOnWarnings>true</failOnWarnings>
+            <failOnWarnings>true</failOnWarnings>
                                 
-            </configuration>
+          </configuration>
                           
-          </plugin>
+        </plugin>
                         
-          <!-- Jackrabbit FileVault Package Plugin -->
+        <!-- Jackrabbit FileVault Package Plugin -->
                         
-          <plugin>
+        <plugin>
                               
-            <groupId>org.apache.jackrabbit</groupId>
+          <groupId>org.apache.jackrabbit</groupId>
                               
-            <artifactId>filevault-package-maven-plugin</artifactId>
+          <artifactId>filevault-package-maven-plugin</artifactId>
                               
-            <extensions>true</extensions>
+          <extensions>true</extensions>
                               
-            <version>1.1.6</version>
+          <version>1.1.6</version>
                               
-            <configuration>
+          <configuration>
                                     
-              <filterSource>src/main/content/META-INF/vault/filter.xml</filterSource>
+            <filterSource>src/main/content/META-INF/vault/filter.xml</filterSource>
                                     
-              <validatorsSettings>
+            <validatorsSettings>
                                           
-                <jackrabbit-nodetypes>
+              <jackrabbit-nodetypes>
                                                 
-                  <options>
+                <options>
                                                       
-                    <!-- use the nodetypes and namespaces from the aem-nodetypes.jar provided in the plugin dependencies -->
+                  <!-- use the nodetypes and namespaces from the aem-nodetypes.jar provided in the plugin dependencies -->
                                                       
-                    <cnds>tccl:aem.cnd</cnds>
+                  <cnds>tccl:aem.cnd</cnds>
                                                   
-                  </options>
+                </options>
                                             
-                </jackrabbit-nodetypes>
+              </jackrabbit-nodetypes>
                                       
-              </validatorsSettings>
+            </validatorsSettings>
                                 
-            </configuration>
+          </configuration>
                               
-            <dependencies>
+          <dependencies>
                                     
-              <dependency>
+            <dependency>
                                           
-                <groupId>biz.netcentric.aem</groupId>
+              <groupId>biz.netcentric.aem</groupId>
                                           
-                <artifactId>aem-nodetypes</artifactId>
+              <artifactId>aem-nodetypes</artifactId>
                                           
-                <version>6.5.7.0</version>
+              <version>6.5.7.0</version>
                                       
-              </dependency>
+            </dependency>
                                 
-            </dependencies>
+          </dependencies>
                           
-          </plugin>
+        </plugin>
                         
-          <!-- AEM Analyser Plugin -->
+        <!-- AEM Analyser Plugin -->
                         
-          <plugin>
+        <plugin>
                               
-            <groupId>com.adobe.aem</groupId>
+          <groupId>com.adobe.aem</groupId>
                               
-            <artifactId>aemanalyser-maven-plugin</artifactId>
+          <artifactId>aemanalyser-maven-plugin</artifactId>
                               
-            <version>${aemanalyser.version}</version>
+          <version>${aemanalyser.version}</version>
                               
-            <extensions>true</extensions>
+          <extensions>true</extensions>
                           
-          </plugin>
+        </plugin>
                         
-          <!-- Content Package Plugin -->
+        <!-- Content Package Plugin -->
                         
-          <plugin>
+        <plugin>
                               
-            <groupId>com.day.jcr.vault</groupId>
+          <groupId>com.day.jcr.vault</groupId>
                               
-            <artifactId>content-package-maven-plugin</artifactId>
+          <artifactId>content-package-maven-plugin</artifactId>
                               
-            <version>1.0.2</version>
+          <version>1.0.2</version>
                               
-            <configuration>
+          <configuration>
                                     
-              <targetURL>http://${aem.host}:${aem.port}/crx/packmgr/service.jsp</targetURL>
+            <targetURL>http://${aem.host}:${aem.port}/crx/packmgr/service.jsp</targetURL>
                                     
-              <failOnError>true</failOnError>
+            <failOnError>true</failOnError>
                                     
-              <userId>${vault.user}</userId>
+            <userId>${vault.user}</userId>
                                     
-              <password>${vault.password}</password>
+            <password>${vault.password}</password>
                                 
-            </configuration>
+          </configuration>
                           
-          </plugin>
+        </plugin>
                         
-          <!-- Maven Enforcer Plugin -->
+        <!-- Maven Enforcer Plugin -->
                         
-          <plugin>
+        <plugin>
                               
-            <groupId>org.apache.maven.plugins</groupId>
+          <groupId>org.apache.maven.plugins</groupId>
                               
-            <artifactId>maven-enforcer-plugin</artifactId>
+          <artifactId>maven-enforcer-plugin</artifactId>
                               
-            <version>3.0.0</version>
+          <version>3.0.0</version>
                           
-          </plugin>
+        </plugin>
                         
-          <!-- Maven Dependency Plugin -->
+        <!-- Maven Dependency Plugin -->
                         
-          <plugin>
+        <plugin>
                               
-            <groupId>org.apache.maven.plugins</groupId>
+          <groupId>org.apache.maven.plugins</groupId>
                               
-            <artifactId>maven-dependency-plugin</artifactId>
+          <artifactId>maven-dependency-plugin</artifactId>
                               
-            <version>3.0.0</version>
+          <version>3.0.0</version>
                           
-          </plugin>
+        </plugin>
                         
-          <!-- Build Helper Maven Plugin -->
+        <!-- Build Helper Maven Plugin -->
                         
-          <plugin>
+        <plugin>
                               
-            <groupId>org.codehaus.mojo</groupId>
+          <groupId>org.codehaus.mojo</groupId>
                               
-            <artifactId>build-helper-maven-plugin</artifactId>
+          <artifactId>build-helper-maven-plugin</artifactId>
                               
-            <version>3.0.0</version>
+          <version>3.0.0</version>
                           
-          </plugin>
+        </plugin>
                         
-          <!--This plugin's configuration is used to store Eclipse
+        <!--This plugin's configuration is used to store Eclipse
                     m2e settings only. It has no influence on the Maven build itself. -->
                         
-          <plugin>
+        <plugin>
                               
-            <groupId>org.eclipse.m2e</groupId>
+          <groupId>org.eclipse.m2e</groupId>
                               
-            <artifactId>lifecycle-mapping</artifactId>
+          <artifactId>lifecycle-mapping</artifactId>
                               
-            <version>1.0.0</version>
+          <version>1.0.0</version>
                               
-            <configuration>
+          <configuration>
                                     
-              <lifecycleMappingMetadata>
+            <lifecycleMappingMetadata>
                                           
-                <pluginExecutions>
+              <pluginExecutions>
                                                 
-                  <pluginExecution>
+                <pluginExecution>
                                                       
-                    <pluginExecutionFilter>
+                  <pluginExecutionFilter>
                                                             
-                      <groupId>org.apache.maven.plugins</groupId>
+                    <groupId>org.apache.maven.plugins</groupId>
                                                             
-                      <artifactId>maven-enforcer-plugin</artifactId>
+                    <artifactId>maven-enforcer-plugin</artifactId>
                                                             
-                      <versionRange>[1.0.0,)</versionRange>
+                    <versionRange>[1.0.0,)</versionRange>
                                                             
-                      <goals>
+                    <goals>
                                                                   
-                        <goal>enforce</goal>
+                      <goal>enforce</goal>
                                                               
-                      </goals>
+                    </goals>
                                                         
-                    </pluginExecutionFilter>
+                  </pluginExecutionFilter>
                                                       
-                    <action>
+                  <action>
                                                             
-                      <ignore />
+                    <ignore/>
                                                         
-                    </action>
+                  </action>
                                                   
-                  </pluginExecution>
+                </pluginExecution>
                                                 
-                  <pluginExecution>
+                <pluginExecution>
                                                       
-                    <pluginExecutionFilter>
+                  <pluginExecutionFilter>
                                                             
-                      <groupId>
+                    <groupId>
                                             org.apache.maven.plugins
-                      </groupId>
+                                        </groupId>
                                                             
-                      <artifactId>
+                    <artifactId>
                                             maven-dependency-plugin
-                      </artifactId>
+                                        </artifactId>
                                                             
-                      <versionRange>
+                    <versionRange>
                                             [2.2,)
-                      </versionRange>
+                                        </versionRange>
                                                             
-                      <goals>
+                    <goals>
                                                                   
-                        <goal>copy-dependencies</goal>
+                      <goal>copy-dependencies</goal>
                                                                   
-                        <goal>unpack</goal>
+                      <goal>unpack</goal>
                                                               
-                      </goals>
+                    </goals>
                                                         
-                    </pluginExecutionFilter>
+                  </pluginExecutionFilter>
                                                       
-                    <action>
+                  <action>
                                                             
-                      <ignore />
+                    <ignore/>
                                                         
-                    </action>
+                  </action>
                                                   
-                  </pluginExecution>
+                </pluginExecution>
                                                 
-                  <pluginExecution>
+                <pluginExecution>
                                                       
-                    <pluginExecutionFilter>
+                  <pluginExecutionFilter>
                                                             
-                      <groupId>
+                    <groupId>
                                             org.codehaus.mojo
-                      </groupId>
+                                        </groupId>
                                                             
-                      <artifactId>
+                    <artifactId>
                                             build-helper-maven-plugin
-                      </artifactId>
+                                        </artifactId>
                                                             
-                      <versionRange>
+                    <versionRange>
                                             [1.5,)
-                      </versionRange>
+                                        </versionRange>
                                                             
-                      <goals>
+                    <goals>
                                                                   
-                        <goal>
+                      <goal>
                                                 reserve-network-port
-                        </goal>
+                                            </goal>
                                                               
-                      </goals>
+                    </goals>
                                                         
-                    </pluginExecutionFilter>
+                  </pluginExecutionFilter>
                                                       
-                    <action>
+                  <action>
                                                             
-                      <ignore />
+                    <ignore/>
                                                         
-                    </action>
+                  </action>
                                                   
-                  </pluginExecution>
+                </pluginExecution>
                                             
-                </pluginExecutions>
+              </pluginExecutions>
                                       
-              </lifecycleMappingMetadata>
+            </lifecycleMappingMetadata>
                                 
-            </configuration>
+          </configuration>
                           
-          </plugin>
+        </plugin>
                     
-        </plugins>
+      </plugins>
               
-      </pluginManagement>
+    </pluginManagement>
         
-    </build>
+  </build>
       
-    <profiles>
+  <profiles>
             
-      <!-- Development profile: install only the bundle -->
+    <!-- Development profile: install only the bundle -->
             
-      <profile>
+    <profile>
                   
-        <id>autoInstallBundle</id>
+      <id>autoInstallBundle</id>
                   
-        <!--
+      <!--
                 To enable this feature for a bundle, the sling-maven-plugin
                 (without configuration) needs to be included:
 
@@ -759,364 +761,364 @@ Bundle-DocURL:
                  </plugin>
             -->
                   
-        <activation>
+      <activation>
                         
-          <activeByDefault>false</activeByDefault>
+        <activeByDefault>false</activeByDefault>
                     
-        </activation>
+      </activation>
                   
-        <build>
+      <build>
                         
-          <pluginManagement>
+        <pluginManagement>
                               
-            <plugins>
+          <plugins>
                                     
-              <plugin>
+            <plugin>
                                           
-                <groupId>org.apache.sling</groupId>
+              <groupId>org.apache.sling</groupId>
                                           
-                <artifactId>sling-maven-plugin</artifactId>
+              <artifactId>sling-maven-plugin</artifactId>
                                           
-                <executions>
+              <executions>
                                                 
-                  <execution>
+                <execution>
                                                       
-                    <id>install-bundle</id>
+                  <id>install-bundle</id>
                                                       
-                    <goals>
+                  <goals>
                                                             
-                      <goal>install</goal>
+                    <goal>install</goal>
                                                         
-                    </goals>
+                  </goals>
                                                   
-                  </execution>
+                </execution>
                                             
-                </executions>
+              </executions>
                                       
-              </plugin>
+            </plugin>
                                 
-            </plugins>
+          </plugins>
                           
-          </pluginManagement>
+        </pluginManagement>
                     
-        </build>
+      </build>
               
-      </profile>
+    </profile>
             
-      <profile>
+    <profile>
                   
-        <id>autoInstallPackage</id>
+      <id>autoInstallPackage</id>
                   
-        <activation>
+      <activation>
                         
-          <activeByDefault>false</activeByDefault>
+        <activeByDefault>false</activeByDefault>
                     
-        </activation>
+      </activation>
                   
-        <build>
+      <build>
                         
-          <pluginManagement>
+        <pluginManagement>
                               
-            <plugins>
+          <plugins>
                                     
-              <plugin>
+            <plugin>
                                           
-                <groupId>org.apache.jackrabbit</groupId>
+              <groupId>org.apache.jackrabbit</groupId>
                                           
-                <artifactId>filevault-package-maven-plugin</artifactId>
+              <artifactId>filevault-package-maven-plugin</artifactId>
                                           
-                <executions>
+              <executions>
                                                 
-                  <execution>
+                <execution>
                                                       
-                    <id>create-package</id>
+                  <id>create-package</id>
                                                       
-                    <goals>
+                  <goals>
                                                             
-                      <goal>package</goal>
+                    <goal>package</goal>
                                                         
-                    </goals>
+                  </goals>
                                                   
-                  </execution>
+                </execution>
                                             
-                </executions>
+              </executions>
                                       
-              </plugin>
+            </plugin>
                                     
-              <plugin>
+            <plugin>
                                           
-                <groupId>com.day.jcr.vault</groupId>
+              <groupId>com.day.jcr.vault</groupId>
                                           
-                <artifactId>content-package-maven-plugin</artifactId>
+              <artifactId>content-package-maven-plugin</artifactId>
                                           
-                <executions>
+              <executions>
                                                 
-                  <execution>
+                <execution>
                                                       
-                    <id>install-package</id>
+                  <id>install-package</id>
                                                       
-                    <goals>
+                  <goals>
                                                             
-                      <goal>install</goal>
+                    <goal>install</goal>
                                                         
-                    </goals>
+                  </goals>
                                                       
-                    <configuration>
+                  <configuration>
                                                             
-                      <targetURL>http://${aem.host}:${aem.port}/crx/packmgr/service.jsp</targetURL>
+                    <targetURL>http://${aem.host}:${aem.port}/crx/packmgr/service.jsp</targetURL>
                                                         
-                    </configuration>
+                  </configuration>
                                                   
-                  </execution>
+                </execution>
                                             
-                </executions>
+              </executions>
                                       
-              </plugin>
+            </plugin>
                                 
-            </plugins>
+          </plugins>
                           
-          </pluginManagement>
+        </pluginManagement>
                     
-        </build>
+      </build>
               
-      </profile>
+    </profile>
             
-      <profile>
+    <profile>
                   
-        <id>autoInstallPackagePublish</id>
+      <id>autoInstallPackagePublish</id>
                   
-        <activation>
+      <activation>
                         
-          <activeByDefault>false</activeByDefault>
+        <activeByDefault>false</activeByDefault>
                     
-        </activation>
+      </activation>
                   
-        <build>
+      <build>
                         
-          <pluginManagement>
+        <pluginManagement>
                               
-            <plugins>
+          <plugins>
                                     
-              <plugin>
+            <plugin>
                                           
-                <groupId>org.apache.jackrabbit</groupId>
+              <groupId>org.apache.jackrabbit</groupId>
                                           
-                <artifactId>filevault-package-maven-plugin</artifactId>
+              <artifactId>filevault-package-maven-plugin</artifactId>
                                           
-                <executions>
+              <executions>
                                                 
-                  <execution>
+                <execution>
                                                       
-                    <id>create-package</id>
+                  <id>create-package</id>
                                                       
-                    <goals>
+                  <goals>
                                                             
-                      <goal>package</goal>
+                    <goal>package</goal>
                                                         
-                    </goals>
+                  </goals>
                                                   
-                  </execution>
+                </execution>
                                             
-                </executions>
+              </executions>
                                       
-              </plugin>
+            </plugin>
                                     
-              <plugin>
+            <plugin>
                                           
-                <groupId>com.day.jcr.vault</groupId>
+              <groupId>com.day.jcr.vault</groupId>
                                           
-                <artifactId>content-package-maven-plugin</artifactId>
+              <artifactId>content-package-maven-plugin</artifactId>
                                           
-                <executions>
+              <executions>
                                                 
-                  <execution>
+                <execution>
                                                       
-                    <id>install-package-publish</id>
+                  <id>install-package-publish</id>
                                                       
-                    <goals>
+                  <goals>
                                                             
-                      <goal>install</goal>
+                    <goal>install</goal>
                                                         
-                    </goals>
+                  </goals>
                                                       
-                    <configuration>
+                  <configuration>
                                                             
-                      <targetURL>http://${aem.publish.host}:${aem.publish.port}/crx/packmgr/service.jsp</targetURL>
+                    <targetURL>http://${aem.publish.host}:${aem.publish.port}/crx/packmgr/service.jsp</targetURL>
                                                         
-                    </configuration>
+                  </configuration>
                                                   
-                  </execution>
+                </execution>
                                             
-                </executions>
+              </executions>
                                       
-              </plugin>
+            </plugin>
                                 
-            </plugins>
+          </plugins>
                           
-          </pluginManagement>
+        </pluginManagement>
                     
-        </build>
+      </build>
               
-      </profile>
+    </profile>
         
-    </profiles>
+  </profiles>
       
-    <!-- ====================================================================== -->
+  <!-- ====================================================================== -->
       
-    <!-- D E P E N D E N C I E S -->
+  <!-- D E P E N D E N C I E S -->
       
-    <!-- ====================================================================== -->
+  <!-- ====================================================================== -->
       
-    <dependencyManagement>
+  <dependencyManagement>
             
-      <dependencies>
+    <dependencies>
                   
-        <dependency>
+      <dependency>
                         
-          <groupId>com.adobe.aem</groupId>
+        <groupId>com.adobe.aem</groupId>
                         
-          <artifactId>aem-sdk-api</artifactId>
+        <artifactId>aem-sdk-api</artifactId>
                         
-          <version>${aem.sdk.api}</version>
+        <version>${aem.sdk.api}</version>
                         
-          <scope>provided</scope>
+        <scope>provided</scope>
                     
-        </dependency>
+      </dependency>
                   
-        <dependency>
+      <dependency>
                         
-          <groupId>com.adobe.cq</groupId>
+        <groupId>com.adobe.cq</groupId>
                         
-          <artifactId>core.wcm.components.core</artifactId>
+        <artifactId>core.wcm.components.core</artifactId>
                         
-          <version>${core.wcm.components.version}</version>
+        <version>${core.wcm.components.version}</version>
                     
-        </dependency>
+      </dependency>
                   
-        <!-- SPA Project Core (includes hierarchy page model) -->
+      <!-- SPA Project Core (includes hierarchy page model) -->
                   
-        <dependency>
+      <dependency>
                         
-          <groupId>com.adobe.aem</groupId>
+        <groupId>com.adobe.aem</groupId>
                         
-          <artifactId>spa.project.core.ui.apps</artifactId>
+        <artifactId>spa.project.core.ui.apps</artifactId>
                         
-          <type>zip</type>
+        <type>zip</type>
                         
-          <version>${spa.project.core.version}</version>
+        <version>${spa.project.core.version}</version>
                     
-        </dependency>
+      </dependency>
                   
-        <dependency>
+      <dependency>
                         
-          <groupId>com.adobe.aem</groupId>
+        <groupId>com.adobe.aem</groupId>
                         
-          <artifactId>spa.project.core.core</artifactId>
+        <artifactId>spa.project.core.core</artifactId>
                         
-          <version>${spa.project.core.version}</version>
+        <version>${spa.project.core.version}</version>
                     
-        </dependency>
+      </dependency>
                   
-        <!-- Testing -->
+      <!-- Testing -->
                   
-        <dependency>
+      <dependency>
                         
-          <groupId>org.junit</groupId>
+        <groupId>org.junit</groupId>
                         
-          <artifactId>junit-bom</artifactId>
+        <artifactId>junit-bom</artifactId>
                         
-          <version>5.8.2</version>
+        <version>5.8.2</version>
                         
-          <type>pom</type>
+        <type>pom</type>
                         
-          <scope>import</scope>
+        <scope>import</scope>
                     
-        </dependency>
+      </dependency>
                   
-        <dependency>
+      <dependency>
                         
-          <groupId>org.mockito</groupId>
+        <groupId>org.mockito</groupId>
                         
-          <artifactId>mockito-core</artifactId>
+        <artifactId>mockito-core</artifactId>
                         
-          <version>4.1.0</version>
+        <version>4.1.0</version>
                         
-          <scope>test</scope>
+        <scope>test</scope>
                     
-        </dependency>
+      </dependency>
                   
-        <dependency>
+      <dependency>
                         
-          <groupId>org.mockito</groupId>
+        <groupId>org.mockito</groupId>
                         
-          <artifactId>mockito-junit-jupiter</artifactId>
+        <artifactId>mockito-junit-jupiter</artifactId>
                         
-          <version>4.1.0</version>
+        <version>4.1.0</version>
                         
-          <scope>test</scope>
+        <scope>test</scope>
                     
-        </dependency>
+      </dependency>
                   
-        <dependency>
+      <dependency>
                         
-          <groupId>junit-addons</groupId>
+        <groupId>junit-addons</groupId>
                         
-          <artifactId>junit-addons</artifactId>
+        <artifactId>junit-addons</artifactId>
                         
-          <version>1.4</version>
+        <version>1.4</version>
                         
-          <scope>test</scope>
+        <scope>test</scope>
                     
-        </dependency>
+      </dependency>
                   
-        <dependency>
+      <dependency>
                         
-          <groupId>io.wcm</groupId>
+        <groupId>io.wcm</groupId>
                         
-          <artifactId>io.wcm.testing.aem-mock.junit5</artifactId>
+        <artifactId>io.wcm.testing.aem-mock.junit5</artifactId>
                         
-          <version>4.1.8</version>
+        <version>4.1.8</version>
                         
-          <scope>test</scope>
+        <scope>test</scope>
                     
-        </dependency>
+      </dependency>
                   
-        <dependency>
+      <dependency>
                         
-          <groupId>org.apache.sling</groupId>
+        <groupId>org.apache.sling</groupId>
                         
-          <artifactId>org.apache.sling.testing.caconfig-mock-plugin</artifactId>
+        <artifactId>org.apache.sling.testing.caconfig-mock-plugin</artifactId>
                         
-          <version>1.3.6</version>
+        <version>1.3.6</version>
                     
-        </dependency>
+      </dependency>
                   
-        <dependency>
+      <dependency>
                         
-          <groupId>com.adobe.cq</groupId>
+        <groupId>com.adobe.cq</groupId>
                         
-          <artifactId>core.wcm.components.testing.aem-mock-plugin</artifactId>
+        <artifactId>core.wcm.components.testing.aem-mock-plugin</artifactId>
                         
-          <version>${core.wcm.components.version}</version>
+        <version>${core.wcm.components.version}</version>
                         
-          <scope>test</scope>
+        <scope>test</scope>
                     
-        </dependency>
+      </dependency>
                   
-        <dependency>
+      <dependency>
                         
-          <groupId>uk.org.lidalia</groupId>
+        <groupId>uk.org.lidalia</groupId>
                         
-          <artifactId>slf4j-test</artifactId>
+        <artifactId>slf4j-test</artifactId>
                         
-          <version>1.0.1</version>
+        <version>1.0.1</version>
                         
-          <scope>test</scope>
+        <scope>test</scope>
                     
-        </dependency>
+      </dependency>
               
-      </dependencies>
+    </dependencies>
         
-    </dependencyManagement>
+  </dependencyManagement>
   
-  </project>
+</project>

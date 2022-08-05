@@ -1,0 +1,30 @@
+@import "../../styles/variables.scss";
+
+.nfts--container {
+  background: $grey-500;
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin-top: 64px;
+    width: 100%;
+    gap: 56px;
+
+    @include breakpoint("xl") {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    @include breakpoint("lg") {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      margin-top: 40px;
+      gap: 40px;
+    }
+  }
+}
