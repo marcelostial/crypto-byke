@@ -18,9 +18,13 @@
 
 package com.uol.cryptobike.core.models.impl;
 
+import java.util.Collections;
+import java.util.List;
+import com.adobe.acs.commons.models.injectors.annotation.ChildResourceFromRequest;
 import com.adobe.cq.export.json.ComponentExporter;
 import com.adobe.cq.export.json.ExporterConstants;
-import com.uol.cryptobike.core.models.Example;
+import com.uol.cryptobike.core.models.NFTCards;
+import com.uol.cryptobike.core.models.Nossosnfts;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Exporter;
@@ -32,29 +36,29 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 @Model(adaptables = {
     SlingHttpServletRequest.class
 }, adapters = {
-    Example.class,
+    Nossosnfts.class,
     ComponentExporter.class
-}, resourceType = "cryptobike/components/example")
+}, resourceType = "cryptobike/components/nossosnfts")
 @Exporter(name = ExporterConstants.SLING_MODEL_EXPORTER_NAME, extensions = ExporterConstants.SLING_MODEL_EXTENSION)
-public class ExampleImpl
-    implements Example
+public class NossosnftsImpl
+    implements Nossosnfts
 {
 
     @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
-    private String title;
-    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
-    private String text;
+    private String maintitle;
+    @ChildResourceFromRequest(injectionStrategy = InjectionStrategy.OPTIONAL)
+    private List<NFTCards> nftcards;
     @SlingObject
     private Resource resource;
 
     @Override
-    public String getTitle() {
-        return title;
+    public String getMaintitle() {
+        return maintitle;
     }
 
     @Override
-    public String getText() {
-        return text;
+    public List<NFTCards> getNftcards() {
+        return nftcards != null ? Collections.unmodifiableList(nftcards) : null;
     }
 
     @Override

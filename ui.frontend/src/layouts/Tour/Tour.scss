@@ -1,0 +1,41 @@
+@import "../../styles/variables.scss";
+
+.tour--container {
+  background-color: $grey-500;
+
+  .grid--inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+  }
+
+  .tour-text {
+    color: $white;
+    b {
+      font-weight: 700;
+      color: $primary-200;
+    }
+  }
+
+  .image {
+    width: 100%;
+    object-fit: scale-down;
+  }
+
+  @include breakpoint("lg") {
+    .grid--inner {
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .content {
+      gap: 24px;
+    }
+  }
+}

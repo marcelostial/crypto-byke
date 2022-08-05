@@ -10,6 +10,9 @@ import { createBrowserHistory } from "history";
 import LocalDevModelClient from "./routing/LocalDevModelClient";
 import { Constants, ModelManager } from "@adobe/aem-spa-page-model-manager";
 
+import TagManager from "react-gtm-module";
+import ReactGA from "react-ga";
+
 import "./import-components";
 import "./styles/globals.scss";
 
@@ -19,6 +22,15 @@ if (process.env.REACT_APP_PROXY_ENABLED) {
     process.env.REACT_APP_API_HOST
   );
 }
+
+const tagManagerArgs = {
+  gtmId: "GTM-5ZMH2GT",
+};
+
+const TRACKING_ID = "UA-96866913-1";
+
+TagManager.initialize(tagManagerArgs);
+ReactGA.initialize(TRACKING_ID);
 
 const renderApp = () => {
   ModelManager.initialize(modelManagerOptions).then((pageModel) => {
