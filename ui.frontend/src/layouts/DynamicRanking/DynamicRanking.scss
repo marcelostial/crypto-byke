@@ -10,7 +10,7 @@
   .dynamic-ranking--heading {
     margin-bottom: 96px;
     @include breakpoint("lg") {
-      margin-bottom: 40px;
+      margin-bottom: 59px;
     }
 
     .title--container {
@@ -95,6 +95,7 @@
 
         @include breakpoint("lg") {
           gap: 4px;
+          width: auto;
         }
 
         img {
@@ -133,13 +134,49 @@
         @include breakpoint("lg") {
           display: none;
         }
-
-       
       }
 
       .dynamic-ranking--table-score {
         flex: 1;
         text-align: end;
+      }
+    }
+
+    .dynamic-ranking--not-found {
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      max-width: 424px;
+      gap: 16px;
+
+      margin-bottom: 84px;
+
+      h4 {
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 42px;
+        text-align: center;
+      }
+      .dynamic-ranking--not-found-description {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 27px;
+        text-align: center;
+        b {
+          font-weight: 700;
+        }
+      }
+
+      @include breakpoint("md") {
+        margin-bottom: 0px;
+        h4 {
+          font-size: 20px;
+          line-height: 30px;
+        }
+        .dynamic-ranking--not-found-description {
+          font-size: 16px;
+          line-height: 24px;
+        }
       }
     }
   }

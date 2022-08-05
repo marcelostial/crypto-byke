@@ -49,11 +49,6 @@
                                         jcr:primaryType="nt:unstructured"
                                         name="./description"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/textarea"/>
-                           <searchPlaceholder cq-msm-lockable="./searchPlaceholder"
-                                              fieldLabel="Search Placeholder"
-                                              jcr:primaryType="nt:unstructured"
-                                              name="./searchPlaceholder"
-                                              sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
                            <backgroundResType jcr:primaryType="nt:unstructured"
                                               name="./background/sling:resourceType"
                                               sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
@@ -77,9 +72,47 @@
                      </column>
                   </items>
                </heading-tab>
-               <heading-tab-mobile jcr:primaryType="nt:unstructured"
-                                   jcr:title="Heading Mobile"
-                                   sling:resourceType="granite/ui/components/coral/foundation/container">
+               <search-section jcr:primaryType="nt:unstructured"
+                               jcr:title="Search Section"
+                               sling:resourceType="granite/ui/components/coral/foundation/container">
+                  <layout jcr:primaryType="nt:unstructured"
+                          sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"/>
+                  <items jcr:primaryType="nt:unstructured">
+                     <column jcr:primaryType="nt:unstructured"
+                             sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                           <searchPlaceholder cq-msm-lockable="./searchPlaceholder"
+                                              fieldLabel="Search Placeholder"
+                                              jcr:primaryType="nt:unstructured"
+                                              name="./searchPlaceholder"
+                                              sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                           <nameOptionLabel cq-msm-lockable="./nameOptionLabel"
+                                            fieldLabel="Name Option Label"
+                                            jcr:primaryType="nt:unstructured"
+                                            name="./nameOptionLabel"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                           <countryOptionLabel cq-msm-lockable="./countryOptionLabel"
+                                               fieldLabel="Country Option Label"
+                                               jcr:primaryType="nt:unstructured"
+                                               name="./countryOptionLabel"
+                                               sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                           <stateOptionLabel cq-msm-lockable="./stateOptionLabel"
+                                             fieldLabel="State Option Label"
+                                             jcr:primaryType="nt:unstructured"
+                                             name="./stateOptionLabel"
+                                             sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                           <cityOptionLabel cq-msm-lockable="./cityOptionLabel"
+                                            fieldLabel="City Option Label"
+                                            jcr:primaryType="nt:unstructured"
+                                            name="./cityOptionLabel"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                        </items>
+                     </column>
+                  </items>
+               </search-section>
+               <search-section-mobile jcr:primaryType="nt:unstructured"
+                                      jcr:title="Search Section Mobile"
+                                      sling:resourceType="granite/ui/components/coral/foundation/container">
                   <layout jcr:primaryType="nt:unstructured"
                           sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"/>
                   <items jcr:primaryType="nt:unstructured">
@@ -104,7 +137,7 @@
                         </items>
                      </column>
                   </items>
-               </heading-tab-mobile>
+               </search-section-mobile>
                <ranking-tab jcr:primaryType="nt:unstructured"
                             jcr:title="Ranking"
                             sling:resourceType="granite/ui/components/coral/foundation/container">
@@ -134,6 +167,16 @@
                                            jcr:primaryType="nt:unstructured"
                                            name="./columnDistance"
                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                           <notFoundTitle cq-msm-lockable="./notFoundTitle"
+                                          fieldLabel="Not Found Title"
+                                          jcr:primaryType="nt:unstructured"
+                                          name="./notFoundTitle"
+                                          sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                           <notFoundDescription cq-msm-lockable="./notFoundDescription"
+                                                fieldLabel="Not Found Description"
+                                                jcr:primaryType="nt:unstructured"
+                                                name="./notFoundDescription"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
                         </items>
                      </column>
                   </items>

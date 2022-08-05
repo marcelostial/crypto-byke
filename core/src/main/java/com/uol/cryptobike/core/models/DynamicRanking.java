@@ -40,11 +40,23 @@ public interface DynamicRanking
     @JsonProperty("description")
     String getDescription();
 
+    @JsonProperty("background")
+    Image getBackground();
+
     @JsonProperty("searchPlaceholder")
     String getSearchPlaceholder();
 
-    @JsonProperty("background")
-    Image getBackground();
+    @JsonProperty("nameOptionLabel")
+    String getNameOptionLabel();
+
+    @JsonProperty("countryOptionLabel")
+    String getCountryOptionLabel();
+
+    @JsonProperty("stateOptionLabel")
+    String getStateOptionLabel();
+
+    @JsonProperty("cityOptionLabel")
+    String getCityOptionLabel();
 
     @JsonProperty("mobileDropDownTitle")
     String getMobileDropDownTitle();
@@ -66,5 +78,11 @@ public interface DynamicRanking
 
     @JsonProperty("columnDistance")
     String getColumnDistance();
+
+    @JsonProperty("notFoundTitle")
+    String getNotFoundTitle();
+
+    @JsonProperty("notFoundDescription")
+    String getNotFoundDescription();
 
 }

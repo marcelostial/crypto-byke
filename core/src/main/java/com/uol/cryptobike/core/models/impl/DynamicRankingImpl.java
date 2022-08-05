@@ -47,10 +47,18 @@ public class DynamicRankingImpl
     private String title;
     @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
     private String description;
-    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
-    private String searchPlaceholder;
     @ChildResourceFromRequest(injectionStrategy = InjectionStrategy.OPTIONAL)
     private Image background;
+    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
+    private String searchPlaceholder;
+    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
+    private String nameOptionLabel;
+    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
+    private String countryOptionLabel;
+    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
+    private String stateOptionLabel;
+    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
+    private String cityOptionLabel;
     @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
     private String mobileDropDownTitle;
     @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
@@ -65,6 +73,10 @@ public class DynamicRankingImpl
     private String columnCountry;
     @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
     private String columnDistance;
+    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
+    private String notFoundTitle;
+    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
+    private String notFoundDescription;
     @SlingObject
     private Resource resource;
 
@@ -81,15 +93,39 @@ public class DynamicRankingImpl
     }
 
     @Override
+    @JsonProperty("background")
+    public Image getBackground() {
+        return background;
+    }
+
+    @Override
     @JsonProperty("searchPlaceholder")
     public String getSearchPlaceholder() {
         return searchPlaceholder;
     }
 
     @Override
-    @JsonProperty("background")
-    public Image getBackground() {
-        return background;
+    @JsonProperty("nameOptionLabel")
+    public String getNameOptionLabel() {
+        return nameOptionLabel;
+    }
+
+    @Override
+    @JsonProperty("countryOptionLabel")
+    public String getCountryOptionLabel() {
+        return countryOptionLabel;
+    }
+
+    @Override
+    @JsonProperty("stateOptionLabel")
+    public String getStateOptionLabel() {
+        return stateOptionLabel;
+    }
+
+    @Override
+    @JsonProperty("cityOptionLabel")
+    public String getCityOptionLabel() {
+        return cityOptionLabel;
     }
 
     @Override
@@ -132,6 +168,18 @@ public class DynamicRankingImpl
     @JsonProperty("columnDistance")
     public String getColumnDistance() {
         return columnDistance;
+    }
+
+    @Override
+    @JsonProperty("notFoundTitle")
+    public String getNotFoundTitle() {
+        return notFoundTitle;
+    }
+
+    @Override
+    @JsonProperty("notFoundDescription")
+    public String getNotFoundDescription() {
+        return notFoundDescription;
     }
 
     @Override
