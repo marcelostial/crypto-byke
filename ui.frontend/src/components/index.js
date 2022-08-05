@@ -7,6 +7,7 @@ import BlogCard from "./BlogCard/BlogCard";
 import Carousel from "./Carousel/Carousel";
 import { PedalarCard } from "./PedalarCard/PedalarCard";
 import RankingCard from "./RankingCard/RankingCard";
+import { CardNFT } from "./CardNFT/CardNFT";
 
 export {
   Title,
@@ -18,4 +19,5 @@ export {
   Carousel,
   PedalarCard,
   RankingCard,
+  CardNFT,
 };
