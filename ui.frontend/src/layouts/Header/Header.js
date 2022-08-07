@@ -1,174 +1,105 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
+import { Grid } from "../../components";
+import { useWindowSize } from "../../hooks";
+import resolvePath from "../../routing/resolvePath";
+
+import { NavLink } from "./NavLink";
+import { Modal } from "./Modal/Modal";
+import { ModalControl } from "./ModalControl";
 
 import Logo from "../../assets/logo-horizontal-white.svg";
-import LogoVertical from "../../assets/logo-vertical-white.svg";
-import { Grid } from "../../components";
-import Nav from "./NavLink/NavLink";
-import NavLanguage from "./NavLanguage/NavLanguage";
-import ModalLanguage from "./ModalLanguage/ModalLanguage";
+import LogoVert from "../../assets/logo-vertical-white.svg";
 
 import "./Header.scss";
-const Header = ({
-  firstbuttonlabel,
-  firstlinklabel,
-  firstbuttonmobile,
-  firstlinkmobile,
-  secondbuttonlabel,
-  secondlinklabel,
-  secondbuttonmobile,
-  secondlinkmobile,
-  thirdbuttonlabel,
-  thirdlinklabel,
-  thirdbuttonmobile,
-  thirdlinkmobile,
-  fourthbuttonlabel,
-  fourthlinklabel,
-  fourthbuttonmobile,
-  fourthlinkmobile,
-  urlLanguagePTbr,
-  urlLanguageEnUs,
-}) => {
-  const [modal, setModal] = React.useState(false);
-  const [menuModalMobile, setMenuModalMobile] = React.useState(false);
-  const [buttonVisibility, setButtonVisibility] = React.useState(true);
-  const [buttonCloseVisibility, setbuttonCloseVisibility] =
-    React.useState(false);
 
-  const clickButtonMenu = () => {
-    setMenuModalMobile(true);
-  };
+const Header = ({ home, currentLanguage, nav, languages, langVariants }) => {
+  const [modal, setModal] = useState(false);
+  const [openNav, setOpenNav] = useState(false);
+  const { width } = useWindowSize();
+  const isMobile = width < 992;
 
-  const clickButtonClose = () => {
-    setMenuModalMobile(null);
-  };
+  const navigation = nav.map(({ label, path }, index) => (
+    <NavLink key={"nav_" + index} link={path} label={label} />
+  ));
 
-  const hiddenButton = () => {
-    if (menuModalMobile === true) {
-      setButtonVisibility(false);
-      setbuttonCloseVisibility(true);
-    } else {
-      setButtonVisibility(true);
-      setbuttonCloseVisibility(false);
-    }
-  };
-
-  React.useEffect(() => {
-    hiddenButton();
-  });
+  if (openNav && modal) {
+    setOpenNav(false);
+  }
 
   return (
-    <Grid className="container-global-header-style">
-    <ModalLanguage
-      modal={modal}
-      setModal={setModal}
-      urlPtBr={urlLanguagePTbr}
-      urlEnUs={urlLanguageEnUs}
-    />
-    <div className="header-container">
-      {menuModalMobile && (
-        <div className="modal-mobile-container">
-          <nav className="modal-nav-navigation">
-            <Nav name={firstbuttonmobile} link={firstlinkmobile} />
-            <Nav name={secondbuttonmobile} link={secondlinkmobile} />
-            <Nav name={thirdbuttonmobile} link={thirdlinkmobile} />
-            <Nav name={fourthbuttonmobile} link={fourthlinkmobile} />
-          </nav>
-        </div>
-      )}
+    <>
+      <Grid className="header">
+        <div className="header--row">
+          <Link to={resolvePath(home)}>
+            <img
+              className="logo"
+              draggable="false"
+              src={isMobile ? LogoVert : Logo}
+              alt="logo"
+            />
+          </Link>
 
-      <div className="header-navigation">
-        <div className="subContainer">
-          <img
-            className="logo-header"
-            draggable="false"
-            src={Logo}
-            alt="logo"
-          ></img>
-          <img
-            draggable="false"
-            src={LogoVertical}
-            className="logo-vertical"
-            alt="logo-vertical"
-          ></img>
+          <div className={`header--nav ${modal ? "open" : ""}`}>
+            {!isMobile && navigation}
 
-          <div className="nav-navigation">
-            <nav className="navLink-container">
-              <Nav name={firstbuttonlabel} link={firstlinklabel} />
-              <Nav name={secondbuttonlabel} link={secondlinklabel} />
-              <Nav name={thirdbuttonlabel} link={thirdlinklabel} />
-              <Nav name={fourthbuttonlabel} link={fourthlinklabel} />
-            </nav>
-            <div className="nav-buttons">
-              <NavLanguage name="PT" setModal={setModal} />
-              {buttonVisibility && (
-                <button
-                  className="buttun-menu"
-                  onClick={clickButtonMenu}
-                ></button>
-              )}
-              {buttonCloseVisibility && (
-                <button
-                  className="buttonClose"
-                  onClick={clickButtonClose}
-                ></button>
-              )}
-            </div>
+            <ModalControl
+              controls={modal}
+              switches={setModal}
+              variant="language"
+              label={currentLanguage}
+            />
+
+            {isMobile && (
+              <ModalControl
+                controls={openNav}
+                switches={setOpenNav}
+                variant="hamburger"
+              />
+            )}
           </div>
         </div>
-      </div>
-    </div>
-  </Grid>
+
+        {isMobile && openNav && (
+          <div className={`nav-mobile ${openNav ? "open" : ""}`}>
+            {navigation}
+          </div>
+        )}
+      </Grid>
+
+      <Modal open={modal} languages={languages} variants={langVariants} />
+    </>
   );
 };
 
-Header.propTypes = {
-  firstbuttonlabel: PropTypes.string,
-  firstlinklabel: PropTypes.string,
-  firstbuttonmobile: PropTypes.string,
-  firstlinkmobile: PropTypes.string,
-
-  secondbuttonlabel: PropTypes.string,
-  secondlinklabel: PropTypes.string,
-  secondbuttonmobile: PropTypes.string,
-  secondlinkmobile: PropTypes.string,
-
-  thirdbuttonlabel: PropTypes.string,
-  thirdlinklabel: PropTypes.string,
-  thirdbuttonmobile: PropTypes.string,
-  thirdlinkmobile: PropTypes.string,
-
-  fourthbuttonlabel: PropTypes.string,
-  fourthlinklabel: PropTypes.string,
-  fourthbuttonmobile: PropTypes.string,
-  fourthlinkmobile: PropTypes.string,
-  urlLanguagePTbr: PropTypes.string,
-  urlLanguageEnUs: PropTypes.string,
-};
-
 Header.defaultProps = {
-  firstbuttonlabel: "Home",
-  firstlinklabel: "/",
-  firstbuttonmobile: "Home",
-  firstlinkmobile: "/",
+  home: "./",
+  currentLanguage: "pt",
 
-  secondbuttonlabel: "Sobre nós",
-  secondlinklabel: "/",
-  secondbuttonmobile: "Sobre nós",
-  secondlinkmobile: "/",
+  nav: [
+    {
+      label: "Home",
+      path: "/en/home",
+    },
+    {
+      label: "Sobre nós",
+      path: "#about-us",
+    },
+    {
+      label: "Como participar",
+      path: "#participate",
+    },
+    {
+      label: "Ranking",
+      path: "/en/ranking",
+    },
+  ],
 
-  thirdbuttonlabel: "Como Participar",
-  thirdlinklabel: "/",
-  thirdbuttonmobile: "Como Participar",
-  thirdlinkmobile: "/",
+  // languages defaults in Modal.js
 
-  fourthbuttonlabel: "Ranking",
-  fourthlinklabel: "/",
-  fourthbuttonmobile: "Ranking",
-  fourthlinkmobile: "/",
-
-  urlLanguagePTbr: "/",
-  urlLanguageEnUs: "/",
+  // TODO: get from backend
+  langVariants: [],
 };
 
 export default Header;

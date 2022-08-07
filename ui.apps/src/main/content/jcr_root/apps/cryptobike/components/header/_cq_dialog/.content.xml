@@ -26,105 +26,121 @@
           sling:resourceType="cq/gui/components/authoring/dialog">
    <content jcr:primaryType="nt:unstructured"
             sling:resourceType="granite/ui/components/coral/foundation/container">
-      <layout jcr:primaryType="nt:unstructured"
-              margin="{Boolean}false"
-              sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
       <items jcr:primaryType="nt:unstructured">
-         <column jcr:primaryType="nt:unstructured"
-                 sling:resourceType="granite/ui/components/coral/foundation/container">
+         <tabs jcr:primaryType="nt:unstructured"
+               sling:resourceType="granite/ui/components/coral/foundation/tabs">
             <items jcr:primaryType="nt:unstructured">
-               <firstbuttonlabel cq-msm-lockable="./firstbuttonlabel"
-                                 fieldLabel="firstbuttonlabel"
+               <general jcr:primaryType="nt:unstructured"
+                        jcr:title="General"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                  <layout jcr:primaryType="nt:unstructured"
+                          sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"/>
+                  <items jcr:primaryType="nt:unstructured">
+                     <column jcr:primaryType="nt:unstructured"
+                             sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                           <home cq-msm-lockable="./home"
+                                 fieldLabel="Home Path"
                                  jcr:primaryType="nt:unstructured"
-                                 name="./firstbuttonlabel"
-                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
-               <firstlinklabel cq-msm-lockable="./firstlinklabel"
-                               fieldLabel="firstlinklabel"
-                               jcr:primaryType="nt:unstructured"
-                               name="./firstlinklabel"
-                               sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
-               <firstbuttonmobile cq-msm-lockable="./firstbuttonmobile"
-                                  fieldLabel="firstbuttonmobile"
-                                  jcr:primaryType="nt:unstructured"
-                                  name="./firstbuttonmobile"
-                                  sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
-               <firstlinkmobile cq-msm-lockable="./firstlinkmobile"
-                                fieldLabel="firstlinkmobile"
+                                 name="./home"
+                                 rootPath="/content"
+                                 sling:resourceType="cq/gui/components/coral/common/form/pagefield"/>
+                           <language cq-msm-lockable="./language"
+                                     fieldLabel="Current Language"
+                                     jcr:primaryType="nt:unstructured"
+                                     name="./language"
+                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                        </items>
+                     </column>
+                  </items>
+               </general>
+               <navigation jcr:primaryType="nt:unstructured"
+                           jcr:title="Navigation"
+                           sling:resourceType="granite/ui/components/coral/foundation/container">
+                  <layout jcr:primaryType="nt:unstructured"
+                          sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"/>
+                  <items jcr:primaryType="nt:unstructured">
+                     <column jcr:primaryType="nt:unstructured"
+                             sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                           <nav composite="{Boolean}true"
+                                fieldLabel="Navigation"
                                 jcr:primaryType="nt:unstructured"
-                                name="./firstlinkmobile"
-                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
-               <secondbuttonlabel cq-msm-lockable="./secondbuttonlabel"
-                                  fieldLabel="secondbuttonlabel"
-                                  jcr:primaryType="nt:unstructured"
-                                  name="./secondbuttonlabel"
-                                  sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
-               <secondlinklabel cq-msm-lockable="./secondlinklabel"
-                                fieldLabel="secondlinklabel"
-                                jcr:primaryType="nt:unstructured"
-                                name="./secondlinklabel"
-                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
-               <secondbuttonmobile cq-msm-lockable="./secondbuttonmobile"
-                                   fieldLabel="secondbuttonmobile"
-                                   jcr:primaryType="nt:unstructured"
-                                   name="./secondbuttonmobile"
-                                   sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
-               <secondlinkmobile cq-msm-lockable="./secondlinkmobile"
-                                 fieldLabel="secondlinkmobile"
-                                 jcr:primaryType="nt:unstructured"
-                                 name="./secondlinkmobile"
-                                 sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
-               <thirdbuttonlabel cq-msm-lockable="./thirdbuttonlabel"
-                                 fieldLabel="thirdbuttonlabel"
-                                 jcr:primaryType="nt:unstructured"
-                                 name="./thirdbuttonlabel"
-                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
-               <thirdlinklabel cq-msm-lockable="./thirdlinklabel"
-                               fieldLabel="thirdlinklabel"
-                               jcr:primaryType="nt:unstructured"
-                               name="./thirdlinklabel"
-                               sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
-               <thirdbuttonmobile cq-msm-lockable="./thirdbuttonmobile"
-                                  fieldLabel="thirdbuttonmobile"
-                                  jcr:primaryType="nt:unstructured"
-                                  name="./thirdbuttonmobile"
-                                  sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
-               <thirdlinkmobile cq-msm-lockable="./thirdlinkmobile"
-                                fieldLabel="thirdlinkmobile"
-                                jcr:primaryType="nt:unstructured"
-                                name="./thirdlinkmobile"
-                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
-               <fourthbuttonlabel cq-msm-lockable="./fourthbuttonlabel"
-                                  fieldLabel="fourthbuttonlabel"
-                                  jcr:primaryType="nt:unstructured"
-                                  name="./fourthbuttonlabel"
-                                  sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
-               <fourthlinklabel cq-msm-lockable="./fourthlinklabel"
-                                fieldLabel="fourthlinklabel"
-                                jcr:primaryType="nt:unstructured"
-                                name="./fourthlinklabel"
-                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
-               <fourthbuttonmobile cq-msm-lockable="./fourthbuttonmobile"
-                                   fieldLabel="fourthbuttonmobile"
-                                   jcr:primaryType="nt:unstructured"
-                                   name="./fourthbuttonmobile"
-                                   sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
-               <fourthlinkmobile cq-msm-lockable="./fourthlinkmobile"
-                                 fieldLabel="fourthlinkmobile"
-                                 jcr:primaryType="nt:unstructured"
-                                 name="./fourthlinkmobile"
-                                 sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
-               <urlLanguagePTbr cq-msm-lockable="./urlLanguagePTbr"
-                                fieldLabel="urlLanguagePTbr"
-                                jcr:primaryType="nt:unstructured"
-                                name="./urlLanguagePTbr"
-                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
-               <urlLanguageEnUs cq-msm-lockable="./urlLanguageEnUs"
-                                fieldLabel="urlLanguageEnUs"
-                                jcr:primaryType="nt:unstructured"
-                                name="./urlLanguageEnUs"
-                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield">
+                              <field cq-msm-lockable="./nav"
+                                     jcr:primaryType="nt:unstructured"
+                                     name="./nav"
+                                     sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                 <items jcr:primaryType="nt:unstructured">
+                                    <label fieldLabel="Label"
+                                           jcr:primaryType="nt:unstructured"
+                                           name="./label"
+                                           sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                    <path fieldLabel="Path"
+                                          jcr:primaryType="nt:unstructured"
+                                          name="./path"
+                                          rootPath="/content"
+                                          sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
+                                 </items>
+                              </field>
+                           </nav>
+                        </items>
+                     </column>
+                  </items>
+               </navigation>
+               <language jcr:primaryType="nt:unstructured"
+                         jcr:title="Language"
+                         sling:resourceType="granite/ui/components/coral/foundation/container">
+                  <layout jcr:primaryType="nt:unstructured"
+                          sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"/>
+                  <items jcr:primaryType="nt:unstructured">
+                     <column jcr:primaryType="nt:unstructured"
+                             sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                           <languages composite="{Boolean}true"
+                                      fieldLabel="languages"
+                                      jcr:primaryType="nt:unstructured"
+                                      sling:resourceType="granite/ui/components/coral/foundation/form/multifield">
+                              <field cq-msm-lockable="./languages"
+                                     jcr:primaryType="nt:unstructured"
+                                     name="./languages"
+                                     sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                 <items jcr:primaryType="nt:unstructured">
+                                    <id fieldLabel="ID"
+                                        jcr:primaryType="nt:unstructured"
+                                        name="./id"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                    <name fieldLabel="Name"
+                                          jcr:primaryType="nt:unstructured"
+                                          name="./name"
+                                          sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                    <iconResType jcr:primaryType="nt:unstructured"
+                                                 name="./icon/sling:resourceType"
+                                                 sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
+                                                 value="core/wcm/components/image/v2/image"/>
+                                    <icon allowUpload="{Boolean}false"
+                                          autoStart="{Boolean}false"
+                                          class="cq-droptarget"
+                                          fieldLabel="Flag"
+                                          fileNameParameter="./icon/fileName"
+                                          fileReferenceParameter="./icon/fileReference"
+                                          jcr:primaryType="nt:unstructured"
+                                          mimeTypes="[image/gif,image/jpeg,image/png,image/webp,image/tiff,image/svg+xml]"
+                                          multiple="{Boolean}false"
+                                          name="./icon/file"
+                                          sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                          title="Drag to select image"
+                                          uploadUrl="${suffix.path}"
+                                          useHTML5="{Boolean}true"/>
+                                 </items>
+                              </field>
+                           </languages>
+                        </items>
+                     </column>
+                  </items>
+               </language>
             </items>
-         </column>
+         </tabs>
       </items>
    </content>
 </jcr:root>
