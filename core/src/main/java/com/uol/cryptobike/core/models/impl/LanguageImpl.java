@@ -18,15 +18,11 @@
 
 package com.uol.cryptobike.core.models.impl;
 
-import java.util.Collections;
-import java.util.List;
 import com.adobe.acs.commons.models.injectors.annotation.ChildResourceFromRequest;
 import com.adobe.cq.export.json.ComponentExporter;
 import com.adobe.cq.export.json.ExporterConstants;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.uol.cryptobike.core.models.Header;
+import com.adobe.cq.wcm.core.components.models.Image;
 import com.uol.cryptobike.core.models.Language;
-import com.uol.cryptobike.core.models.NavItem;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Exporter;
@@ -38,45 +34,36 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 @Model(adaptables = {
     SlingHttpServletRequest.class
 }, adapters = {
-    Header.class,
+    Language.class,
     ComponentExporter.class
-}, resourceType = "cryptobike/components/header")
+})
 @Exporter(name = ExporterConstants.SLING_MODEL_EXPORTER_NAME, extensions = ExporterConstants.SLING_MODEL_EXTENSION)
-public class HeaderImpl
-    implements Header
+public class LanguageImpl
+    implements Language
 {
 
     @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
-    private String home;
+    private String id;
     @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
-    private String language;
+    private String name;
     @ChildResourceFromRequest(injectionStrategy = InjectionStrategy.OPTIONAL)
-    private List<NavItem> nav;
-    @ChildResourceFromRequest(injectionStrategy = InjectionStrategy.OPTIONAL)
-    private List<Language> languages;
+    private Image icon;
     @SlingObject
     private Resource resource;
 
     @Override
-    public String getHome() {
-        return home;
+    public String getId() {
+        return id;
     }
 
     @Override
-    @JsonProperty("currentLanguage")
-    public String getLanguage() {
-        return language;
+    public String getName() {
+        return name;
     }
 
     @Override
-    public List<NavItem> getNav() {
-        return nav != null ? Collections.unmodifiableList(nav) : null;
-    }
-
-    @Override
-    @JsonProperty("languages")
-    public List<Language> getLanguages() {
-        return languages != null ? Collections.unmodifiableList(languages) : null;
+    public Image getIcon() {
+        return icon;
     }
 
     @Override
