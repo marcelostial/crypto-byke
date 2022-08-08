@@ -18,7 +18,9 @@
 
 package com.uol.cryptobike.core.models;
 
+import java.util.List;
 import com.adobe.cq.export.json.ComponentExporter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.osgi.annotation.versioning.ConsumerType;
 
 
@@ -32,40 +34,14 @@ public interface Header
 {
 
 
-    String getFirstbuttonlabel();
+    String getHome();
 
-    String getFirstlinklabel();
+    @JsonProperty("currentLanguage")
+    String getLanguage();
 
-    String getFirstbuttonmobile();
+    List<NavItem> getNav();
 
-    String getFirstlinkmobile();
-
-    String getSecondbuttonlabel();
-
-    String getSecondlinklabel();
-
-    String getSecondbuttonmobile();
-
-    String getSecondlinkmobile();
-
-    String getThirdbuttonlabel();
-
-    String getThirdlinklabel();
-
-    String getThirdbuttonmobile();
-
-    String getThirdlinkmobile();
-
-    String getFourthbuttonlabel();
-
-    String getFourthlinklabel();
-
-    String getFourthbuttonmobile();
-
-    String getFourthlinkmobile();
-
-    String getUrlLanguagePTbr();
-
-    String getUrlLanguageEnUs();
+    @JsonProperty("languages")
+    List<Language> getLanguages();
 
 }

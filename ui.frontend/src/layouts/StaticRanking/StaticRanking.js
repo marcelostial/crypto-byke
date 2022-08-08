@@ -12,20 +12,25 @@ const StaticRanking = ({ title, about, buttonTitle, buttonUrl }) => {
   const [rankings, setRankings] = React.useState([]);
 
   React.useEffect(() => {
-    getRankings().then((data) => setRankings(data));
+    getRankings().then(({ data }) => setRankings(data.ranking.slice(0, 3)));
   }, []);
 
   return (
     <Grid className="static-ranking--container">
-      <div className="static-ranking--title">
-        <Title text={title} />
-      </div>
+      <Title text={title} />
+
       <h5>
         <Text className="static-ranking--about" text={about} />
       </h5>
       <div className="static-ranking--content">
         {rankings &&
-          rankings.map((item, index) => <RankingCard key={index} {...item} />)}
+          rankings.map((item) => (
+            <RankingCard
+              key={item.ranking}
+              place={`${item.city}, ${item.state}`}
+              {...item}
+            />
+          ))}
       </div>
       <div className="static-ranking--button">
         <Button

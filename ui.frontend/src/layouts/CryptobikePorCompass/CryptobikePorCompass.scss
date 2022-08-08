@@ -1,0 +1,21 @@
+@import "../../styles/variables.scss";
+
+.by-compass {
+  background-color: white;
+
+  .text {
+    padding-top: 64px;
+    color: $grey-500;
+
+    b {
+      font-weight: 700;
+      color: $grey-500;
+    }
+  }
+
+  @include breakpoint("lg") {
+    .text {
+      padding-top: 24px;
+    }
+  }
+}
