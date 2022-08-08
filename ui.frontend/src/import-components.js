@@ -114,9 +114,14 @@ const Tour = withAsyncImport(() =>
   import(`./layouts/Tour/Tour`),
 );
 
+const CryptoPorCompass = withAsyncImport(() =>
+  import(`./layouts/CryptobikePorCompass/CryptobikePorCompass`),
+);
+
 MapTo("compass/components/blog-posts")(Blog);
 MapTo('cryptobike/components/header')(Header);
 MapTo('cryptobike/components/pedalar')(Pedalar);
 MapTo("cryptobike/components/tourdeterre")(Tour);
 MapTo('cryptobike/components/nossosnfts')(OurNFTs);
 MapTo('cryptobike/components/static-ranking')(StaticRanking);
+MapTo('cryptobike/components/por-compass')(CryptoPorCompass);
