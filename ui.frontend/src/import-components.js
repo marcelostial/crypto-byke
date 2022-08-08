@@ -109,6 +109,9 @@ const OurNFTs = withAsyncImport(() =>
 const StaticRanking = withAsyncImport(() =>
   import(`./layouts/StaticRanking/StaticRanking`),
 );
+const DynamicRanking = withAsyncImport(() =>
+  import(`./layouts/DynamicRanking/DynamicRanking`),
+);
 
 const Tour = withAsyncImport(() =>
   import(`./layouts/Tour/Tour`),
@@ -125,3 +128,4 @@ MapTo("cryptobike/components/tourdeterre")(Tour);
 MapTo('cryptobike/components/nossosnfts')(OurNFTs);
 MapTo('cryptobike/components/static-ranking')(StaticRanking);
 MapTo('cryptobike/components/por-compass')(CryptoPorCompass);
+MapTo('cryptobike/components/dynamic-ranking')(DynamicRanking);
