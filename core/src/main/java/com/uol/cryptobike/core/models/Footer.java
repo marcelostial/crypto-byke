@@ -42,4 +42,12 @@ public interface Footer
 
     String getInstagram();
 
+    String getHome();
+
+    String getAboutus();
+
+    String getHowtojoin();
+
+    String getRanking();
+
 }

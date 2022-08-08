@@ -63,6 +63,30 @@
                           jcr:primaryType="nt:unstructured"
                           name="./instagram"
                           sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
+               <home cq-msm-lockable="./home"
+                     fieldDescription="Path to Home"
+                     fieldLabel="Home"
+                     jcr:primaryType="nt:unstructured"
+                     name="./home"
+                     sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
+               <aboutus cq-msm-lockable="./aboutus"
+                        fieldDescription="Path to About Us"
+                        fieldLabel="Sobre Nós"
+                        jcr:primaryType="nt:unstructured"
+                        name="./aboutus"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
+               <howtojoin cq-msm-lockable="./howtojoin"
+                          fieldDescription="Path to How to join"
+                          fieldLabel="Como Participar"
+                          jcr:primaryType="nt:unstructured"
+                          name="./howtojoin"
+                          sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
+               <ranking cq-msm-lockable="./ranking"
+                        fieldDescription="Path to ranking"
+                        fieldLabel="ranking"
+                        jcr:primaryType="nt:unstructured"
+                        name="./ranking"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
             </items>
          </column>
       </items>

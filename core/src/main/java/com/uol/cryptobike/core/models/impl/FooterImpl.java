@@ -50,6 +50,14 @@ public class FooterImpl
     private String youtube;
     @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
     private String instagram;
+    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
+    private String home;
+    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
+    private String aboutus;
+    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
+    private String howtojoin;
+    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
+    private String ranking;
     @SlingObject
     private Resource resource;
 
@@ -76,6 +84,26 @@ public class FooterImpl
     @Override
     public String getInstagram() {
         return instagram;
+    }
+
+    @Override
+    public String getHome() {
+        return home;
+    }
+
+    @Override
+    public String getAboutus() {
+        return aboutus;
+    }
+
+    @Override
+    public String getHowtojoin() {
+        return howtojoin;
+    }
+
+    @Override
+    public String getRanking() {
+        return ranking;
     }
 
     @Override

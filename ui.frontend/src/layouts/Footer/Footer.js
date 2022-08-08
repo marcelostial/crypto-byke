@@ -9,13 +9,25 @@ import twitterlogo from "./assets/twitter.svg";
 import youtubelogo from "./assets/youtube.svg";
 import instagramlogo from "./assets/instagram.svg";
 
-const Footer = ({ linkedin, facebook, twitter, youtube, instagram }) => {
+const Footer = ({
+  linkedin,
+  facebook,
+  twitter,
+  youtube,
+  instagram,
+  home,
+  aboutus,
+  howtojoin,
+  ranking,
+}) => {
   return (
     <Grid className="footer--container">
       <div className="topcontainer">
         <div className="topleft">
           <div className="wrapper">
-            <img className="logo" src={logocompass} alt="Logo Compass" />
+            <a href={home}>
+              <img className="logo" src={logocompass} alt="Logo Compass" />
+            </a>
             <div className="imagelist">
               <a href={linkedin}>
                 <img src={linkedinlogo} alt="Logo linkedin" />
@@ -36,16 +48,16 @@ const Footer = ({ linkedin, facebook, twitter, youtube, instagram }) => {
           </div>
         </div>
         <div className="topright">
-          <a href="">
+          <a href={home}>
             <p>home</p>
           </a>
-          <a href="">
+          <a href={aboutus}>
             <p>sobre nós</p>
           </a>
-          <a href="">
+          <a href={howtojoin}>
             <p>Como participar</p>
           </a>
-          <a href="">
+          <a href={ranking}>
             <p>Ranking</p>
           </a>
         </div>
