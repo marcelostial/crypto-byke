@@ -18,30 +18,25 @@
 
 package com.uol.cryptobike.core.models;
 
-import java.util.List;
 import com.adobe.cq.export.json.ComponentExporter;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.adobe.cq.wcm.core.components.models.Image;
 import org.osgi.annotation.versioning.ConsumerType;
 
 
 /**
- * Defines the {@code Header} Sling Model used for the {@code cryptobike/components/header} component.
+ * Defines the {@code Language} Sling Model used for the multifield in {@code cryptobike/components/header} component.
  * 
  */
 @ConsumerType
-public interface Header
+public interface Language
     extends ComponentExporter
 {
 
 
-    String getHome();
+    String getId();
 
-    @JsonProperty("currentLanguage")
-    String getLanguage();
+    String getName();
 
-    List<NavItem> getNav();
-
-    @JsonProperty("languages")
-    List<Language> getLanguages();
+    Image getIcon();
 
 }

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ |  ***********************************************************************
+ |  Compass UOL CONFIDENTIAL
+ |  ___________________
+ |
+ |  Copyright 2022 Compass UOL
+ |  All Rights Reserved.
+ |
+ |  NOTICE:  All information contained herein is, and remains the property
+ |  of Compass UOL and its suppliers, if any. The intellectual and
+ |  technical concepts contained herein are proprietary to Compass UOL
+ |  and its suppliers and are protected by trade secret or copyright law.
+ |  Dissemination of this information or reproduction of this material
+ |  is strictly forbidden unless prior written permission is obtained
+ |  from Compass UOL.
+ |  ***********************************************************************
+-->
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="NossosNFTs"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+   <content jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+      <layout jcr:primaryType="nt:unstructured"
+              margin="{Boolean}false"
+              sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+      <items jcr:primaryType="nt:unstructured">
+         <column jcr:primaryType="nt:unstructured"
+                 sling:resourceType="granite/ui/components/coral/foundation/container">
+            <items jcr:primaryType="nt:unstructured">
+               <maintitle cq-msm-lockable="./maintitle"
+                          fieldLabel="Title"
+                          jcr:primaryType="nt:unstructured"
+                          name="./maintitle"
+                          sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+               <nftcards composite="{Boolean}true"
+                         fieldLabel="NFTCards"
+                         jcr:primaryType="nt:unstructured"
+                         sling:resourceType="granite/ui/components/coral/foundation/form/multifield">
+                  <field cq-msm-lockable="./nftcards"
+                         jcr:primaryType="nt:unstructured"
+                         name="./nftcards"
+                         sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                     <items jcr:primaryType="nt:unstructured">
+                        <IconResType jcr:primaryType="nt:unstructured"
+                                     name="./Icon/sling:resourceType"
+                                     sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
+                                     value="core/wcm/components/image/v2/image"/>
+                        <Icon allowUpload="{Boolean}false"
+                              autoStart="{Boolean}false"
+                              class="cq-droptarget"
+                              fieldLabel="Icon"
+                              fileNameParameter="./Icon/fileName"
+                              fileReferenceParameter="./Icon/fileReference"
+                              jcr:primaryType="nt:unstructured"
+                              mimeTypes="[image/gif,image/jpeg,image/png,image/webp,image/tiff,image/svg+xml]"
+                              multiple="{Boolean}false"
+                              name="./Icon/file"
+                              sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                              title="Drag to select image"
+                              uploadUrl="${suffix.path}"
+                              useHTML5="{Boolean}true"/>
+                        <label fieldDescription="Label to display on the link"
+                               fieldLabel="Label"
+                               jcr:primaryType="nt:unstructured"
+                               name="./label"
+                               sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                        <path fieldDescription="Path to the page"
+                              fieldLabel="Path"
+                              jcr:primaryType="nt:unstructured"
+                              name="./path"
+                              sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
+                     </items>
+                  </field>
+               </nftcards>
+            </items>
+         </column>
+      </items>
+   </content>
+</jcr:root>

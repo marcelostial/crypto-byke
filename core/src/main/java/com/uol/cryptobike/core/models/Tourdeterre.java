@@ -18,30 +18,25 @@
 
 package com.uol.cryptobike.core.models;
 
-import java.util.List;
 import com.adobe.cq.export.json.ComponentExporter;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.adobe.cq.wcm.core.components.models.Image;
 import org.osgi.annotation.versioning.ConsumerType;
 
 
 /**
- * Defines the {@code Header} Sling Model used for the {@code cryptobike/components/header} component.
+ * Defines the {@code Tourdeterre} Sling Model used for the {@code cryptobike/components/tourdeterre} component.
  * 
  */
 @ConsumerType
-public interface Header
+public interface Tourdeterre
     extends ComponentExporter
 {
 
 
-    String getHome();
+    String getTitle();
 
-    @JsonProperty("currentLanguage")
-    String getLanguage();
+    String getText();
 
-    List<NavItem> getNav();
-
-    @JsonProperty("languages")
-    List<Language> getLanguages();
+    Image getImage();
 
 }

@@ -20,28 +20,21 @@ package com.uol.cryptobike.core.models;
 
 import java.util.List;
 import com.adobe.cq.export.json.ComponentExporter;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import org.osgi.annotation.versioning.ConsumerType;
 
 
 /**
- * Defines the {@code Header} Sling Model used for the {@code cryptobike/components/header} component.
+ * Defines the {@code Nossosnfts} Sling Model used for the {@code cryptobike/components/nossosnfts} component.
  * 
  */
 @ConsumerType
-public interface Header
+public interface Nossosnfts
     extends ComponentExporter
 {
 
 
-    String getHome();
+    String getMaintitle();
 
-    @JsonProperty("currentLanguage")
-    String getLanguage();
-
-    List<NavItem> getNav();
-
-    @JsonProperty("languages")
-    List<Language> getLanguages();
+    List<NFTCards> getNftcards();
 
 }

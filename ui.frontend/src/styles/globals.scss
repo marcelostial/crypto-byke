@@ -3,17 +3,22 @@
 @import "./compass/slick.scss";
 @import url("https://unpkg.com/reset-css/reset.css");
 
-html,
-body {
+*,
+*::after,
+*::before {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
 
+html,
+body {
   background-color: $white;
-
   font-family: "Mulish", sans-serif;
   font-size: 16px;
   line-height: 24px;
-
   box-sizing: border-box;
 }
 
