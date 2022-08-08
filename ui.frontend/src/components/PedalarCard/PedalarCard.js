@@ -1,7 +1,7 @@
 import React from "react";
 import "./PedalarCard.scss";
 
-export const PedalarCard = ({ icon, title, description }) => {
+export const PedalarCard = ({ icon = {}, title, description }) => {
   return (
     <div className="pedalar--card">
       <img src={icon.src} className="icon" alt="svg" />

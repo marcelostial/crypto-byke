@@ -17,9 +17,8 @@ const StaticRanking = ({ title, about, buttonTitle, buttonUrl }) => {
 
   return (
     <Grid className="static-ranking--container">
-      <div className="static-ranking--title">
-        <Title text={title} />
-      </div>
+      <Title text={title} />
+
       <h5>
         <Text className="static-ranking--about" text={about} />
       </h5>

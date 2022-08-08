@@ -18,30 +18,22 @@
 
 package com.uol.cryptobike.core.models;
 
-import java.util.List;
 import com.adobe.cq.export.json.ComponentExporter;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import org.osgi.annotation.versioning.ConsumerType;
 
 
 /**
- * Defines the {@code Header} Sling Model used for the {@code cryptobike/components/header} component.
+ * Defines the {@code PorCompass} Sling Model used for the {@code cryptobike/components/por-compass} component.
  * 
  */
 @ConsumerType
-public interface Header
+public interface PorCompass
     extends ComponentExporter
 {
 
 
-    String getHome();
+    String getTitle();
 
-    @JsonProperty("currentLanguage")
-    String getLanguage();
-
-    List<NavItem> getNav();
-
-    @JsonProperty("languages")
-    List<Language> getLanguages();
+    String getText();
 
 }
