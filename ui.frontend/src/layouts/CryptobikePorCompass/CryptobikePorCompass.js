@@ -1,23 +1,16 @@
-import styles from "./CryptobikePorCompass.scss";
-import PropTypes from "prop-types";
-import Text from "../../components/Text/Text";
-import { Grid } from "../../components/Grid/Grid";
-import Title from "../../components/Title/Title";
+import React from "react";
+import { Grid, Text, Title } from "../../components";
+
+import "./CryptobikePorCompass.scss";
 
 const CryptoPorCompass = ({ title, text }) => {
   return (
-    <Grid className="CryptoPorCompass--container">
-      <Title text={title} variant={"light"} />
-      <div className="CryptoPorCompass--textContainer">
-        <Text text={text} richText={true} />
-      </div>
+    <Grid className="by-compass">
+      <Title text={title} variant="light" />
+
+      <Text text={text} className="text p3" />
     </Grid>
   );
-};
-
-CryptoPorCompass.propTypes = {
-  title: PropTypes.string,
-  text: PropTypes.string,
 };
 
 CryptoPorCompass.defaultProps = {
