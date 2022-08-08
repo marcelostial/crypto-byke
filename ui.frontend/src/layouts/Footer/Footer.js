@@ -14,32 +14,40 @@ const Footer = ({ linkedin, facebook, twitter, youtube, instagram }) => {
     <Grid className="footer--container">
       <div className="topcontainer">
         <div className="topleft">
-          {/* <a href={pathlogo}> */}
-          <img src={logocompass} alt="Logo Compass" />
-          {/* </a> */}
-          <div className="imagelist">
-            <a href={linkedin}>
-              <img src={linkedinlogo} alt="Logo linkedin" />
-            </a>
-            <a href={facebook}>
-              <img src={facebooklogo} alt="Logo facebook" />
-            </a>
-            <a href={twitter}>
-              <img src={twitterlogo} alt="Logo twitter" />
-            </a>
-            <a href={youtube}>
-              <img src={youtubelogo} alt="Logo youtube" />
-            </a>
-            <a href={instagram}>
-              <img src={instagramlogo} alt="Logo instagram" />
-            </a>
+          <div className="wrapper">
+            <img className="logo" src={logocompass} alt="Logo Compass" />
+            <div className="imagelist">
+              <a href={linkedin}>
+                <img src={linkedinlogo} alt="Logo linkedin" />
+              </a>
+              <a href={facebook}>
+                <img src={facebooklogo} alt="Logo facebook" />
+              </a>
+              <a href={twitter}>
+                <img src={twitterlogo} alt="Logo twitter" />
+              </a>
+              <a href={youtube}>
+                <img src={youtubelogo} alt="Logo youtube" />
+              </a>
+              <a href={instagram}>
+                <img src={instagramlogo} alt="Logo instagram" />
+              </a>
+            </div>
           </div>
         </div>
         <div className="topright">
-          <p>home</p>
-          <p>sobre nós</p>
-          <p>Como participar</p>
-          <p>Ranking</p>
+          <a href="">
+            <p>home</p>
+          </a>
+          <a href="">
+            <p>sobre nós</p>
+          </a>
+          <a href="">
+            <p>Como participar</p>
+          </a>
+          <a href="">
+            <p>Ranking</p>
+          </a>
         </div>
       </div>
 
