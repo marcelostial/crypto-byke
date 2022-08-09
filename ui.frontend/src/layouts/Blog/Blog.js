@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { Grid, Title, Button, BlogCard, Carousel } from "../../components";
 
@@ -8,12 +8,14 @@ import { decodeEntities } from "../../utils/decodeEntities";
 import "./Blog.scss";
 
 export const Blog = ({ title, buttonLabel, buttonUrl, buttonText }) => {
-  const [posts, setPosts] = React.useState([]);
+  const [posts, setPosts] = useState([]);
 
-  React.useEffect(() => {
-    getPosts().then((posts) => {
-      setPosts(posts.data);
-    });
+  useEffect(() => {
+    if (posts.length === 0) {
+      getPosts().then((posts) => {
+        setPosts(posts.data);
+      });
+    }
   });
 
   return (

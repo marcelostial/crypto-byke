@@ -162,6 +162,12 @@
   gap: 16px;
   min-width: 175px;
 
+  img{
+    width: 53px;
+    height: 40px;
+    object-fit: contain;
+  }
+
   div {
     display: flex;
     flex-direction: column;
