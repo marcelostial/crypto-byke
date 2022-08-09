@@ -38,6 +38,9 @@
   .topright {
     p {
       padding: 8px 0px;
+      &:hover {
+        color: #fece00;
+      }
     }
   }
 
