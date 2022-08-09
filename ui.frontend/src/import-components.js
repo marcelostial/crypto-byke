@@ -90,21 +90,13 @@ MapTo('cryptobike/components/breadcrumb')(BreadCrumbV2, {
 
 // --------------------------- Custom components ---------------------------
 
-const Blog = withAsyncImport(() =>
-  import(`./layouts/Blog/Blog`),
-);
+const Blog = withAsyncImport(() => import(`./layouts/Blog/Blog`));
 
-const Header = withAsyncImport(() =>
-import(`./layouts/Header/Header`),
-);
+const Header = withAsyncImport(() => import(`./layouts/Header/Header`));
 
-const Pedalar = withAsyncImport(() =>
-  import(`./layouts/Pedalar/pedalar`),
-);
+const Pedalar = withAsyncImport(() => import(`./layouts/Pedalar/pedalar`));
 
-const OurNFTs = withAsyncImport(() =>
-  import(`./layouts/OurNFTs/OurNFTs`),
-);
+const OurNFTs = withAsyncImport(() => import(`./layouts/OurNFTs/OurNFTs`));
 
 const StaticRanking = withAsyncImport(() =>
   import(`./layouts/StaticRanking/StaticRanking`),
@@ -113,19 +105,20 @@ const DynamicRanking = withAsyncImport(() =>
   import(`./layouts/DynamicRanking/DynamicRanking`),
 );
 
-const Tour = withAsyncImport(() =>
-  import(`./layouts/Tour/Tour`),
-);
+const Tour = withAsyncImport(() => import(`./layouts/Tour/Tour`));
 
 const CryptoPorCompass = withAsyncImport(() =>
   import(`./layouts/CryptobikePorCompass/CryptobikePorCompass`),
 );
 
-MapTo("compass/components/blog-posts")(Blog);
+const banner = withAsyncImport(() => import(`./layouts/Banner/banner`));
+
+MapTo('compass/components/blog-posts')(Blog);
 MapTo('cryptobike/components/header')(Header);
 MapTo('cryptobike/components/pedalar')(Pedalar);
-MapTo("cryptobike/components/tourdeterre")(Tour);
+MapTo('cryptobike/components/tourdeterre')(Tour);
 MapTo('cryptobike/components/nossosnfts')(OurNFTs);
 MapTo('cryptobike/components/static-ranking')(StaticRanking);
 MapTo('cryptobike/components/por-compass')(CryptoPorCompass);
 MapTo('cryptobike/components/dynamic-ranking')(DynamicRanking);
+MapTo('cryptobike/components/banner')(banner);
