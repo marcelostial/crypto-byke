@@ -11,14 +11,15 @@
     display: none;
 }
 
-
 .decoration-container {
+    display: none;
     width: 100%;
     position: absolute;
     bottom: 0;
-    height: 43%;
-    background-image: url("../../assets/Decoration.svg");
-    background-size: cover;
+    height: 100%;
+    background-image: url("../../assets/decoration--section--download.svg");
+    background-size: contain;
+    background-position: bottom;
     background-repeat: no-repeat;
     z-index: 1;
     left: 0;
@@ -96,40 +97,15 @@
     height: 64px;
 }
 
-.tel-container {
-    background-image: url("../../assets/tel.svg");
-    position: absolute;
-    bottom: 0;
-    left: 61.7%;
-    height: 90%;
-    background-repeat: no-repeat;
-    background-position: bottom;
-    width: 100%;
-    max-width: 473px;
-    background-size: 99.9%;
-}
-
 @media (min-width: 1700px) {
     .container-global-download {
         background-position: unset;
         max-height: unset;
     }
 
-    .tel-container {
-        background-size: 99.5%;
-        max-width: 670px;
-        height: 100%;
-    }
-
     .container-buttons-download {
-        padding-top: 15%;
+        padding-top: 21%;
         padding-bottom: 13%;
-    }
-
-    .decoration-container {
-        height: 100%;
-        background-position: bottom;
-        background-size: contain;
     }
 
     .container-text {
@@ -141,35 +117,27 @@
     }
 }
 
-@media (max-width: 1290px) {
-    .tel-container {
-        left: 60%;
-    }
-}
 
 @media (max-width: 1200px) {
-    .tel-container {
-        max-width: 400px;
-    }
 
     .container-buttons-download {
         padding-top: 16%;
         padding-bottom: unset;
     }
 
-    .decoration-container {
-        height: 30%;
+    .container-global-download {
+        background: url(../../assets/image_background.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .decoration-container{
+        display: block;
     }
 }
 
 @media (max-width: 992px) {
-
-    .tel-container {
-        left: 48.5%;
-        background-size: 90%;
-        width: 50%;
-    }
-
 
 
     .container-buttons-download {
@@ -191,21 +159,9 @@
     .fourthtextlabel {
         height: 60%;
     }
-
-    .container-global-download {
-        background: url(../../assets/image_background.svg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-    }
-
 }
 
 @media (max-width: 768px) {
-    .tel-container {
-        left: 50%;
-        max-width: 280px;
-    }
 
     .container-text {
         flex-direction: column;
@@ -238,10 +194,6 @@
         height: unset;
     }
 
-    .decoration-container {
-        background-size: 100% 150%;
-    }
-
     .sub-container-download {
         padding-bottom: 50%;
         gap: unset;
@@ -263,13 +215,18 @@
 
 @media (max-width: 576px) {
 
+     
+    .decoration-container{
+        display: none;
+    }
+
     .container-global-download {
         background-image: url("../../assets/fundomobile.svg");
         background-position: unset;
     }
 
     .decoration-container {
-        background-image: url("../../assets/Decorationmobile.svg");
+        background-image: url("../../assets/decoration--mobile--download.svg");
         background-size: 100%;
         background-position: bottom;
     }

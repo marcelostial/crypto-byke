@@ -60,8 +60,6 @@ const SectionDownload = ({
           </div>
         </div>
           <div className="decoration-container">
-          </div>
-        <div className="tel-container">
         </div>
       </Grid>
     </>
