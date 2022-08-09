@@ -5,8 +5,6 @@
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
-    max-height: 800px;
-    background-position: center;
 }
 
 .LogoVertical-mobile {
@@ -33,6 +31,7 @@
     position: relative;
     z-index: 2;
     gap: 50px;
+    padding-top: 10px;
 }
 
 .container-text {
@@ -95,7 +94,6 @@
 .LogoVertical {
     width: 283px;
     height: 64px;
-    padding-top: 10px;
 }
 
 .tel-container {

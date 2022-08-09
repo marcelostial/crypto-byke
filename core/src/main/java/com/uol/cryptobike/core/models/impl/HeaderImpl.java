@@ -18,9 +18,15 @@
 
 package com.uol.cryptobike.core.models.impl;
 
+import java.util.Collections;
+import java.util.List;
+import com.adobe.acs.commons.models.injectors.annotation.ChildResourceFromRequest;
 import com.adobe.cq.export.json.ComponentExporter;
 import com.adobe.cq.export.json.ExporterConstants;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.uol.cryptobike.core.models.Header;
+import com.uol.cryptobike.core.models.Language;
+import com.uol.cryptobike.core.models.NavItem;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Exporter;
@@ -41,132 +47,36 @@ public class HeaderImpl
 {
 
     @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
-    private String firstbuttonlabel;
+    private String home;
     @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
-    private String firstlinklabel;
-    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
-    private String firstbuttonmobile;
-    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
-    private String firstlinkmobile;
-    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
-    private String secondbuttonlabel;
-    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
-    private String secondlinklabel;
-    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
-    private String secondbuttonmobile;
-    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
-    private String secondlinkmobile;
-    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
-    private String thirdbuttonlabel;
-    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
-    private String thirdlinklabel;
-    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
-    private String thirdbuttonmobile;
-    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
-    private String thirdlinkmobile;
-    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
-    private String fourthbuttonlabel;
-    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
-    private String fourthlinklabel;
-    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
-    private String fourthbuttonmobile;
-    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
-    private String fourthlinkmobile;
-    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
-    private String urlLanguagePTbr;
-    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
-    private String urlLanguageEnUs;
+    private String language;
+    @ChildResourceFromRequest(injectionStrategy = InjectionStrategy.OPTIONAL)
+    private List<NavItem> nav;
+    @ChildResourceFromRequest(injectionStrategy = InjectionStrategy.OPTIONAL)
+    private List<Language> languages;
     @SlingObject
     private Resource resource;
 
     @Override
-    public String getFirstbuttonlabel() {
-        return firstbuttonlabel;
+    public String getHome() {
+        return home;
     }
 
     @Override
-    public String getFirstlinklabel() {
-        return firstlinklabel;
+    @JsonProperty("currentLanguage")
+    public String getLanguage() {
+        return language;
     }
 
     @Override
-    public String getFirstbuttonmobile() {
-        return firstbuttonmobile;
+    public List<NavItem> getNav() {
+        return nav != null ? Collections.unmodifiableList(nav) : null;
     }
 
     @Override
-    public String getFirstlinkmobile() {
-        return firstlinkmobile;
-    }
-
-    @Override
-    public String getSecondbuttonlabel() {
-        return secondbuttonlabel;
-    }
-
-    @Override
-    public String getSecondlinklabel() {
-        return secondlinklabel;
-    }
-
-    @Override
-    public String getSecondbuttonmobile() {
-        return secondbuttonmobile;
-    }
-
-    @Override
-    public String getSecondlinkmobile() {
-        return secondlinkmobile;
-    }
-
-    @Override
-    public String getThirdbuttonlabel() {
-        return thirdbuttonlabel;
-    }
-
-    @Override
-    public String getThirdlinklabel() {
-        return thirdlinklabel;
-    }
-
-    @Override
-    public String getThirdbuttonmobile() {
-        return thirdbuttonmobile;
-    }
-
-    @Override
-    public String getThirdlinkmobile() {
-        return thirdlinkmobile;
-    }
-
-    @Override
-    public String getFourthbuttonlabel() {
-        return fourthbuttonlabel;
-    }
-
-    @Override
-    public String getFourthlinklabel() {
-        return fourthlinklabel;
-    }
-
-    @Override
-    public String getFourthbuttonmobile() {
-        return fourthbuttonmobile;
-    }
-
-    @Override
-    public String getFourthlinkmobile() {
-        return fourthlinkmobile;
-    }
-
-    @Override
-    public String getUrlLanguagePTbr() {
-        return urlLanguagePTbr;
-    }
-
-    @Override
-    public String getUrlLanguageEnUs() {
-        return urlLanguageEnUs;
+    @JsonProperty("languages")
+    public List<Language> getLanguages() {
+        return languages != null ? Collections.unmodifiableList(languages) : null;
     }
 
     @Override

@@ -16,23 +16,6 @@
     padding: 96px 16px;
   }
 
-  .static-ranking--title {
-    div {
-      h2 {
-        font-weight: 800;
-        font-size: 40px !important;
-        line-height: 60px;
-        width: fit-content;
-
-        @include breakpoint("lg") {
-          font-weight: 700;
-          font-size: 24px !important;
-          line-height: 36px;
-        }
-      }
-    }
-  }
-
   .static-ranking--about {
     line-height: 36px;
     margin: 24px 0 64px;
