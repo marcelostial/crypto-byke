@@ -16,34 +16,52 @@ const SectionDownload = ({
   return (
     <>
       <Grid className="container-global-download">
+      <img
+            src={LogoVertical}
+            className="LogoVertical-mobile"
+            draggable="false"
+            alt="logo"
+          ></img>
         <div className="sub-container-download">
-          <img src={LogoVertical} className="LogoVertical" draggable="false" alt="logo"></img>
+        <img
+            src={LogoVertical}
+            className="LogoVertical"
+            draggable="false"
+            alt="logo"
+          ></img>
           <div className="container-text">
             <Text text={firsttextlabel} className="textlabel" />
             <Text text={secondtextlabel} className="secondtextlabel" />
-            <img className="Arrow" src={Arrow} draggable="false" alt="arrow"></img>
+            <img
+              className="Arrow"
+              src={Arrow}
+              draggable="false"
+              alt="arrow"
+            ></img>
             <div className="container-text-second">
-            <Text text={thirdtextlabel} className="textlabel" />
-            <Text text={fourthtextlabel} className="fourthtextlabel" />
+              <Text text={thirdtextlabel} className="thirdtextlabel" />
+              <div className="line-text-fourth">
+              <Text text={fourthtextlabel} className="fourthtextlabel" />
+              </div>
+              ?
             </div>
-
           </div>
           <div className="container-buttons-download">
-        <Download
-          label="Baixe agora na <b>Apple Store<b/></p>"
-          icon="apple"
-          url={urlbuttonapple}
-        />
-        <Download
-          label="Baixe agora no <b>Google Play<b/></p>"
-          icon="google"
-          url={urlbuttongoogle}
-        />
-      </div>
+            <Download
+              label="Baixe agora na <b>Apple Store<b/></p>"
+              icon="apple"
+              url={urlbuttonapple}
+            />
+            <Download
+              label="Baixe agora no <b>Google Play<b/></p>"
+              icon="google"
+              url={urlbuttongoogle}
+            />
+          </div>
         </div>
-        <div className="background-page">
-          <div className="tel-container"></div>
-          <div className="decoration-container"></div>
+          <div className="decoration-container">
+          </div>
+        <div className="tel-container">
         </div>
       </Grid>
     </>
@@ -59,7 +77,7 @@ SectionDownload.propTypes = {
 };
 
 SectionDownload.defaultProps = {
-  firsttextlabel: "Whats",
+  firsttextlabel: 'Whats',
   secondtextlabel: "the north",
   thirdtextlabel: "for the",
   fourthtextlabel: "environment",

@@ -4,59 +4,60 @@
     background: url(../../assets/BackgroundDownload.svg);
     position: relative;
     background-repeat: no-repeat;
+    background-size: cover;
+    max-height: 800px;
+    background-position: center;
 }
 
-.background-page {
-    position: absolute;
+.LogoVertical-mobile {
+    display: none;
+}
+
+
+.decoration-container {
     width: 100%;
-    height: 300px;
+    position: absolute;
     bottom: 0;
+    height: 43%;
+    background-image: url("../../assets/Decoration.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1;
     left: 0;
 }
 
-.decoration-container {
-    background: url(../../assets/Decoration.svg);
-    background-size: auto;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 300px;
-}
 
 .sub-container-download {
+    display: flex;
+    flex-direction: column;
     position: relative;
-    z-index: 1;
+    z-index: 2;
+    gap: 50px;
 }
 
 .container-text {
     display: flex;
     flex-direction: column;
-}
-
-.textlabel {
     font-family: 'Mulish';
     font-style: normal;
     font-weight: 800;
     font-size: 48px;
     line-height: 60px;
-
-    /* Tons de Cinza/White */
-
     color: #FFFFFF;
+    position: relative;
+    width: 495px;
+    padding-top: 27px
+}
 
+.container-buttons-download {
+    display: flex;
+    gap: 30px;
+    padding-top: 65px;
+    padding-bottom: 66px;
 }
 
 .secondtextlabel {
-    font-family: 'Mulish';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 48px;
-    line-height: 60px;
-
-    /* Tons de Cinza/White */
-
-    color: #FFFFFF;
     margin-left: 56px;
-
 }
 
 .fourthtextlabel {
@@ -65,16 +66,21 @@
     font-weight: 500;
     font-size: 48px;
     line-height: 60px;
-
-    /* Cor Primária/Primary-200 */
-
     color: #FECE00;
 
 }
 
+.line-text-fourth {
+    border-bottom: 8px solid #FFFFFF;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .Arrow {
     position: absolute;
-    left: 25.95%;
+    left: 54.95%;
     right: 4.85%;
     top: 0%;
     bottom: 51.69%;
@@ -82,11 +88,343 @@
 
 .container-text-second {
     display: flex;
-    width: 100%;
-    gap: 15px;
+    width: 600px;
+    grid-gap: 2px;
 }
 
 .LogoVertical {
     width: 283px;
     height: 64px;
+    padding-top: 10px;
+}
+
+.tel-container {
+    background-image: url("../../assets/tel.svg");
+    position: absolute;
+    bottom: 0;
+    left: 61.7%;
+    height: 90%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    width: 100%;
+    max-width: 473px;
+    background-size: 99.9%;
+}
+
+@media (min-width: 1700px) {
+    .container-global-download {
+        background-position: unset;
+        max-height: unset;
+    }
+
+    .tel-container {
+        background-size: 99.5%;
+        max-width: 670px;
+        height: 100%;
+    }
+
+    .container-buttons-download {
+        padding-top: 15%;
+        padding-bottom: 13%;
+    }
+
+    .decoration-container {
+        height: 100%;
+        background-position: bottom;
+        background-size: contain;
+    }
+
+    .container-text {
+        padding-top: 8%;
+    }
+
+    .Arrow {
+        top: 25%;
+    }
+}
+
+@media (max-width: 1290px) {
+    .tel-container {
+        left: 60%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .tel-container {
+        max-width: 400px;
+    }
+
+    .container-buttons-download {
+        padding-top: 16%;
+        padding-bottom: unset;
+    }
+
+    .decoration-container {
+        height: 30%;
+    }
+}
+
+@media (max-width: 992px) {
+
+    .tel-container {
+        left: 48.5%;
+        background-size: 90%;
+        width: 50%;
+    }
+
+
+
+    .container-buttons-download {
+        padding-top: 40%;
+        padding-bottom: unset;
+    }
+
+    .Arrow {
+        width: 90px;
+        height: 90px;
+    }
+
+
+    .container-text-second {
+        grid-gap: 10px;
+        align-items: center;
+    }
+
+    .fourthtextlabel {
+        height: 60%;
+    }
+
+    .container-global-download {
+        background: url(../../assets/image_background.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .tel-container {
+        left: 50%;
+        max-width: 280px;
+    }
+
+    .container-text {
+        flex-direction: column;
+        font-size: 28px;
+        line-height: 42px;
+    }
+
+    .Arrow {
+        left: 30%;
+        top: 10%;
+
+    }
+
+    .container-text-second {
+        width: unset;
+    }
+
+    .secondtextlabel {
+        text-align: unset;
+        margin-left: 0%;
+    }
+
+    .thirdtextlabel {
+        padding: unset;
+        margin: unset;
+    }
+
+    .fourthtextlabel {
+        font-size: 28px;
+        height: unset;
+    }
+
+    .decoration-container {
+        background-size: 100% 150%;
+    }
+
+    .sub-container-download {
+        padding-bottom: 50%;
+        gap: unset;
+    }
+
+    .line-text-fourth {
+        width: 179px;
+        height: 24px;
+        border-bottom: 4px solid #FFFFFF;
+    }
+
+    .container-buttons-download {
+        padding: unset;
+        position: absolute;
+        top: 90%;
+    }
+
+}
+
+@media (max-width: 576px) {
+
+    .container-global-download {
+        background-image: url("../../assets/fundomobile.svg");
+        background-position: unset;
+    }
+
+    .decoration-container {
+        background-image: url("../../assets/Decorationmobile.svg");
+        background-size: 100%;
+        background-position: bottom;
+    }
+
+    .container-text {
+        padding-top: 6%;
+        padding-bottom: 94%;
+    }
+
+    .sub-container-download {
+        padding: unset;
+    }
+
+    .tel-container {
+        left: 50%;
+        background-image: url("../../assets/telmobile.svg");
+        background-repeat: no-repeat;
+        left: 50%;
+        max-width: unset;
+        background-size: 100%;
+        width: 50%;
+        height: 85%;
+    }
+
+    .LogoVertical {
+        display: none;
+    }
+
+    .LogoVertical-mobile {
+        display: block;
+        position: absolute;
+        top: 40px;
+        width: 141.33px;
+        height: 32px;
+        padding: unset;
+    }
+
+    .container-buttons-download {
+        position: absolute;
+
+        gap: 16px;
+        top: 95%;
+    }
+
+    .Arrow {
+        left: 48%;
+        top: 0;
+    }
+
+    .container-text-second {
+        width: 320px;
+    }
+
+
+    .container-text {
+        width: 300px;
+    }
+
+}
+
+@media (max-width: 510px) {
+    .container-buttons-download {
+        height: 68px;
+    }
+
+    .container-buttons-download .download--container .download--label {
+        font-size: 16px;
+        line-height: 25px;
+
+    }
+}
+
+@media (max-width: 482px) {
+    .container-buttons-download {
+        gap: 20px;
+    }
+
+    .container-buttons-download .download--container .download--label {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+
+    .container-buttons-download .download--container .download--icon {
+        width: 24px;
+        height: 24px;
+
+    }
+}
+
+
+@media (max-width: 450px) {
+    .container-text {
+        padding-bottom: 84%;
+    }
+
+    .container-buttons-download .download--container {
+        gap: 10px;
+    }
+
+    .container-buttons-download .download--container .download--label {
+        font-size: 12px;
+        line-height: 18px;
+
+    }
+
+
+
+}
+
+@media (max-width:380px) {
+    .container-buttons-download {
+        gap: 16px;
+        width: 328px;
+        height: 67px;
+        padding: 0;
+        top: 100%;
+        left: -4%;
+    }
+}
+
+@media (max-width:350px) {
+    .container-buttons-download {
+        width: 99%;
+        height: 67px;
+        left: unset;
+    }
+
+    .container-buttons-download .download--container .download--label {
+        font-size: 9px;
+        line-height: 12px;
+    }
+
+    .container-text-second {
+        width: 100%;
+    }
+
+    .fourthtextlabel {
+        font-size: 18px;
+    }
+
+    .container-text {
+        line-height: 22px;
+        font-size: 18px;
+        width: 90%;
+    }
+
+    .Arrow {
+        width: 50px;
+        height: 50px;
+    }
+
+    .line-text-fourth {
+        width: 100px;
+    }
 }
