@@ -26,15 +26,15 @@ const Pedalar = ({ maintitle, cards }) => {
   );
 };
 
-// Pedalar.defaultProps = {
-//   maintitle: "Pedalar",
-//   cards: [
-//     {
-//       icon: "",
-//       title: "Default Title",
-//       description: "Default Description",
-//     },
-//   ],
-// };
+Pedalar.defaultProps = {
+  maintitle: "Pedalar",
+  cards: [
+    {
+      icon: "",
+      title: "Default Title",
+      description: "Default Description",
+    },
+  ],
+};
 
 export default Pedalar;

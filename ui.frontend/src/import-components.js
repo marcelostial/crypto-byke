@@ -116,6 +116,10 @@ const DynamicRanking = withAsyncImport(() =>
   import(`./layouts/DynamicRanking/DynamicRanking`),
 );
 
+const Footer = withAsyncImport(() =>
+  import(`./layouts/Footer/Footer`),
+);
+
 const Tour = withAsyncImport(() =>
   import(`./layouts/Tour/Tour`),
 );
