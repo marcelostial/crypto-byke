@@ -18,9 +18,13 @@
 
 package com.uol.cryptobike.core.models.impl;
 
+import java.util.Collections;
+import java.util.List;
+import com.adobe.acs.commons.models.injectors.annotation.ChildResourceFromRequest;
 import com.adobe.cq.export.json.ComponentExporter;
 import com.adobe.cq.export.json.ExporterConstants;
 import com.uol.cryptobike.core.models.Footer;
+import com.uol.cryptobike.core.models.FooterLinks;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Exporter;
@@ -53,11 +57,13 @@ public class FooterImpl
     @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
     private String home;
     @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
-    private String aboutus;
+    private String bottomtextleft;
     @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
-    private String howtojoin;
+    private String bottomtextright;
     @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
-    private String ranking;
+    private String bottomrightlink;
+    @ChildResourceFromRequest(injectionStrategy = InjectionStrategy.OPTIONAL)
+    private List<FooterLinks> footerlinks;
     @SlingObject
     private Resource resource;
 
@@ -92,18 +98,23 @@ public class FooterImpl
     }
 
     @Override
-    public String getAboutus() {
-        return aboutus;
+    public String getBottomtextleft() {
+        return bottomtextleft;
     }
 
     @Override
-    public String getHowtojoin() {
-        return howtojoin;
+    public String getBottomtextright() {
+        return bottomtextright;
     }
 
     @Override
-    public String getRanking() {
-        return ranking;
+    public String getBottomrightlink() {
+        return bottomrightlink;
+    }
+
+    @Override
+    public List<FooterLinks> getFooterlinks() {
+        return footerlinks != null ? Collections.unmodifiableList(footerlinks) : null;
     }
 
     @Override

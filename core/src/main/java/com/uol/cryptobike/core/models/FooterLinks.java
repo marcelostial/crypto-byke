@@ -18,39 +18,22 @@
 
 package com.uol.cryptobike.core.models;
 
-import java.util.List;
 import com.adobe.cq.export.json.ComponentExporter;
 import org.osgi.annotation.versioning.ConsumerType;
 
 
 /**
- * Defines the {@code Footer} Sling Model used for the {@code cryptobike/components/footer} component.
+ * Defines the {@code FooterLinks} Sling Model used for the multifield in {@code cryptobike/components/footer} component.
  * 
  */
 @ConsumerType
-public interface Footer
+public interface FooterLinks
     extends ComponentExporter
 {
 
 
-    String getLinkedin();
+    String getPath();
 
-    String getFacebook();
-
-    String getTwitter();
-
-    String getYoutube();
-
-    String getInstagram();
-
-    String getHome();
-
-    String getBottomtextleft();
-
-    String getBottomtextright();
-
-    String getBottomrightlink();
-
-    List<FooterLinks> getFooterlinks();
+    String getLabel();
 
 }
