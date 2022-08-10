@@ -4,5 +4,6 @@ import OurNFTs from "./OurNFTs/OurNFTs";
 import Pedalar from "./Pedalar/Pedalar";
 import StaticRanking from "./StaticRanking/StaticRanking";
 import Tour from "./Tour/Tour";
+import Footer from "./Footer/Footer";
 
-export { Blog, Header, OurNFTs, Pedalar, StaticRanking, Tour };
+export { Blog, Header, OurNFTs, Pedalar, StaticRanking, Tour, Footer };

@@ -109,8 +109,13 @@ const OurNFTs = withAsyncImport(() =>
 const StaticRanking = withAsyncImport(() =>
   import(`./layouts/StaticRanking/StaticRanking`),
 );
+
 const DynamicRanking = withAsyncImport(() =>
   import(`./layouts/DynamicRanking/DynamicRanking`),
+);
+
+const Footer = withAsyncImport(() =>
+  import(`./layouts/Footer/Footer`),
 );
 
 const Tour = withAsyncImport(() =>
@@ -127,6 +132,7 @@ const YellowDownload = withAsyncImport(() =>
 
 MapTo("compass/components/blog-posts")(Blog);
 MapTo('cryptobike/components/header')(Header);
+MapTo('cryptobike/components/footer')(Footer);
 MapTo('cryptobike/components/pedalar')(Pedalar);
 MapTo("cryptobike/components/tourdeterre")(Tour);
 MapTo('cryptobike/components/nossosnfts')(OurNFTs);
