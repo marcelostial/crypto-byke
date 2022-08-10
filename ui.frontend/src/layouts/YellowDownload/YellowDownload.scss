@@ -1,0 +1,120 @@
+@import "../../styles/variables.scss";
+
+.download-app--container {
+  background-color: $primary-200;
+
+  @include breakpoint("md") {
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+  }
+
+  .grid--inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+
+    @include breakpoint("lg") {
+      flex-direction: column;
+    }
+
+    .download-app--sub-container {
+      @include breakpoint("lg") {
+        display: flex;
+        flex-direction: column;
+        gap: 75px;
+      }
+    }
+
+    .download-app--heading {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-width: 537px;
+      margin-bottom: 64px;
+
+      @include breakpoint("lg") {
+        gap: 16px;
+        max-width: unset;
+        margin-bottom: 0px;
+      }
+
+      .title--text {
+        font-size: 40px;
+        line-height: 60px;
+        .title--underline {
+          display: none;
+        }
+      }
+      .text--container {
+        line-height: 30px;
+      }
+
+      @include breakpoint("sm") {
+        .title--text {
+          font-size: 24px;
+          font-weight: 700;
+          line-height: 36px;
+        }
+        .text--container {
+          font-size: 18px;
+          line-height: 27px;
+        }
+      }
+    }
+
+    .download-app--background-mobile {
+      display: none;
+      img {
+        object-fit: contain;
+      }
+
+      @include breakpoint("lg") {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    .download-app--stores {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+
+      @include breakpoint("lg") {
+        justify-content: center;
+      }
+
+      .download--container {
+        &:hover {
+          box-shadow: 0px 0px 0px 1px rgba(0, 0, 0);
+        }
+      }
+
+      @include breakpoint("sm") {
+        gap: 16px;
+        justify-content: space-between;
+        .download--container {
+          gap: 8px;
+          .download--icon {
+            width: 24px;
+          }
+          .text--container {
+            font-size: 12px;
+            line-height: 18px;
+            b {
+              font-size: 14px;
+              line-height: 21px;
+              font-weight: 700;
+            }
+          }
+        }
+      }
+    }
+
+    .download-app--background {
+      margin-bottom: -$padding-y;
+      @include breakpoint("lg") {
+        display: none;
+      }
+    }
+  }
+}

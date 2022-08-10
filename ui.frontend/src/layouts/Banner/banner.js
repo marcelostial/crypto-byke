@@ -6,7 +6,7 @@ const banner = ({ title, text }) => {
   return (
     <Grid className="banner--container">
       <div className="content--container">
-        <p className="title">{title}</p>
+        <h2 className="title">{title}</h2>
         <p className="text">{text}</p>
       </div>
     </Grid>
@@ -20,8 +20,7 @@ banner.propTypes = {
 
 banner.defaultProps = {
   title: "TOUR DE TERRE",
-
-  text: `Pedalar é um ato de grande valor. Baixe o aplicativo. Participe do Tour de Terre. Ganhe NFTs exclusivos.`,
+  text: "Pedalar é um ato de grande valor. Baixe o aplicativo. Participe do Tour de Terre. Ganhe NFTs exclusivos.",
 };
 
 export default banner;
