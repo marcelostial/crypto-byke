@@ -101,24 +101,37 @@ const OurNFTs = withAsyncImport(() => import(`./layouts/OurNFTs/OurNFTs`));
 const StaticRanking = withAsyncImport(() =>
   import(`./layouts/StaticRanking/StaticRanking`),
 );
+
 const DynamicRanking = withAsyncImport(() =>
   import(`./layouts/DynamicRanking/DynamicRanking`),
 );
 
-const Tour = withAsyncImport(() => import(`./layouts/Tour/Tour`));
+const Footer = withAsyncImport(() =>
+  import(`./layouts/Footer/Footer`),
+);
+
+const Tour = withAsyncImport(() =>
+  import(`./layouts/Tour/Tour`),
+);
 
 const CryptoPorCompass = withAsyncImport(() =>
   import(`./layouts/CryptobikePorCompass/CryptobikePorCompass`),
+);
+
+const YellowDownload = withAsyncImport(() =>
+  import(`./layouts/YellowDownload/YellowDownload`),
 );
 
 const banner = withAsyncImport(() => import(`./layouts/Banner/banner`));
 
 MapTo('compass/components/blog-posts')(Blog);
 MapTo('cryptobike/components/header')(Header);
+MapTo('cryptobike/components/footer')(Footer);
 MapTo('cryptobike/components/pedalar')(Pedalar);
 MapTo('cryptobike/components/tourdeterre')(Tour);
 MapTo('cryptobike/components/nossosnfts')(OurNFTs);
 MapTo('cryptobike/components/static-ranking')(StaticRanking);
 MapTo('cryptobike/components/por-compass')(CryptoPorCompass);
 MapTo('cryptobike/components/dynamic-ranking')(DynamicRanking);
+MapTo('cryptobike/components/yellow-download')(YellowDownload);
 MapTo('cryptobike/components/banner')(banner);
