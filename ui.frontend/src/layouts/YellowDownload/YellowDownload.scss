@@ -4,7 +4,8 @@
   background-color: $primary-200;
 
   @include breakpoint("md") {
-    padding: 32px 16px;
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
   }
 
   .grid--inner {
