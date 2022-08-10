@@ -5,10 +5,36 @@
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
+    max-height: 800px;
+
+    @include breakpoint("xl") {
+        max-height: unset;
+    }
+
+    @include breakpoint("xl") {
+        background: url(../../assets/image_background.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    @include breakpoint("sm") {
+        background-image: url("../../assets/fundomobile.svg");
+        background-position: unset;
+    }
 }
 
 .LogoVertical-mobile {
     display: none;
+    position: absolute;
+    top: 40px;
+    width: 141.33px;
+    height: 32px;
+    padding: unset;
+
+    @include breakpoint("sm") {
+        display: block;
+    }
 }
 
 .decoration-container {
@@ -23,6 +49,18 @@
     background-repeat: no-repeat;
     z-index: 1;
     left: 0;
+
+    @include breakpoint("xl") {
+        display: block;
+    }
+
+    @include breakpoint("sm") {
+        display: none;
+        background-image: url("../../assets/decoration--mobile--download.svg");
+        background-size: 100%;
+        background-position: bottom;
+    }
+
 }
 
 
@@ -32,7 +70,18 @@
     position: relative;
     z-index: 2;
     gap: 50px;
-    padding-top: 10px;
+    padding-top: 16px !important;
+
+    @include breakpoint("md") {
+        padding-bottom: 50%;
+        gap: unset;
+    }
+
+    @include breakpoint("sm") {
+        padding: unset;
+    }
+
+
 }
 
 .container-text {
@@ -46,7 +95,19 @@
     color: #FFFFFF;
     position: relative;
     width: 495px;
-    padding-top: 27px
+    padding-top: 27px;
+
+    @include breakpoint("md") {
+        flex-direction: column;
+        font-size: 28px;
+        line-height: 42px;
+    }
+
+    @include breakpoint("sm") {
+        padding-top: 6%;
+        padding-bottom: 94%;
+        width: 300px;
+    }
 }
 
 .container-buttons-download {
@@ -54,10 +115,41 @@
     gap: 30px;
     padding-top: 65px;
     padding-bottom: 66px;
+
+    @include breakpoint("xl") {
+        padding-top: 16%;
+        padding-bottom: unset;
+    }
+
+    @include breakpoint("lg") {
+        padding-top: 40%;
+        padding-bottom: unset;
+    }
+
+    @include breakpoint("md") {
+        padding: unset;
+        position: absolute;
+        top: 90%;
+    }
+
+    @include breakpoint("sm") {
+        position: absolute;
+        gap: 16px;
+        top: 95%;
+    }
 }
 
 .secondtextlabel {
     margin-left: 56px;
+
+    @include breakpoint("md") {
+        text-align: unset;
+        margin-left: 0%;
+    }
+
+    @include breakpoint("sm") {
+        margin-left: 9%;
+    }
 }
 
 .fourthtextlabel {
@@ -68,6 +160,23 @@
     line-height: 60px;
     color: #FECE00;
 
+    @include breakpoint("lg") {
+        height: 60%;
+    }
+
+    @include breakpoint("md") {
+        font-size: 28px;
+        height: unset;
+    }
+
+}
+
+.thirdtextlabel {
+
+    @include breakpoint("md") {
+        padding: unset;
+        margin: unset;
+    }
 }
 
 .line-text-fourth {
@@ -76,6 +185,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @include breakpoint("md") {
+        width: 179px;
+        height: 28px;
+        border-bottom: 4px solid #FFFFFF;
+    }
 }
 
 .Arrow {
@@ -84,18 +199,52 @@
     right: 4.85%;
     top: 0%;
     bottom: 51.69%;
+
+    @include breakpoint("lg") {
+        width: 90px;
+        height: 90px;
+    }
+
+    @include breakpoint("md") {
+        left: 30%;
+        top: 10%;
+    }
+
+    @include breakpoint("sm") {
+        left: 51%;
+        top: -4%;
+    }
 }
 
 .container-text-second {
     display: flex;
     width: 600px;
     grid-gap: 2px;
+
+    @include breakpoint("lg") {
+        grid-gap: 10px;
+        align-items: center;
+    }
+
+    @include breakpoint("md") {
+        width: unset;
+    }
+
+    @include breakpoint("sm") {
+        width: 320px;
+    }
+
 }
 
 .LogoVertical {
     width: 283px;
     height: 64px;
+
+    @include breakpoint("sm") {
+        display: none;
+    }
 }
+
 
 @media (min-width: 1700px) {
     .container-global-download {
@@ -117,175 +266,6 @@
     }
 }
 
-
-@media (max-width: 1200px) {
-
-    .container-buttons-download {
-        padding-top: 16%;
-        padding-bottom: unset;
-    }
-
-    .container-global-download {
-        background: url(../../assets/image_background.svg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-    }
-
-    .decoration-container{
-        display: block;
-    }
-}
-
-@media (max-width: 992px) {
-
-
-    .container-buttons-download {
-        padding-top: 40%;
-        padding-bottom: unset;
-    }
-
-    .Arrow {
-        width: 90px;
-        height: 90px;
-    }
-
-
-    .container-text-second {
-        grid-gap: 10px;
-        align-items: center;
-    }
-
-    .fourthtextlabel {
-        height: 60%;
-    }
-}
-
-@media (max-width: 768px) {
-
-    .container-text {
-        flex-direction: column;
-        font-size: 28px;
-        line-height: 42px;
-    }
-
-    .Arrow {
-        left: 30%;
-        top: 10%;
-
-    }
-
-    .container-text-second {
-        width: unset;
-    }
-
-    .secondtextlabel {
-        text-align: unset;
-        margin-left: 0%;
-    }
-
-    .thirdtextlabel {
-        padding: unset;
-        margin: unset;
-    }
-
-    .fourthtextlabel {
-        font-size: 28px;
-        height: unset;
-    }
-
-    .sub-container-download {
-        padding-bottom: 50%;
-        gap: unset;
-    }
-
-    .line-text-fourth {
-        width: 179px;
-        height: 24px;
-        border-bottom: 4px solid #FFFFFF;
-    }
-
-    .container-buttons-download {
-        padding: unset;
-        position: absolute;
-        top: 90%;
-    }
-
-}
-
-@media (max-width: 576px) {
-
-     
-    .decoration-container{
-        display: none;
-    }
-
-    .container-global-download {
-        background-image: url("../../assets/fundomobile.svg");
-        background-position: unset;
-    }
-
-    .decoration-container {
-        background-image: url("../../assets/decoration--mobile--download.svg");
-        background-size: 100%;
-        background-position: bottom;
-    }
-
-    .container-text {
-        padding-top: 6%;
-        padding-bottom: 94%;
-    }
-
-    .sub-container-download {
-        padding: unset;
-    }
-
-    .tel-container {
-        left: 50%;
-        background-image: url("../../assets/telmobile.svg");
-        background-repeat: no-repeat;
-        left: 50%;
-        max-width: unset;
-        background-size: 100%;
-        width: 50%;
-        height: 85%;
-    }
-
-    .LogoVertical {
-        display: none;
-    }
-
-    .LogoVertical-mobile {
-        display: block;
-        position: absolute;
-        top: 40px;
-        width: 141.33px;
-        height: 32px;
-        padding: unset;
-    }
-
-    .container-buttons-download {
-        position: absolute;
-
-        gap: 16px;
-        top: 95%;
-    }
-
-    .Arrow {
-        left: 48%;
-        top: 0;
-    }
-
-    .container-text-second {
-        width: 320px;
-    }
-
-
-    .container-text {
-        width: 300px;
-    }
-
-}
 
 @media (max-width: 510px) {
     .container-buttons-download {
@@ -309,7 +289,6 @@
         line-height: 20px;
     }
 
-
     .container-buttons-download .download--container .download--icon {
         width: 24px;
         height: 24px;
@@ -319,8 +298,10 @@
 
 
 @media (max-width: 450px) {
+
     .container-text {
-        padding-bottom: 84%;
+        padding-bottom: 83%;
+        padding-top: 0;
     }
 
     .container-buttons-download .download--container {
@@ -332,12 +313,14 @@
         line-height: 18px;
 
     }
-
-
-
 }
 
 @media (max-width:380px) {
+
+    .container-global-download {
+        height: 593px;
+    }
+
     .container-buttons-download {
         gap: 16px;
         width: 328px;
@@ -349,6 +332,10 @@
 }
 
 @media (max-width:350px) {
+
+    .container-global-download {
+        height: unset;
+    }
     .container-buttons-download {
         width: 99%;
         height: 67px;

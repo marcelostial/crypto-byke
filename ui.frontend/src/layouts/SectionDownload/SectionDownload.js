@@ -12,6 +12,8 @@ const SectionDownload = ({
   fourthtextlabel,
   urlbuttonapple,
   urlbuttongoogle,
+  labelapple,
+  labelgoogle,
 }) => {
   return (
     <>
@@ -48,12 +50,12 @@ const SectionDownload = ({
           </div>
           <div className="container-buttons-download">
             <Download
-              label="Baixe agora na <b>Apple Store<b/></p>"
+              label={labelapple}
               icon="apple"
               url={urlbuttonapple}
             />
             <Download
-              label="Baixe agora no <b>Google Play<b/></p>"
+              label={labelgoogle}
               icon="google"
               url={urlbuttongoogle}
             />
@@ -72,6 +74,8 @@ SectionDownload.propTypes = {
   fourthtextlabel: PropTypes.string,
   urlbuttonapple: PropTypes.string,
   urlbuttongoogle: PropTypes.string,
+  labelapple: PropTypes.string.isRequired,
+  labelgoogle: PropTypes.string.isRequired,
 };
 
 SectionDownload.defaultProps = {
@@ -79,6 +83,8 @@ SectionDownload.defaultProps = {
   secondtextlabel: "the north",
   thirdtextlabel: "for the",
   fourthtextlabel: "environment",
+  labelapple: "Baixe agora na <b>Apple Store<b/>",
+  labelgoogle: "Baixe agora no <b>Google Play<b/>",
   urlbuttonapple: "/",
   urlbuttongoogle: "/",
 };

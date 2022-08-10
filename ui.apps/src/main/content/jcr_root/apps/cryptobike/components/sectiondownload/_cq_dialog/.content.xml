@@ -24,16 +24,18 @@
           jcr:primaryType="nt:unstructured"
           jcr:title="Section Download"
           sling:resourceType="cq/gui/components/authoring/dialog">
-   <content jcr:primaryType="nt:unstructured"
-            sling:resourceType="granite/ui/components/coral/foundation/container">
-      <layout jcr:primaryType="nt:unstructured"
-              margin="{Boolean}false"
-              sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+   <content jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/container">
       <items jcr:primaryType="nt:unstructured">
-         <column jcr:primaryType="nt:unstructured"
-                 sling:resourceType="granite/ui/components/coral/foundation/container">
+         <tabs jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/tabs">
             <items jcr:primaryType="nt:unstructured">
-               <firsttextlabel cq-msm-lockable="./firsttextlabel"
+               <main-content jcr:primaryType="nt:unstructured"
+                             jcr:title="Content"
+                             sling:resourceType="granite/ui/components/coral/foundation/container">
+                  <layout jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns" />
+                  <items jcr:primaryType="nt:unstructured">
+                     <column jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                                          <firsttextlabel cq-msm-lockable="./firsttextlabel"
                                fieldLabel="firsttextlabel"
                                jcr:primaryType="nt:unstructured"
                                name="./firsttextlabel"
@@ -53,18 +55,61 @@
                                 jcr:primaryType="nt:unstructured"
                                 name="./fourthtextlabel"
                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
-               <urlbuttonapple cq-msm-lockable="./urlbuttonapple"
+                        </items>
+                     </column>
+                  </items>
+               </main-content>
+               <stores jcr:primaryType="nt:unstructured" jcr:title="Smartphone Stores" sling:resourceType="granite/ui/components/coral/foundation/container">
+                  <layout jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns" />
+                  <items jcr:primaryType="nt:unstructured">
+                     <column jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                           <labelapple cq-msm-lockable="./labelapple"
+                                     fieldLabel="App Store Label"
+                                     jcr:primaryType="nt:unstructured"
+                                     name="./labelapple"
+                                     useFixedInlineToolbar="{Boolean}true"
+                                     sling:resourceType="cq/gui/components/authoring/dialog/richtext">
+                              <rtePlugins jcr:primaryType="nt:unstructured">
+                                 <format jcr:primaryType="nt:unstructured" features="bold" />
+                              </rtePlugins>
+                              <uiSettings jcr:primaryType="nt:unstructured">
+                                 <cui jcr:primaryType="nt:unstructured">
+                                    <inline jcr:primaryType="nt:unstructured" toolbar="[format#bold]"></inline>
+                                 </cui> 
+                              </uiSettings>  
+                           </labelapple>
+                          <urlbuttonapple cq-msm-lockable="./urlbuttonapple"
                                fieldLabel="urlbuttonapple"
                                jcr:primaryType="nt:unstructured"
                                name="./urlbuttonapple"
                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
-               <urlbuttongoogle cq-msm-lockable="./urlbuttongoogle"
-                                fieldLabel="urlbuttongoogle"
-                                jcr:primaryType="nt:unstructured"
-                                name="./urlbuttongoogle"
-                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                           <labelgoogle cq-msm-lockable="./labelgoogle"
+                                         fieldLabel="Play Store Label"
+                                         jcr:primaryType="nt:unstructured"
+                                         name="./labelgoogle"
+                                         useFixedInlineToolbar="{Boolean}true"
+                                         sling:resourceType="cq/gui/components/authoring/dialog/richtext">
+                              <rtePlugins jcr:primaryType="nt:unstructured">
+                                 <format jcr:primaryType="nt:unstructured" features="bold" />
+                              </rtePlugins>
+                              <uiSettings jcr:primaryType="nt:unstructured">
+                                 <cui jcr:primaryType="nt:unstructured">
+                                    <inline jcr:primaryType="nt:unstructured" toolbar="[format#bold]"></inline>
+                                 </cui> 
+                              </uiSettings>  
+                           </labelgoogle>
+                           <urlbuttongoogle cq-msm-lockable="./urlbuttongoogle"
+                                        fieldLabel="urlbuttongoogle"
+                                        jcr:primaryType="nt:unstructured"
+                                        name="./urlbuttongoogle"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                        </items>
+                     </column>
+                  </items>
+               </stores>
             </items>
-         </column>
+         </tabs>
       </items>
    </content>
 </jcr:root>
