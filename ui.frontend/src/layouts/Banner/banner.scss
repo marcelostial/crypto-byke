@@ -1,0 +1,73 @@
+@import "../../styles/variables.scss";
+
+.banner--container {
+  margin-top: 86px;
+
+  background-image: url("../../assets/KV_cryptobike_12.png");
+  background-position: 73% 0;
+  background-repeat: no-repeat;
+  background-color: #f0f1f6;
+
+  height: 688px;
+  justify-content: center;
+
+  @include breakpoint("desk") {
+    background-position: 105% 0%;
+  }
+
+  @include breakpoint("xl") {
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  @include breakpoint("lg") {
+    background-position: 16% 85%;
+    justify-content: flex-start;
+    align-items: center;
+    height: 768px;
+  }
+
+  .content--container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 210px;
+    width: 329px;
+    margin-top: 80px;
+
+    @include breakpoint("xl") {
+      margin-top: -80px;
+      height: 170px;
+    }
+
+    @include breakpoint("lg") {
+      height: 140px;
+      width: 327px;
+      margin-top: -80px;
+    }
+
+    .title {
+      font-weight: 800;
+      font-size: 40px;
+      line-height: 60px;
+      color: $grey-500;
+
+      @include breakpoint("lg") {
+        font-size: 24px;
+        line-height: 36px;
+      }
+    }
+
+    .text {
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 30px;
+      color: $grey-500;
+
+      @include breakpoint("lg") {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+}
