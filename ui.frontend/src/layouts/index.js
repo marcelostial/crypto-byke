@@ -8,4 +8,3 @@ import Footer from "./Footer/Footer";
 import SectionDownload from "./SectionDownload/SectionDownload"
 
 export { Blog, Header, OurNFTs, Pedalar, StaticRanking, Tour, Footer, SectionDownload};
-

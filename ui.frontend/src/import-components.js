@@ -90,13 +90,21 @@ MapTo('cryptobike/components/breadcrumb')(BreadCrumbV2, {
 
 // --------------------------- Custom components ---------------------------
 
-const Blog = withAsyncImport(() => import(`./layouts/Blog/Blog`));
+const Blog = withAsyncImport(() =>
+  import(`./layouts/Blog/Blog`),
+);
 
-const Header = withAsyncImport(() => import(`./layouts/Header/Header`));
+const Header = withAsyncImport(() =>
+import(`./layouts/Header/Header`),
+);
 
-const Pedalar = withAsyncImport(() => import(`./layouts/Pedalar/pedalar`));
+const Pedalar = withAsyncImport(() =>
+  import(`./layouts/Pedalar/pedalar`),
+);
 
-const OurNFTs = withAsyncImport(() => import(`./layouts/OurNFTs/OurNFTs`));
+const OurNFTs = withAsyncImport(() =>
+  import(`./layouts/OurNFTs/OurNFTs`),
+);
 
 const StaticRanking = withAsyncImport(() =>
   import(`./layouts/StaticRanking/StaticRanking`),
@@ -118,6 +126,10 @@ const CryptoPorCompass = withAsyncImport(() =>
   import(`./layouts/CryptobikePorCompass/CryptobikePorCompass`),
 );
 
+const YellowDownload = withAsyncImport(() =>
+  import(`./layouts/YellowDownload/YellowDownload`),
+);
+
 
 const SectionDownload = withAsyncImport(() =>
   import(`./layouts/SectionDownload/SectionDownload`),
@@ -125,24 +137,13 @@ const SectionDownload = withAsyncImport(() =>
 
 
 MapTo("compass/components/blog-posts")(Blog);
-const YellowDownload = withAsyncImport(() =>
-  import(`./layouts/YellowDownload/YellowDownload`),
-);
-
-const banner = withAsyncImport(() => import(`./layouts/Banner/banner`));
-
-const conhecatour = withAsyncImport(() => import(`./layouts/Conhecatour/conhecatour`));
-
-MapTo('compass/components/blog-posts')(Blog);
 MapTo('cryptobike/components/header')(Header);
 MapTo('cryptobike/components/footer')(Footer);
 MapTo('cryptobike/components/pedalar')(Pedalar);
-MapTo('cryptobike/components/tourdeterre')(Tour);
+MapTo("cryptobike/components/tourdeterre")(Tour);
 MapTo('cryptobike/components/nossosnfts')(OurNFTs);
 MapTo('cryptobike/components/static-ranking')(StaticRanking);
 MapTo('cryptobike/components/por-compass')(CryptoPorCompass);
 MapTo('cryptobike/components/dynamic-ranking')(DynamicRanking);
-MapTo('cryptobike/components/sectiondownload')(SectionDownload);
 MapTo('cryptobike/components/yellow-download')(YellowDownload);
-MapTo('cryptobike/components/banner')(banner);
-MapTo('cryptobike/components/conhecatour')(conhecatour);
+MapTo('cryptobike/components/sectiondownload')(SectionDownload);
