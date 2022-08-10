@@ -13,9 +13,9 @@ const conhecatour = ({ titleconhecatour, link }) => {
           height="616"
           src={link}
           title="YouTube video player"
-          frameborder="0"
+          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
       </div>
     </Grid>
