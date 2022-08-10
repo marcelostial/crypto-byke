@@ -1,14 +1,15 @@
 @import "../../styles/variables.scss";
 
 .footer--container {
-  padding: 40px 126px 0px;
+  padding-top: 40px !important;
+  padding-bottom: 40px !important;
   box-shadow: inset 0px 1.5px 0px #2f3237;
   background: #111213;
 
   @include breakpoint("md") {
+    padding-bottom: 12px !important;
     display: flex;
     flex-direction: column;
-    padding: 40px 16px 0px;
     gap: 48px;
   }
 

@@ -109,9 +109,7 @@ const OurNFTs = withAsyncImport(() =>
 const StaticRanking = withAsyncImport(() =>
   import(`./layouts/StaticRanking/StaticRanking`),
 );
-const Footer = withAsyncImport(() =>
-  import(`./layouts/Footer/Footer`),
-);
+
 const DynamicRanking = withAsyncImport(() =>
   import(`./layouts/DynamicRanking/DynamicRanking`),
 );
