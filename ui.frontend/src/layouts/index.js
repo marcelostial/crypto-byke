@@ -5,5 +5,6 @@ import Pedalar from "./Pedalar/Pedalar";
 import StaticRanking from "./StaticRanking/StaticRanking";
 import Tour from "./Tour/Tour";
 import Footer from "./Footer/Footer";
+import SectionDownload from "./SectionDownload/SectionDownload"
 
-export { Blog, Header, OurNFTs, Pedalar, StaticRanking, Tour, Footer };
+export { Blog, Header, OurNFTs, Pedalar, StaticRanking, Tour, Footer, SectionDownload};
