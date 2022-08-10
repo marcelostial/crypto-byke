@@ -1,0 +1,24 @@
+@import "../../styles/variables.scss";
+
+.conhecatour--container {
+  background: #111213;
+  height: 943px;
+
+  @include breakpoint("sm") {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .video--container {
+    display: flex;
+    margin-top: 64px;
+
+    @include breakpoint("sm") {
+
+      iframe {
+        width: 328px;
+        height: 192px;
+      }
+    }
+  }
+}
