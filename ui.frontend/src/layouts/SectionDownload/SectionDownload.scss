@@ -238,10 +238,7 @@
 
 .container-buttons-download .download--container{
     padding: 12px 15px;
-
-    @include breakpoint("sm") {
-        padding: 12px 12px;
-    }
+    width: 100%;
 }
 
 .LogoVertical {
@@ -253,6 +250,9 @@
     }
 }
 
+.container-buttons-download .download--container .download--label b {
+    font-weight: 700;
+}
 
 @media (min-width: 1700px) {
     .container-global-download {
@@ -304,6 +304,18 @@
     }
 }
 
+@media (max-width: 769px) {
+    .container-buttons-download .download--container {
+        width: unset;
+    }
+}
+
+
+@media (max-width: 500px) {
+    .container-buttons-download .download--container {
+        width: 100%;
+    }
+}
 
 @media (max-width: 450px) {
 
@@ -316,7 +328,14 @@
         gap: 10px;
     }
 
+    .container-buttons-download .download--container .download--label b {
+        font-size: 14px;
+        line-height: 21px;
+        font-weight: 700;
+    }
+
     .container-buttons-download .download--container .download--label {
+        font-weight: 400;
         font-size: 12px;
         line-height: 18px;
 
@@ -324,6 +343,10 @@
 }
 
 @media (max-width:380px) {
+
+    .container-buttons-download .download--container {
+        padding: 12px 12px;
+    }
 
     .container-global-download {
         height: 593px;
