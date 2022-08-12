@@ -58,6 +58,7 @@ const SectionDownload = ({
               label={labelgoogle}
               icon="google"
               url={urlbuttongoogle}
+              
             />
           </div>
         </div>

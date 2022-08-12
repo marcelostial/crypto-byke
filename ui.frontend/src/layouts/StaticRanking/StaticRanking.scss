@@ -24,6 +24,10 @@
       font-weight: 700;
     }
 
+    i {
+      font-style: italic;
+    }
+
     @include breakpoint("lg") {
       font-size: 18px;
       line-height: 27px;
