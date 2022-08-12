@@ -135,6 +135,14 @@ const SectionDownload = withAsyncImport(() =>
   import(`./layouts/SectionDownload/SectionDownload`),
 );
 
+const Banner = withAsyncImport(() =>
+  import(`./layouts/Banner/banner`),
+);
+
+const Conhecatour = withAsyncImport(() =>
+  import(`./layouts/Conhecatour/conhecatour`),
+);
+
 
 MapTo("compass/components/blog-posts")(Blog);
 MapTo('cryptobike/components/header')(Header);
@@ -147,3 +155,5 @@ MapTo('cryptobike/components/por-compass')(CryptoPorCompass);
 MapTo('cryptobike/components/dynamic-ranking')(DynamicRanking);
 MapTo('cryptobike/components/yellow-download')(YellowDownload);
 MapTo('cryptobike/components/sectiondownload')(SectionDownload);
+MapTo('cryptobike/components/banner')(Banner);
+MapTo('cryptobike/components/conhecatour')(Conhecatour);
