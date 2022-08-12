@@ -17,6 +17,7 @@ const StaticRanking = ({ title, about, buttonTitle, buttonUrl }) => {
 
   return (
     <Grid className="static-ranking--container">
+      <span className="anchor" id="ranking" />
       <Title text={title} />
 
       <h5>
