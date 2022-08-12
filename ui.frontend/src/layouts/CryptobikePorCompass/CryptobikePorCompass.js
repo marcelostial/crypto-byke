@@ -5,7 +5,7 @@ import "./CryptobikePorCompass.scss";
 
 const CryptoPorCompass = ({ title, text }) => {
   return (
-    <Grid className="by-compass">
+    <Grid className="by-compass" id="about">
       <Title text={title} variant="light" />
 
       <Text text={text} className="text p3" />
