@@ -4,7 +4,8 @@ import "./Pedalar.scss";
 
 const Pedalar = ({ maintitle, cards }) => {
   return (
-    <Grid className="pedalar--container" id="join">
+    <Grid className="pedalar--container">
+      <span className="anchor" id="join" />
       <Title text={maintitle} />
 
       <Carousel
