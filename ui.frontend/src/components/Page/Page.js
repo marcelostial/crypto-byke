@@ -9,6 +9,9 @@ import ReactGA from "react-ga";
 
 class AppPage extends Page {
   componentDidMount() {
+    let newTitle = this.props.title;
+    document.title = newTitle;
+
     ReactGA.pageview(window.location.pathname + window.location.search);
   }
 
