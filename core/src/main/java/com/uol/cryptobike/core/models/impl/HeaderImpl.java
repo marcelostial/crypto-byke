@@ -1,20 +1,36 @@
-/*
- * ***********************************************************************
- * Compass UOL CONFIDENTIAL
- * ___________________
- *
- * Copyright 2022 Compass UOL.
- * All Rights Reserved.
- *
- * NOTICE:  All information contained herein is, and remains the property
- * of Compass UOL and its suppliers, if any. The intellectual and
- * technical concepts contained herein are proprietary to Compass UOL
- * and its suppliers and are protected by trade secret or copyright law.
- * Dissemination of this information or reproduction of this material
- * is strictly forbidden unless prior written permission is obtained
- * from Compass UOL.
- * ***********************************************************************
- */
+/*
+
+ * ***********************************************************************
+
+ * Compass UOL CONFIDENTIAL
+
+ * ___________________
+
+ *
+
+ * Copyright 2022 Compass UOL.
+
+ * All Rights Reserved.
+
+ *
+
+ * NOTICE:  All information contained herein is, and remains the property
+
+ * of Compass UOL and its suppliers, if any. The intellectual and
+
+ * technical concepts contained herein are proprietary to Compass UOL
+
+ * and its suppliers and are protected by trade secret or copyright law.
+
+ * Dissemination of this information or reproduction of this material
+
+ * is strictly forbidden unless prior written permission is obtained
+
+ * from Compass UOL.
+
+ * ***********************************************************************
+
+ */
 
 package com.uol.cryptobike.core.models.impl;
 
@@ -33,18 +49,22 @@ import org.apache.sling.models.annotations.Exporter;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.InjectionStrategy;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
+import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
+import org.apache.sling.models.annotations.via.ResourceSuperType;
+import org.apache.sling.models.annotations.Via;
+import com.adobe.cq.wcm.core.components.models.LanguageNavigation;
+import com.adobe.cq.wcm.core.components.models.NavigationItem;
 
 @Model(adaptables = {
-    SlingHttpServletRequest.class
+        SlingHttpServletRequest.class
 }, adapters = {
-    Header.class,
-    ComponentExporter.class
+        Header.class,
+        ComponentExporter.class
 }, resourceType = "cryptobike/components/header")
 @Exporter(name = ExporterConstants.SLING_MODEL_EXPORTER_NAME, extensions = ExporterConstants.SLING_MODEL_EXTENSION)
 public class HeaderImpl
-    implements Header
-{
+        implements Header {
 
     @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
     private String home;
@@ -56,6 +76,10 @@ public class HeaderImpl
     private List<Language> languages;
     @SlingObject
     private Resource resource;
+
+    @Self
+    @Via(type = ResourceSuperType.class)
+    private LanguageNavigation languageNavigation;
 
     @Override
     public String getHome() {
@@ -82,6 +106,11 @@ public class HeaderImpl
     @Override
     public String getExportedType() {
         return resource.getResourceType();
+    }
+
+    @Override
+    public List<NavigationItem> getItems() {
+        return null != languageNavigation ? languageNavigation.getItems() : null;
     }
 
 }

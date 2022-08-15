@@ -8,13 +8,22 @@ const DEFAULT_EXTENSION = ".html";
  */
 export default function resolvePath(path) {
   if (!path) throw new Error("No path provided");
-  
+
+  let hash;
+  [path, hash] = path.split("#");
+
   path = addDefaultPageExtension(path);
+  path = addHash(path, hash);
 
   return path;
 }
 
 function addDefaultPageExtension(path) {
   if (!HAS_EXTENSION.test(path)) path += DEFAULT_EXTENSION;
+  return path;
+}
+
+function addHash(path, hash) {
+  if (hash) path += `#${hash}`;
   return path;
 }
