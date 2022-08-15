@@ -35,6 +35,11 @@ ReactGA.initialize(TRACKING_ID);
 const renderApp = () => {
   ModelManager.initialize(modelManagerOptions).then((pageModel) => {
     const history = createBrowserHistory();
+
+    history.listen(() => {
+      window.scrollTo(0, 0);
+    });
+
     render(
       <Router history={history}>
         <App
