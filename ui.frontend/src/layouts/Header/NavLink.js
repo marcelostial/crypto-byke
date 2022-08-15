@@ -8,7 +8,7 @@ export function NavLink({ link, label }) {
   useEffect(() => isActive(link, setActive), [link]);
 
   return (
-    <Link to={link} className={`nav-link p3 ${active}`}>
+    <Link to={resolvePath(link)} className={`nav-link p3 ${active}`}>
       {label}
     </Link>
   );
