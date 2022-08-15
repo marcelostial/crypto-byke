@@ -1,4 +1,5 @@
 import React from "react";
+import { queryLanguage } from "../../../routing/changeLanguage";
 import "./Modal.scss";
 
 export const Modal = ({ open, languages, variants }) => {
@@ -21,16 +22,12 @@ export const Modal = ({ open, languages, variants }) => {
 
 const Language = ({ icon, id, name, variants }) => {
   return (
-    <div className="language" onClick={changeLanguage(id, variants)}>
+    <div className="language" onClick={() => queryLanguage(id, variants)}>
       <img src={icon.src} alt={"flag " + id} />
       <h5 className="label">{name}</h5>
     </div>
   );
 };
-
-function changeLanguage(id, variants) {
-  return; // TODO: change language
-}
 
 Modal.defaultProps = {
   open: false,
@@ -46,4 +43,5 @@ Modal.defaultProps = {
       icon: { src: "https://countryflagsapi.com/svg/us" },
     },
   ],
+  variants: [],
 };
