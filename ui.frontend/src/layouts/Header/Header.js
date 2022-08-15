@@ -14,7 +14,7 @@ import LogoVert from "../../assets/logo-vertical-white.svg";
 
 import "./Header.scss";
 
-const Header = ({ home, currentLanguage, nav, languages, langVariants }) => {
+const Header = ({ home, currentLanguage, nav, languages, languagePages }) => {
   const [modal, setModal] = useState(false);
   const [openNav, setOpenNav] = useState(false);
   const { width } = useWindowSize();
@@ -68,7 +68,7 @@ const Header = ({ home, currentLanguage, nav, languages, langVariants }) => {
         )}
       </Grid>
 
-      <Modal open={modal} languages={languages} variants={langVariants} />
+      <Modal open={modal} languages={languages} variants={languagePages} />
     </>
   );
 };
@@ -98,7 +98,6 @@ Header.defaultProps = {
 
   // languages defaults in Modal.js
 
-  // TODO: get from backend
   langVariants: [],
 };
 
