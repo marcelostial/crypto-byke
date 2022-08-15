@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ |  ***********************************************************************
+ |  Compass UOL CONFIDENTIAL
+ |  ___________________
+ |
+ |  Copyright 2022 Compass UOL
+ |  All Rights Reserved.
+ |
+ |  NOTICE:  All information contained herein is, and remains the property
+ |  of Compass UOL and its suppliers, if any. The intellectual and
+ |  technical concepts contained herein are proprietary to Compass UOL
+ |  and its suppliers and are protected by trade secret or copyright law.
+ |  Dissemination of this information or reproduction of this material
+ |  is strictly forbidden unless prior written permission is obtained
+ |  from Compass UOL.
+ |  ***********************************************************************
+-->
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Not Found 404"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+   <content jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+      <layout jcr:primaryType="nt:unstructured"
+              margin="{Boolean}false"
+              sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+      <items jcr:primaryType="nt:unstructured">
+         <column jcr:primaryType="nt:unstructured"
+                 sling:resourceType="granite/ui/components/coral/foundation/container">
+            <items jcr:primaryType="nt:unstructured">
+               <title jcr:primaryType="nt:unstructured"
+                      sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                      fieldLabel="Title"
+                      name="./title"
+                      useFixedInlineToolbar="{Boolean}true">
+                  <rtePlugins jcr:primaryType="nt:unstructured">
+                     <format jcr:primaryType="nt:unstructured" features="*" />
+                  </rtePlugins>
+                  <uiSettings jcr:primaryType="nt:unstructured">
+                     <cui jcr:primaryType="nt:unstructured">
+                        <inline jcr:primaryType="nt:unstructured" toolbar="[format#bold,format#italic,format#underline]"></inline>
+                     </cui> 
+                  </uiSettings>
+               </title>
+               <description cq-msm-lockable="./description"
+                            fieldLabel="Description"
+                            jcr:primaryType="nt:unstructured"
+                            name="./description"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textarea"/>
+               <homeLabel cq-msm-lockable="./homeLabel"
+                          fieldLabel="Home Label"
+                          jcr:primaryType="nt:unstructured"
+                          name="./homeLabel"
+                          sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+               <homeUrl cq-msm-lockable="./homeUrl"
+                        fieldLabel="URL to homepage"
+                        jcr:primaryType="nt:unstructured"
+                        name="./homeUrl"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
+            </items>
+         </column>
+      </items>
+   </content>
+</jcr:root>
