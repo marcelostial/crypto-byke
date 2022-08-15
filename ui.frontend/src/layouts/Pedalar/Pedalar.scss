@@ -1,6 +1,9 @@
 @import "../../styles/variables.scss";
 
 .pedalar--container {
+  .slick-list {
+    overflow: visible !important;
+  }
   .grid--inner {
     @include breakpoint("sm") {
       margin-bottom: 34px;
