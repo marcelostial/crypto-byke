@@ -2,35 +2,36 @@
 
 .conhecatour--container {
   background: $grey-500;
-  z-index: -1;
-
-  @include breakpoint("sm") {
-    justify-content: center;
-    align-items: center;
-  }
 
   .video--container {
     display: flex;
-    margin-top: 64px;
     align-items: center;
-    justify-content: space-evenly;
-    .video {
-      z-index: 0;
-      width: 1114px;
-      height: 616px;
-      @include breakpoint("sm") {
-        width: 328px;
-        height: 181px;
-      }
-    }
+    justify-content: center;
+
+    margin-top: 64px;
   }
+
+  .video {
+    width: 100%;
+  }
+
   .icon {
-    z-index: 3;
+    z-index: 2;
     position: absolute;
     cursor: pointer;
-    @include breakpoint("sm") {
-      height: 32px;
-      width: 32px;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  @include breakpoint("lg") {
+    .video--container {
+      margin-top: 40px;
+    }
+
+    .icon {
+      scale: 0.8;
     }
   }
 }
