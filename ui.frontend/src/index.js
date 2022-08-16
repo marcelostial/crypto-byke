@@ -38,6 +38,7 @@ const renderApp = () => {
 
     history.listen(() => {
       window.scrollTo(0, 0);
+      scrollToHash();
     });
 
     render(
@@ -59,3 +60,12 @@ const renderApp = () => {
 document.addEventListener("DOMContentLoaded", () => {
   renderApp();
 });
+
+function scrollToHash() {
+  const { hash } = window.location;
+
+  if (hash) {
+    const element = document.querySelector(hash);
+    if (element) element.scrollIntoView();
+  }
+}

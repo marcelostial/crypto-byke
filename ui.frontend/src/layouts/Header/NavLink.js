@@ -7,8 +7,20 @@ export function NavLink({ link, label }) {
 
   useEffect(() => isActive(link, setActive), [link]);
 
+  const [path, anchor] = link.split("#");
+
+  const getHash = () => {
+    return anchor ? `#${anchor}` : "";
+  };
+
   return (
-    <Link to={resolvePath(link)} className={`nav-link p3 ${active}`}>
+    <Link
+      to={{
+        pathname: resolvePath(path),
+        hash: getHash(),
+      }}
+      className={`nav-link p3 ${active}`}
+    >
       {label}
     </Link>
   );
