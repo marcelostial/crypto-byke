@@ -1,23 +1,32 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import resolvePath from "../../routing/resolvePath";
 
 export function NavLink({ link, label }) {
   const [active, setActive] = useState("");
-
-  useEffect(() => isActive(link, setActive), [link]);
-
   const [path, anchor] = link.split("#");
 
-  const getHash = () => {
-    return anchor ? `#${anchor}` : "";
-  };
+  const isActive = useCallback(() => {
+    const windowPath =
+      resolvePath(window.location.pathname) + window.location.hash;
+    const targetPath = resolvePath(path) + getHash(anchor);
+
+    return windowPath === targetPath;
+  }, [path, anchor]);
+
+  useEffect(() => {
+    setActive(isActive() ? "active" : "");
+
+    window.addEventListener("route-change", () => {
+      setActive(isActive() ? "active" : "");
+    });
+  }, [isActive]);
 
   return (
     <Link
       to={{
         pathname: resolvePath(path),
-        hash: getHash(),
+        hash: getHash(anchor),
       }}
       className={`nav-link p3 ${active}`}
     >
@@ -26,10 +35,6 @@ export function NavLink({ link, label }) {
   );
 }
 
-function isActive(link, setActive) {
-  const currentPath = resolvePath(window.location.pathname);
-  const targetPath = resolvePath(link);
-
-  if (currentPath === targetPath) return setActive("active");
-  return setActive("");
-}
+const getHash = (anchor) => {
+  return anchor ? `#${anchor}` : "";
+};
