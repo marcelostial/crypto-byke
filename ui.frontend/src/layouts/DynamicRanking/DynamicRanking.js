@@ -10,7 +10,7 @@ import {
   Text,
   Title,
 } from "../../components";
-import { getRankings } from "../../services/ranking";
+import { getRankings, findRankings } from "../../services/ranking";
 import ChevronDown from "../../assets/icon-regular-chevron-down.svg";
 
 import "./DynamicRanking.scss";
@@ -43,18 +43,41 @@ const DynamicRanking = ({
 
   const [rankings, setRankings] = React.useState([]);
   const [isReversed, setIsReversed] = React.useState(false);
+
   const [selectedFilter, setSelectedFilter] = React.useState(searchOptions[0]);
   const [search, setSearch] = React.useState("");
-  const [searchNotFound, setSearchNotFound] = React.useState(false);
+  const [lastSearch, setLastSearch] = React.useState("");
+
+  const [notFound, setNotFound] = React.useState(false);
 
   React.useEffect(() => {
     getRankings().then(({ data }) => setRankings(data.ranking));
   }, []);
 
-  const handleSearch = () => {
-    // TODO: Implement search with API
-    console.log(`Search by ${selectedFilter.label} text ${search}`);
-    setSearchNotFound((prev) => !prev);
+  const handleSearchChange = ({ target }) => {
+    setSearch(target.value);
+    if (target.value.length === 0) {
+      getRankings().then(({ data }) => {
+        setRankings(data.ranking);
+        setNotFound(false);
+        setIsReversed(false);
+      });
+    }
+  };
+
+  const handleOnSearch = () => {
+    if (search.length >= 2) {
+      setLastSearch(search);
+      findRankings(selectedFilter.value, search).then(({ data }) => {
+        if (data.total === 0) {
+          setNotFound(true);
+        } else {
+          setNotFound(false);
+          setIsReversed(false);
+          setRankings(data.ranking);
+        }
+      });
+    }
   };
 
   const sortRankings = () => {
@@ -85,19 +108,19 @@ const DynamicRanking = ({
             <SearchBar
               placeholder={`${searchPlaceholder} ${selectedFilter.label}`}
               value={search}
-              onChange={({ target }) => setSearch(target.value)}
-              onSearch={handleSearch}
+              onChange={handleSearchChange}
+              onSearch={handleOnSearch}
             />
           </div>
         </div>
       </Grid>
       <Grid className="dynamic-ranking--content">
-        {searchNotFound ? (
+        {notFound ? (
           <div className="dynamic-ranking--not-found">
             <h4>{notFoundTitle}</h4>
             <Text
               className="p2 dynamic-ranking--not-found-description"
-              text={`"${search}" ${notFoundDescription}`}
+              text={`"${lastSearch}" ${notFoundDescription}`}
             />
           </div>
         ) : (
@@ -132,11 +155,7 @@ const DynamicRanking = ({
             </div>
             {rankings &&
               rankings.map((item) => (
-                <RankingCard
-                  key={item.ranking}
-                  place={`${item.city}, ${item.state}`}
-                  {...item}
-                />
+                <RankingCard key={item.ranking} {...item} />
               ))}
           </>
         )}

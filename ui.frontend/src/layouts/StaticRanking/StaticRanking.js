@@ -12,6 +12,8 @@ const StaticRanking = ({ title, about, buttonTitle, buttonUrl }) => {
   const [rankings, setRankings] = React.useState([]);
 
   React.useEffect(() => {
+    // TODO: Use bucket to fetch static data, when CORS error is fixed
+    // getStaticRankings().then(({ data }) => setRankings(data.ranking.slice(0, 3)));
     getRankings().then(({ data }) => setRankings(data.ranking.slice(0, 3)));
   }, []);
 
@@ -25,13 +27,7 @@ const StaticRanking = ({ title, about, buttonTitle, buttonUrl }) => {
       </h5>
       <div className="static-ranking--content">
         {rankings &&
-          rankings.map((item) => (
-            <RankingCard
-              key={item.ranking}
-              place={`${item.city}, ${item.state}`}
-              {...item}
-            />
-          ))}
+          rankings.map((item) => <RankingCard key={item.ranking} {...item} />)}
       </div>
       <div className="static-ranking--button">
         <Button

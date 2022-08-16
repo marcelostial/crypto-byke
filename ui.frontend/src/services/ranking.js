@@ -1,89 +1,40 @@
 import axios from "axios";
 
-export async function getRankings() {
-  // TODO: Get api data
+let RANKING_BUCKET =
+  "https://cb-back-buckets-dev-backrankingbucket-1o72r4129wc4b.s3.amazonaws.com/REPLACE_WITH_ISO/ranking.json";
 
-  // Temporary data for testing
-  return {
-    data: {
-      ranking: [
-        {
-          ranking: 1,
-          profile_img:
-            "https://dgalywyr863hv.cloudfront.net/pictures/athletes/105002046/25114068/1/large.jpg",
-          name: "Alex",
-          nickname: "@alex",
-          country: "Brazil",
-          state: "Rio Grande do Sul",
-          city: "Rio Grande",
-          distance: "888 km",
-          country_code: "BR",
-        },
-        {
-          ranking: 2,
-          profile_img:
-            "https://dgalywyr863hv.cloudfront.net/pictures/athletes/105002046/25114068/1/large.jpg",
-          name: "Felipe",
-          nickname: "@felipe",
-          country: "Estados Unidos",
-          state: "Pernambuco",
-          city: "Recife",
-          distance: "617 km",
-          country_code: "US",
-        },
-        {
-          ranking: 3,
-          profile_img:
-            "https://dgalywyr863hv.cloudfront.net/pictures/athletes/105002046/25114068/1/large.jpg",
-          name: "Ana",
-          nickname: "@ana",
-          country: "França",
-          state: "Santa Catarina",
-          city: "Florianópolis",
-          distance: "941 km",
-          country_code: "FR",
-        },
-        {
-          ranking: 4,
-          profile_img:
-            "https://dgalywyr863hv.cloudfront.net/pictures/athletes/105002046/25114068/1/large.jpg",
-          name: "Bruna",
-          nickname: "@bruna",
-          country: "Espanha",
-          state: "Pernambuco",
-          city: "Recife",
-          distance: "554 km",
-          country_code: "ES",
-        },
-        {
-          ranking: 5,
-          profile_img:
-            "https://dgalywyr863hv.cloudfront.net/pictures/athletes/105002046/25114068/1/large.jpg",
-          name: "Heitor",
-          nickname: "@heitor",
-          country: "Italia",
-          state: "Paraná",
-          city: "Curitiba",
-          distance: "324 km",
-          country_code: "IT",
-        },
-        {
-          ranking: 6,
-          profile_img:
-            "https://dgalywyr863hv.cloudfront.net/pictures/athletes/105002046/25114068/1/large.jpg",
-          name: "Lívia",
-          nickname: "@livia",
-          country: "Japão",
-          state: "Minas Gerais",
-          city: "Belo Horizonte",
-          distance: "123 km",
-          country_code: "JP",
-        },
-      ],
-      total: 12,
-      limit: 6,
-      offset: 0,
-      offsets: 2,
-    },
-  };
+const RANKING_API =
+  "https://h6cifwdcaa.execute-api.us-east-1.amazonaws.com/dev/ranking";
+
+const CONFIG = { headers: { "Content-Type": "application/json" } };
+const EMPTY_RANKS = { data: { ranking: [] }, total: 0 };
+
+// Getting latest bucket data (from yesterday)
+const yesterdayDate = new Date();
+yesterdayDate.setDate(yesterdayDate.getDate() - 1);
+const [lastBucketISO] = yesterdayDate.toISOString().split("T");
+
+RANKING_BUCKET = RANKING_BUCKET.replace("REPLACE_WITH_ISO", lastBucketISO);
+
+export async function getStaticRankings() {
+  return axios.get(RANKING_BUCKET, CONFIG).catch((error) => {
+    console.log(error);
+    return EMPTY_RANKS;
+  });
+}
+
+export async function getRankings() {
+  return axios.get(RANKING_API, CONFIG).catch((error) => {
+    console.log(error);
+    return EMPTY_RANKS;
+  });
+}
+
+export async function findRankings(param, value) {
+  return axios
+    .get(`${RANKING_API}?${param}=${value}`, CONFIG)
+    .catch((error) => {
+      console.log(error);
+      return EMPTY_RANKS;
+    });
 }
