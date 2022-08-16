@@ -143,6 +143,10 @@ const Conhecatour = withAsyncImport(() =>
   import(`./layouts/Conhecatour/conhecatour`),
 );
 
+const NotFound404 = withAsyncImport(()=>
+  import(`./layouts/NotFound/NotFound`)
+); 
+
 
 MapTo("compass/components/blog-posts")(Blog);
 MapTo('cryptobike/components/header')(Header);
@@ -157,3 +161,4 @@ MapTo('cryptobike/components/yellow-download')(YellowDownload);
 MapTo('cryptobike/components/sectiondownload')(SectionDownload);
 MapTo('cryptobike/components/banner')(Banner);
 MapTo('cryptobike/components/conhecatour')(Conhecatour);
+MapTo('cryptobike/components/not-found')(NotFound404);

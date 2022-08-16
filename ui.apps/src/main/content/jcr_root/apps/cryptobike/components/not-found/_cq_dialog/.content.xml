@@ -22,7 +22,7 @@
           xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
           xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
           jcr:primaryType="nt:unstructured"
-          jcr:title="Static Ranking"
+          jcr:title="Not Found 404"
           sling:resourceType="cq/gui/components/authoring/dialog">
    <content jcr:primaryType="nt:unstructured"
             sling:resourceType="granite/ui/components/coral/foundation/container">
@@ -33,16 +33,10 @@
          <column jcr:primaryType="nt:unstructured"
                  sling:resourceType="granite/ui/components/coral/foundation/container">
             <items jcr:primaryType="nt:unstructured">
-               <title cq-msm-lockable="./title"
-                      fieldLabel="Title"
-                      jcr:primaryType="nt:unstructured"
-                      name="./title"
-                      sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
-               <about jcr:primaryType="nt:unstructured"
+               <title jcr:primaryType="nt:unstructured"
                       sling:resourceType="cq/gui/components/authoring/dialog/richtext"
-                      editorType="text"
-                      fieldLabel="Description"
-                      name="./about"
+                      fieldLabel="Title"
+                      name="./title"
                       useFixedInlineToolbar="{Boolean}true">
                   <rtePlugins jcr:primaryType="nt:unstructured">
                      <format jcr:primaryType="nt:unstructured" features="*" />
@@ -52,17 +46,22 @@
                         <inline jcr:primaryType="nt:unstructured" toolbar="[format#bold,format#italic,format#underline]"></inline>
                      </cui> 
                   </uiSettings>
-               </about>
-               <buttonTitle cq-msm-lockable="./buttonTitle"
-                            fieldLabel="Button Title"
+               </title>
+               <description cq-msm-lockable="./description"
+                            fieldLabel="Description"
                             jcr:primaryType="nt:unstructured"
-                            name="./buttonTitle"
-                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
-               <buttonUrl cq-msm-lockable="./buttonUrl"
-                          fieldLabel="Button URL"
+                            name="./description"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textarea"/>
+               <homeLabel cq-msm-lockable="./homeLabel"
+                          fieldLabel="Home Label"
                           jcr:primaryType="nt:unstructured"
-                          name="./buttonUrl"
-                          sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
+                          name="./homeLabel"
+                          sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+               <homeUrl cq-msm-lockable="./homeUrl"
+                        fieldLabel="URL to homepage"
+                        jcr:primaryType="nt:unstructured"
+                        name="./homeUrl"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
             </items>
          </column>
       </items>

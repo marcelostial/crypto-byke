@@ -44,11 +44,21 @@
                                   jcr:primaryType="nt:unstructured"
                                   name="./title"
                                   sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
-                           <description cq-msm-lockable="./description"
+                           <description jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                        editorType="text"
                                         fieldLabel="Description"
-                                        jcr:primaryType="nt:unstructured"
                                         name="./description"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/textarea"/>
+                                        useFixedInlineToolbar="{Boolean}true">
+                              <rtePlugins jcr:primaryType="nt:unstructured">
+                                 <format jcr:primaryType="nt:unstructured" features="*" />
+                              </rtePlugins>
+                              <uiSettings jcr:primaryType="nt:unstructured">
+                                 <cui jcr:primaryType="nt:unstructured">
+                                    <inline jcr:primaryType="nt:unstructured" toolbar="[format#bold,format#italic,format#underline]"></inline>
+                                 </cui> 
+                              </uiSettings>
+                           </description>
                            <backgroundResType jcr:primaryType="nt:unstructured"
                                               name="./background/sling:resourceType"
                                               sling:resourceType="granite/ui/components/coral/foundation/form/hidden"

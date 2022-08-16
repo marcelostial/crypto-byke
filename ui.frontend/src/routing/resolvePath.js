@@ -1,12 +1,5 @@
-// import {
-//   URL_ALIASES,
-//   CONTENT_FOLDER,
-//   DEFAULT_EXTENSION,
-//   PORTUGUESE_ID,
-// } from "../utils/constants";
-
-// import { isInAuthoring } from "../utils/isInAuthoring";
-// const HAS_EXTENSION = /(\.[a-z]+)$/;
+const HAS_EXTENSION = /(\.[a-z]+)$/;
+const DEFAULT_EXTENSION = ".html";
 
 /**
  * função auxiliar para resolver o caminho de uma rota
@@ -16,67 +9,21 @@
 export default function resolvePath(path) {
   if (!path) throw new Error("No path provided");
 
-  // if (isInAuthoring()) {
-  //   path = addDefaultPageExtension(path);
-  //   path = preserveParams(path);
+  let hash;
+  [path, hash] = path.split("#");
 
-  //   return path;
-  // }
-
-  path = applyAliases(path);
-  path = removeContentStructure(path);
-  path = removeExtension(path);
-  path = addFowardSlash(path);
+  path = addDefaultPageExtension(path);
+  path = addHash(path, hash);
 
   return path;
 }
 
-// function addDefaultPageExtension(path) {
-//   // if (!HAS_EXTENSION.test(path)) path += DEFAULT_EXTENSION;
-//   return path;
-// }
-
-// function preserveParams(path) {
-//   // const wcmMode = getWCMparam();
-
-//   // if (wcmMode) {
-//   //   path += `?wcmmode=${wcmMode}`;
-//   // }
-
-//   return path;
-// }
-
-// function getWCMparam() {
-//   const params = new URLSearchParams(window.location.search);
-//   const wcmMode = params.get("wcmmode");
-
-//   return wcmMode;
-// }
-
-function applyAliases(path) {
-  // if (path.includes(PORTUGUESE_ID)) {
-  //   URL_ALIASES.forEach(({ en, pt }) => {
-  //     path = path.replace(en, pt);
-  //   });
-  // }
+function addDefaultPageExtension(path) {
+  if (!HAS_EXTENSION.test(path)) path += DEFAULT_EXTENSION;
   return path;
 }
 
-function removeContentStructure(path) {
-  // if (path.startsWith(CONTENT_FOLDER)) {
-  //   path = path.substring(CONTENT_FOLDER.length);
-  // }
-  return path;
-}
-
-function removeExtension(path) {
-  // if (HAS_EXTENSION.test(path)) {
-  //   path = path.substring(0, path.lastIndexOf("."));
-  // }
-  return path;
-}
-
-function addFowardSlash(path) {
-  // if (!path.endsWith("/")) path += "/";
+function addHash(path, hash) {
+  if (hash) path += `#${hash}`;
   return path;
 }

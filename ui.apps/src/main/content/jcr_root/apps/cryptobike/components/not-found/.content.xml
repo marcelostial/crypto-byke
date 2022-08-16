@@ -23,5 +23,4 @@
           xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
           componentGroup="Crypto Bike - Layout"
           jcr:primaryType="cq:Component"
-          sling:resourceSuperType="core/wcm/components/languagenavigation/v2/languagenavigation"
-          jcr:title="Header" />
+          jcr:title="Not Found 404"/>
