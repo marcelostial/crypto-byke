@@ -9,6 +9,26 @@ import facebooklogo from "../../assets/facebook.svg";
 import twitterlogo from "../../assets/twitter.svg";
 import youtubelogo from "../../assets/youtube.svg";
 import instagramlogo from "../../assets/instagram.svg";
+import resolvePath from "../../routing/resolvePath";
+
+function FooterLink({ path, label }) {
+  const [link, hash] = path.split("#");
+
+  const getHash = () => {
+    return hash ? `#${hash}` : "";
+  };
+
+  return (
+    <Link
+      to={{
+        pathname: resolvePath(link),
+        hash: getHash(),
+      }}
+    >
+      <p>{label}</p>
+    </Link>
+  );
+}
 
 const Footer = ({
   linkedin,
@@ -76,9 +96,7 @@ const Footer = ({
 
         <div className="topright">
           {footerlinks.map(({ path, label }, index) => (
-            <Link to={path} key={"link_" + index}>
-              <p>{label}</p>
-            </Link>
+            <FooterLink key={"link_" + index} path={path} label={label} />
           ))}
         </div>
       </div>
