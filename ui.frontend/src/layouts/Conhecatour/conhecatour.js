@@ -1,36 +1,62 @@
+import { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
-import "./conhecatour.scss";
 import { Grid } from "../../components/Grid/Grid";
 import Title from "../../components/Title/Title";
+import playicon from "../../assets/btn-play.svg";
+import "./conhecatour.scss";
 
-const conhecatour = ({ titleconhecatour, link }) => {
+const Conhecatour = ({ titleconhecatour, link }) => {
+  const vidRef = useRef();
+  const [paused, setPaused] = useState(true);
+
+  const handlePlay = () => {
+    setPaused(!paused);
+    if (paused) {
+      vidRef.current.play();
+    } else {
+      vidRef.current.pause();
+    }
+  };
+
+  useEffect(() => {
+    vidRef.current.addEventListener("pause", () => {
+      setPaused(true);
+    });
+    vidRef.current.addEventListener("play", () => {
+      setPaused(false);
+    });
+  }, []);
+
   return (
     <Grid className="conhecatour--container">
       <Title variant="dark" text={titleconhecatour} />
+
       <div className="video--container">
-        <iframe
-          width="1250"
-          height="616"
-          src={link}
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
+        {paused && (
+          <img
+            src={playicon}
+            alt="play icon"
+            className="icon"
+            onClick={handlePlay}
+          />
+        )}
+
+        <video ref={vidRef} className="video" controls>
+          <source src={link} type="video/mp4" />
+        </video>
       </div>
     </Grid>
   );
 };
 
-conhecatour.propTypes = {
+Conhecatour.propTypes = {
   titleconhecatour: PropTypes.string,
   link: PropTypes.string,
 };
 
-conhecatour.defaultProps = {
+Conhecatour.defaultProps = {
   titleconhecatour: "Conheça o Tour de Terre",
-
-  link: `https://www.youtube.com/embed/-EFoXEVCuA8`,
+  link: "/",
 };
 
-export default conhecatour;
+export default Conhecatour;
