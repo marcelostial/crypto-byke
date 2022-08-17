@@ -24,25 +24,22 @@
           jcr:primaryType="nt:unstructured"
           jcr:title="conhecatour"
           sling:resourceType="cq/gui/components/authoring/dialog">
-   <content jcr:primaryType="nt:unstructured"
-            sling:resourceType="granite/ui/components/coral/foundation/container">
-      <layout jcr:primaryType="nt:unstructured"
-              margin="{Boolean}false"
-              sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+   <content jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/container">
+      <layout jcr:primaryType="nt:unstructured" margin="{Boolean}false" sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns" />
       <items jcr:primaryType="nt:unstructured">
-         <column jcr:primaryType="nt:unstructured"
-                 sling:resourceType="granite/ui/components/coral/foundation/container">
+         <column jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/container">
             <items jcr:primaryType="nt:unstructured">
                <titleconhecatour cq-msm-lockable="./titleconhecatour"
                                  fieldLabel="Title"
                                  jcr:primaryType="nt:unstructured"
                                  name="./titleconhecatour"
-                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
                <link cq-msm-lockable="./link"
                      fieldLabel="Link"
                      jcr:primaryType="nt:unstructured"
                      name="./link"
-                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                     rootPath="/content/dam"
+                     sling:resourceType="granite/ui/components/coral/foundation/form/pathfield" />
             </items>
          </column>
       </items>
