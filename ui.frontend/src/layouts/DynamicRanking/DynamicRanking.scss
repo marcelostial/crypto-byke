@@ -26,11 +26,12 @@
     .dynamic-ranking--description {
       margin-bottom: 152px;
       color: $white;
+      line-height: 30px;
 
       @include breakpoint("sm") {
         margin-bottom: 32px;
         font-size: 18px;
-        line-height: 24px;
+        line-height: 27px;
       }
 
       b {

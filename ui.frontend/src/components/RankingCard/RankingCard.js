@@ -1,9 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import AvatarPlaceholder from "../../assets/avatar-placeholder.svg";
-import FlagPlaceholder from "../../assets/flag-placeholder.svg";
-
 import "./RankingCard.scss";
 
 const RankingCard = ({
@@ -16,47 +13,38 @@ const RankingCard = ({
   city,
   state,
   distance,
+  missingCountryMessage,
 }) => {
-  const [profileImgLoaded, setProfileImgLoaded] = React.useState(false);
+  const flag = `https://countryflagsapi.com/svg/${country_code}`;
+  const place = city && state ? `${city}, ${state}` : missingCountryMessage;
 
-  // Data when user doesn't has a country set
-  const hasCountry = country_code !== "XX";
+  // Getting name initials
+  const rgx = new RegExp(/(\p{L}{1})\p{L}+/, "gu");
+  let initials = [...full_name.matchAll(rgx)] || [];
+  initials = (
+    (initials.shift()?.[1] || "") + (initials.pop()?.[1] || "")
+  ).toUpperCase();
 
-  const flag = hasCountry
-    ? `https://countryflagsapi.com/svg/${country_code}`
-    : FlagPlaceholder;
-
-  // TODO: Use this when state data comes from API
-  // const place = city && state ? `${city}, ${state}` : "No data available";
-  const place = city ? `${city}` : "No data available";
+  const onFlagLoad = ({ target }) => {
+    target.style.backgroundColor = "transparent";
+  };
 
   return (
     <li key={nickname} className="ranking-card--container">
       <h4 className="ranking-card--rank">{ranking}º</h4>
       <div className="ranking-card--content">
         <div className="ranking-card--person">
-          {/* Actual avatar */}
           <img
-            style={{ display: profileImgLoaded ? "block" : "none" }}
             draggable="false"
             className="ranking-card--avatar"
             src={profile_img}
-            alt={`${full_name}'s avatar`}
-            onLoad={() => setProfileImgLoaded(true)}
-          />
-          {/* Placeholder, in case avatar doesn't load */}
-          <img
-            style={{ display: profileImgLoaded ? "none" : "block" }}
-            draggable="false"
-            className="ranking-card--avatar"
-            src={AvatarPlaceholder}
-            alt="avatar-placeholder"
+            alt={initials}
           />
           <div className="ranking-card--info">
             <p className="p2">{full_name}</p>
             <span className="p3">@{nickname}</span>
             <div className="ranking-card--country-mobile">
-              <img src={flag} alt="Flag" />
+              <img src={flag} alt="Flag" onLoad={onFlagLoad} />
               <p className="p2">{country}</p>
               <span className="p3">{place}</span>
             </div>
@@ -64,7 +52,7 @@ const RankingCard = ({
         </div>
         <div className="ranking-card--rest">
           <div className="ranking-card--country">
-            <img src={flag} alt="Flag" />
+            <img src={flag} alt="Flag" onLoad={onFlagLoad} />
             <div>
               <p className="p2">{country}</p>
               <span className="p3">{place}</span>
@@ -86,12 +74,15 @@ RankingCard.propTypes = {
   country: PropTypes.string,
   place: PropTypes.string,
   distance: PropTypes.string,
+  missingCountryMessage: PropTypes.string,
 };
 
 RankingCard.defaultProps = {
   rank: "?",
   distance: "0 km",
+  full_name: "Person Name",
   nickname: "nickname",
+  missingCountryMessage: "No data available",
 };
 
 export default RankingCard;

@@ -4,17 +4,23 @@ import PropTypes from "prop-types";
 
 import { Button, Grid, RankingCard, Text, Title } from "../../components";
 
-import { getRankings } from "../../services/ranking";
+import { getStaticRankings } from "../../services/ranking";
 
 import "./StaticRanking.scss";
 
-const StaticRanking = ({ title, about, buttonTitle, buttonUrl }) => {
+const StaticRanking = ({
+  title,
+  about,
+  buttonTitle,
+  buttonUrl,
+  missingCountryMessage,
+}) => {
   const [rankings, setRankings] = React.useState([]);
 
   React.useEffect(() => {
-    // TODO: Use bucket to fetch static data, when CORS error is fixed
-    // getStaticRankings().then(({ data }) => setRankings(data.ranking.slice(0, 3)));
-    getRankings().then(({ data }) => setRankings(data.ranking.slice(0, 3)));
+    getStaticRankings().then(({ data }) =>
+      setRankings(data.ranking.slice(0, 3))
+    );
   }, []);
 
   return (
@@ -27,7 +33,13 @@ const StaticRanking = ({ title, about, buttonTitle, buttonUrl }) => {
       </h5>
       <div className="static-ranking--content">
         {rankings &&
-          rankings.map((item) => <RankingCard key={item.ranking} {...item} />)}
+          rankings.map((item) => (
+            <RankingCard
+              key={item.ranking}
+              missingCountryMessage={missingCountryMessage}
+              {...item}
+            />
+          ))}
       </div>
       <div className="static-ranking--button">
         <Button
@@ -48,6 +60,7 @@ StaticRanking.propTypes = {
   about: PropTypes.string,
   buttonText: PropTypes.string,
   buttonUrl: PropTypes.string,
+  missingCountryMessage: PropTypes.string,
 };
 
 StaticRanking.defaultProps = {
@@ -55,6 +68,7 @@ StaticRanking.defaultProps = {
   about: "Add a description",
   buttonText: "Button",
   buttonUrl: "/",
+  missingCountryMessage: "No data available",
 };
 
 export default StaticRanking;

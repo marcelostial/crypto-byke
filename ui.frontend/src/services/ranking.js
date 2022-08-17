@@ -7,7 +7,7 @@ const RANKING_API =
   "https://h6cifwdcaa.execute-api.us-east-1.amazonaws.com/dev/ranking";
 
 const CONFIG = { headers: { "Content-Type": "application/json" } };
-const EMPTY_RANKS = { data: { ranking: [] }, total: 0 };
+const EMPTY_RANKS = { data: { ranking: [], total: 0 } };
 
 // Getting latest bucket data (from yesterday)
 const yesterdayDate = new Date();

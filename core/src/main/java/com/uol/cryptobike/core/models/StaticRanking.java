@@ -42,4 +42,7 @@ public interface StaticRanking
     @JsonProperty("buttonUrl")
     String getButtonUrl();
 
+    @JsonProperty("missingCountryMessage")
+    String getMissingCountryMessage();
+
 }

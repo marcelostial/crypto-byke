@@ -33,6 +33,7 @@ const DynamicRanking = ({
   columnDistance,
   notFoundTitle,
   notFoundDescription,
+  missingCountryMessage,
 }) => {
   const searchOptions = [
     { value: "nickname", label: nameOptionLabel },
@@ -155,7 +156,11 @@ const DynamicRanking = ({
             </div>
             {rankings &&
               rankings.map((item) => (
-                <RankingCard key={item.ranking} {...item} />
+                <RankingCard
+                  key={item.ranking}
+                  missingCountryMessage={missingCountryMessage}
+                  {...item}
+                />
               ))}
           </>
         )}
@@ -182,6 +187,7 @@ DynamicRanking.propTypes = {
   columnDistance: PropTypes.string,
   notFoundTitle: PropTypes.string,
   notFoundDescription: PropTypes.string,
+  missingCountryMessage: PropTypes.string,
 };
 
 DynamicRanking.defaultProps = {
@@ -201,6 +207,7 @@ DynamicRanking.defaultProps = {
   columnDistance: "Distance",
   notFoundTitle: "No results found",
   notFoundDescription: "term not found. <br> Try another one.",
+  missingCountryMessage: "No data available",
 };
 
 export default DynamicRanking;
