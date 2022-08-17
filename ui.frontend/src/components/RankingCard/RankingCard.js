@@ -6,14 +6,28 @@ import "./RankingCard.scss";
 const RankingCard = ({
   ranking,
   profile_img,
-  name,
+  full_name,
   nickname,
   country_code,
   country,
-  place,
+  city,
+  state,
   distance,
+  missingCountryMessage,
 }) => {
   const flag = `https://countryflagsapi.com/svg/${country_code}`;
+  const place = city && state ? `${city}, ${state}` : missingCountryMessage;
+
+  // Getting name initials
+  const rgx = new RegExp(/(\p{L}{1})\p{L}+/, "gu");
+  let initials = [...full_name.matchAll(rgx)] || [];
+  initials = (
+    (initials.shift()?.[1] || "") + (initials.pop()?.[1] || "")
+  ).toUpperCase();
+
+  const onFlagLoad = ({ target }) => {
+    target.style.backgroundColor = "transparent";
+  };
 
   return (
     <li key={nickname} className="ranking-card--container">
@@ -24,13 +38,13 @@ const RankingCard = ({
             draggable="false"
             className="ranking-card--avatar"
             src={profile_img}
-            alt={`${name}'s avatar`}
+            alt={initials}
           />
           <div className="ranking-card--info">
-            <p className="p2">{name}</p>
-            <span className="p3">{nickname}</span>
+            <p className="p2">{full_name}</p>
+            <span className="p3">@{nickname}</span>
             <div className="ranking-card--country-mobile">
-              <img src={flag} alt="Flag" />
+              <img src={flag} alt="Flag" onLoad={onFlagLoad} />
               <p className="p2">{country}</p>
               <span className="p3">{place}</span>
             </div>
@@ -38,7 +52,7 @@ const RankingCard = ({
         </div>
         <div className="ranking-card--rest">
           <div className="ranking-card--country">
-            <img src={flag} alt="Flag" />
+            <img src={flag} alt="Flag" onLoad={onFlagLoad} />
             <div>
               <p className="p2">{country}</p>
               <span className="p3">{place}</span>
@@ -54,17 +68,21 @@ const RankingCard = ({
 RankingCard.propTypes = {
   ranking: PropTypes.number,
   profile_img: PropTypes.string,
-  name: PropTypes.string,
+  full_name: PropTypes.string,
   nickname: PropTypes.string,
   country_code: PropTypes.string,
   country: PropTypes.string,
   place: PropTypes.string,
   distance: PropTypes.string,
+  missingCountryMessage: PropTypes.string,
 };
 
 RankingCard.defaultProps = {
   rank: "?",
   distance: "0 km",
+  full_name: "Person Name",
+  nickname: "nickname",
+  missingCountryMessage: "No data available",
 };
 
 export default RankingCard;

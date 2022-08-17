@@ -77,6 +77,8 @@ public class DynamicRankingImpl
     private String notFoundTitle;
     @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
     private String notFoundDescription;
+    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
+    private String missingCountryMessage;
     @SlingObject
     private Resource resource;
 
@@ -180,6 +182,12 @@ public class DynamicRankingImpl
     @JsonProperty("notFoundDescription")
     public String getNotFoundDescription() {
         return notFoundDescription;
+    }
+
+    @Override
+    @JsonProperty("missingCountryMessage")
+    public String getMissingCountryMessage() {
+        return missingCountryMessage;
     }
 
     @Override
