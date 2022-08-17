@@ -10,7 +10,7 @@ import {
   Text,
   Title,
 } from "../../components";
-import { getRankings } from "../../services/ranking";
+import { getRankings, findRankings } from "../../services/ranking";
 import ChevronDown from "../../assets/icon-regular-chevron-down.svg";
 
 import "./DynamicRanking.scss";
@@ -33,6 +33,7 @@ const DynamicRanking = ({
   columnDistance,
   notFoundTitle,
   notFoundDescription,
+  missingCountryMessage,
 }) => {
   const searchOptions = [
     { value: "nickname", label: nameOptionLabel },
@@ -43,18 +44,41 @@ const DynamicRanking = ({
 
   const [rankings, setRankings] = React.useState([]);
   const [isReversed, setIsReversed] = React.useState(false);
+
   const [selectedFilter, setSelectedFilter] = React.useState(searchOptions[0]);
   const [search, setSearch] = React.useState("");
-  const [searchNotFound, setSearchNotFound] = React.useState(false);
+  const [lastSearch, setLastSearch] = React.useState("");
+
+  const [notFound, setNotFound] = React.useState(false);
 
   React.useEffect(() => {
     getRankings().then(({ data }) => setRankings(data.ranking));
   }, []);
 
-  const handleSearch = () => {
-    // TODO: Implement search with API
-    console.log(`Search by ${selectedFilter.label} text ${search}`);
-    setSearchNotFound((prev) => !prev);
+  const handleSearchChange = ({ target }) => {
+    setSearch(target.value);
+    if (target.value.length === 0) {
+      getRankings().then(({ data }) => {
+        setRankings(data.ranking);
+        setNotFound(false);
+        setIsReversed(false);
+      });
+    }
+  };
+
+  const handleOnSearch = () => {
+    if (search.length >= 2) {
+      setLastSearch(search);
+      findRankings(selectedFilter.value, search).then(({ data }) => {
+        if (data.total === 0) {
+          setNotFound(true);
+        } else {
+          setNotFound(false);
+          setIsReversed(false);
+          setRankings(data.ranking);
+        }
+      });
+    }
   };
 
   const sortRankings = () => {
@@ -85,19 +109,19 @@ const DynamicRanking = ({
             <SearchBar
               placeholder={`${searchPlaceholder} ${selectedFilter.label}`}
               value={search}
-              onChange={({ target }) => setSearch(target.value)}
-              onSearch={handleSearch}
+              onChange={handleSearchChange}
+              onSearch={handleOnSearch}
             />
           </div>
         </div>
       </Grid>
       <Grid className="dynamic-ranking--content">
-        {searchNotFound ? (
+        {notFound ? (
           <div className="dynamic-ranking--not-found">
             <h4>{notFoundTitle}</h4>
             <Text
               className="p2 dynamic-ranking--not-found-description"
-              text={`"${search}" ${notFoundDescription}`}
+              text={`"${lastSearch}" ${notFoundDescription}`}
             />
           </div>
         ) : (
@@ -134,7 +158,7 @@ const DynamicRanking = ({
               rankings.map((item) => (
                 <RankingCard
                   key={item.ranking}
-                  place={`${item.city}, ${item.state}`}
+                  missingCountryMessage={missingCountryMessage}
                   {...item}
                 />
               ))}
@@ -163,6 +187,7 @@ DynamicRanking.propTypes = {
   columnDistance: PropTypes.string,
   notFoundTitle: PropTypes.string,
   notFoundDescription: PropTypes.string,
+  missingCountryMessage: PropTypes.string,
 };
 
 DynamicRanking.defaultProps = {
@@ -182,6 +207,7 @@ DynamicRanking.defaultProps = {
   columnDistance: "Distance",
   notFoundTitle: "No results found",
   notFoundDescription: "term not found. <br> Try another one.",
+  missingCountryMessage: "No data available",
 };
 
 export default DynamicRanking;

@@ -49,6 +49,8 @@ public class StaticRankingImpl
     private String buttonTitle;
     @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
     private String buttonUrl;
+    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
+    private String missingCountryMessage;
     @SlingObject
     private Resource resource;
 
@@ -71,6 +73,12 @@ public class StaticRankingImpl
     @JsonProperty("buttonUrl")
     public String getButtonUrl() {
         return buttonUrl;
+    }
+
+    @Override
+    @JsonProperty("missingCountryMessage")
+    public String getMissingCountryMessage() {
+        return missingCountryMessage;
     }
 
     @Override

@@ -122,6 +122,8 @@ Footer.defaultProps = {
   youtube: "https://www.youtube.com/",
   instagram: "https://www.instagram.com/",
 
+  home: "/",
+
   footerlinks: [],
 };
 

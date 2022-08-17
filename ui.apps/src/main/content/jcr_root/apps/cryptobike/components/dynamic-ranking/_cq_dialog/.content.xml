@@ -187,6 +187,11 @@
                                                 jcr:primaryType="nt:unstructured"
                                                 name="./notFoundDescription"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                           <missingCountryMessage cq-msm-lockable="./missingCountryMessage"
+                                                  fieldLabel="Missing Country Message"
+                                                  jcr:primaryType="nt:unstructured"
+                                                  name="./missingCountryMessage"
+                                                  sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
                         </items>
                      </column>
                   </items>

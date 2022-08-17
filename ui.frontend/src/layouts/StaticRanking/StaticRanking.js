@@ -4,15 +4,23 @@ import PropTypes from "prop-types";
 
 import { Button, Grid, RankingCard, Text, Title } from "../../components";
 
-import { getRankings } from "../../services/ranking";
+import { getStaticRankings } from "../../services/ranking";
 
 import "./StaticRanking.scss";
 
-const StaticRanking = ({ title, about, buttonTitle, buttonUrl }) => {
+const StaticRanking = ({
+  title,
+  about,
+  buttonTitle,
+  buttonUrl,
+  missingCountryMessage,
+}) => {
   const [rankings, setRankings] = React.useState([]);
 
   React.useEffect(() => {
-    getRankings().then(({ data }) => setRankings(data.ranking.slice(0, 3)));
+    getStaticRankings().then(({ data }) =>
+      setRankings(data.ranking.slice(0, 3))
+    );
   }, []);
 
   return (
@@ -28,7 +36,7 @@ const StaticRanking = ({ title, about, buttonTitle, buttonUrl }) => {
           rankings.map((item) => (
             <RankingCard
               key={item.ranking}
-              place={`${item.city}, ${item.state}`}
+              missingCountryMessage={missingCountryMessage}
               {...item}
             />
           ))}
@@ -52,6 +60,7 @@ StaticRanking.propTypes = {
   about: PropTypes.string,
   buttonText: PropTypes.string,
   buttonUrl: PropTypes.string,
+  missingCountryMessage: PropTypes.string,
 };
 
 StaticRanking.defaultProps = {
@@ -59,6 +68,7 @@ StaticRanking.defaultProps = {
   about: "Add a description",
   buttonText: "Button",
   buttonUrl: "/",
+  missingCountryMessage: "No data available",
 };
 
 export default StaticRanking;

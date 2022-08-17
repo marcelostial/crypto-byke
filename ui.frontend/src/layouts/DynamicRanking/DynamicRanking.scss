@@ -26,11 +26,12 @@
     .dynamic-ranking--description {
       margin-bottom: 152px;
       color: $white;
+      line-height: 30px;
 
       @include breakpoint("sm") {
         margin-bottom: 32px;
         font-size: 18px;
-        line-height: 24px;
+        line-height: 27px;
       }
 
       b {
@@ -53,7 +54,7 @@
       }
 
       .drop-down--container {
-        min-width: 238px;
+        min-width: 274px;
         @include breakpoint("lg") {
           min-width: auto;
         }

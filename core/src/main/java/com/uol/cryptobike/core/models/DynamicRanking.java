@@ -85,4 +85,7 @@ public interface DynamicRanking
     @JsonProperty("notFoundDescription")
     String getNotFoundDescription();
 
+    @JsonProperty("missingCountryMessage")
+    String getMissingCountryMessage();
+
 }

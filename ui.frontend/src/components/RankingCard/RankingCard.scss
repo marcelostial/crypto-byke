@@ -88,12 +88,19 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background-color: $grey-100;
+  background-color: $grey-200;
   object-fit: cover;
+
+  text-align: center;
+  font-size: 20px;
+  line-height: 80px;
 
   @include breakpoint("lg") {
     height: 40px;
     width: 40px;
+
+    font-size: 14px;
+    line-height: 40px;
   }
 }
 
@@ -146,6 +153,9 @@
     img {
       width: 13.25px;
       height: 10px;
+      object-fit: contain;
+      background-color: $grey-200;
+      font-size: 0px;
     }
 
     p,
@@ -167,6 +177,8 @@
     width: 53px;
     height: 40px;
     object-fit: contain;
+    background-color: $grey-200;
+    font-size: 0px;
   }
 
   div {
