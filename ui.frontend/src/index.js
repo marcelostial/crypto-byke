@@ -31,13 +31,16 @@ const TRACKING_ID = "UA-96866913-1";
 
 TagManager.initialize(tagManagerArgs);
 ReactGA.initialize(TRACKING_ID);
+const routeChange = new CustomEvent("route-change");
 
 const renderApp = () => {
   ModelManager.initialize(modelManagerOptions).then((pageModel) => {
     const history = createBrowserHistory();
 
     history.listen(() => {
+      window.dispatchEvent(routeChange);
       window.scrollTo(0, 0);
+      scrollToHash();
     });
 
     render(
@@ -59,3 +62,12 @@ const renderApp = () => {
 document.addEventListener("DOMContentLoaded", () => {
   renderApp();
 });
+
+function scrollToHash() {
+  const { hash } = window.location;
+
+  if (hash) {
+    const element = document.querySelector(hash);
+    if (element) element.scrollIntoView();
+  }
+}

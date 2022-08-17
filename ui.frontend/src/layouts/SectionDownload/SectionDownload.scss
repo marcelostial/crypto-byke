@@ -256,21 +256,27 @@
 
 @media (min-width: 1700px) {
     .container-global-download {
-        background-position: unset;
-        max-height: unset;
+        background-position: center;
+        background-image: url("../../assets/BackgroundDownloadFullHd.svg");
+        max-height: 870px;
     }
 
     .container-buttons-download {
-        padding-top: 21%;
-        padding-bottom: 13%;
+        padding-top: 11.8%;
     }
 
     .container-text {
-        padding-top: 8%;
+        padding-top: 7.5%;
     }
 
     .Arrow {
-        top: 25%;
+        top: 20%;
+    }
+
+    .decoration-container{
+        display: block;
+        background-size: 100%;
+        background-position-y: 85px;
     }
 }
 
