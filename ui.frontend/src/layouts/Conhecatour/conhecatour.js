@@ -41,7 +41,7 @@ const Conhecatour = ({ titleconhecatour, link }) => {
           />
         )}
 
-        <video ref={vidRef} className="video" controls>
+        <video ref={vidRef} className="video" controls={paused ? false : true}>
           <source src={link} type="video/mp4" />
         </video>
       </div>
