@@ -35,7 +35,7 @@ const StaticRanking = ({ title, about, buttonTitle, buttonUrl }) => {
       </div>
       <div className="static-ranking--button">
         <Button
-          linkType={"externo"}
+          linkType={"interno"}
           label={buttonTitle}
           alignIcon={"right"}
           type="quinary"

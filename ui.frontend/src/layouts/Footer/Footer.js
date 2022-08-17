@@ -75,9 +75,9 @@ const Footer = ({
       <div className="topcontainer">
         <div className="topleft">
           <div className="wrapper">
-            <a href={home}>
+            <Link to={resolvePath(home)}>
               <img className="logo" src={logocompass} alt="Logo Compass" />
-            </a>
+            </Link>
 
             <div className="icons">
               {socialLinks.map((socialLink) => (
