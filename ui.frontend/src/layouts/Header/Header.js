@@ -80,15 +80,15 @@ Header.defaultProps = {
   nav: [
     {
       label: "Home",
-      path: "/en/home",
+      path: "/",
     },
     {
       label: "Sobre nós",
-      path: "#about-us",
+      path: "/",
     },
     {
       label: "Como participar",
-      path: "#participate",
+      path: "/",
     },
     {
       label: "Ranking",

@@ -24,17 +24,31 @@ export function NavLink({ link, label }) {
 
   return (
     <Link
-      to={{
-        pathname: resolvePath(path),
-        hash: getHash(anchor),
-      }}
+
+    to={{
+
+      pathname: path && resolvePath(path),
+
+      hash: getHash(anchor),
+
+    }}
       className={`nav-link p3 ${active}`}
     >
       {label}
     </Link>
   );
-}
+
+  
+};
+NavLink.defaultProps = {
+
+  link: "/",
+
+  label: "Default",
+
+};
 
 const getHash = (anchor) => {
   return anchor ? `#${anchor}` : "";
 };
+
